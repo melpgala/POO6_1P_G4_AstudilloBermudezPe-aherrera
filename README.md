@@ -1,2 +1,2 @@
-# POO6_1P_G4_AstudilloBermudezPe-aherrera
+# POO6_1P_G4_AstudilloBermudezPeniaherrera
 Repositorio Proyecto Grupo 4
