@@ -26,18 +26,32 @@ public class Conductor {
         Arraylist conductores1 = conductores.LeeFichero("conductores.txt");
         for (i=0;i<conductores1.length;i++){
             this.user = conductores1[i][0];
-            this.licencia = conductores1[i][1];
+            this.licencia = Integer.valueOf(conductores1[i][1]);
             this.estado = conductores1[i][2];
             int codigoVeh = Integer.valueOf(conductores1[i][3]);
         }
         
-        this.veh = Vehiculo(codigoVeh)
+        this.veh = Vehiculo(codigoVeh);
         //this.user = ;
         //this.licencia = ;
         //this.estado = ;
         //this.codigoVehiculo = ;
         
     }
+    
+    private String getUser(){
+        return user;
+    }
+    private String getEstado(){
+        return estado;
+    }
+    private int getLicencia(){
+        return licencia;
+    }
+    private int getCodigoVehiculo(){
+        return codigoVehiculo;
+    }
+    
 
     
     @Override
