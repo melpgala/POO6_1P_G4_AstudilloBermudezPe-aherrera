@@ -10,5 +10,12 @@ package Sistema;
  * @author User
  */
 public class Platos {
+    String nombrePlato;
+    double precioPlato;
+    int cantPlatos;
+    
+    protected double precioxPlatos(){
+    
+    }
     
 }
