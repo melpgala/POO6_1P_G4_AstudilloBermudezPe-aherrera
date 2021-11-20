@@ -9,7 +9,7 @@ package Sistema;
  *
  * @author User
  */
-public class Taxi {
+public class Taxi extends Servicio {
     private int numeroPasajeros;
     
     private double calcularValorPagar(){
