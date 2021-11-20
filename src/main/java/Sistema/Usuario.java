@@ -25,7 +25,7 @@ public class Usuario {
     
     protected String identificarUsusario(String Usuarios,String Contrasenia){
         ManejoArchivos usuarioC=new ManejoArchivos();
-        Arraylist usuarioCl = usuarioC.LeeFichero(clientes.txt);
+        Arraylist usuarioCl = usuarioC.LeeFichero(Usuario.txt);
 
         for (i=0;i<usuarioCl.length;i++){
             String user =usuarioCl[i][3];
