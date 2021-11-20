@@ -5,6 +5,7 @@
  */
 package Sistema;
 import java.util.ArrayList;
+import manejoArchivos.ManejoArchivos;
 
 /**
  *
@@ -17,10 +18,10 @@ public class Cliente extends Usuario{
     protected ArrayList ServiciosPedidos;
     
     private Cliente(){
-        manejoArchivos cliente=new manejoArchivos();
-        Arraylist<String> clienteCL=cliente.LeeFichero(cliente.txt);
-         for (i=0;i<usuarioCl.length;i++){
-            this.numtarjetaCredito =usuarioCl[i].split(",")[2];
+        ManejoArchivos cliente=new ManejoArchivos();
+        ArrayList<String> clienteCL=cliente.LeeFichero(cliente.txt);
+         for (int i=0;i<usuarioCl.length;i++){
+            this.numtarjetaCredito =usuarioCL[i].split(",")[2];
             this.edad=usuarioCl[i].split(",")[1];
             this.cedula=ususarioCl[i][0];    
             
