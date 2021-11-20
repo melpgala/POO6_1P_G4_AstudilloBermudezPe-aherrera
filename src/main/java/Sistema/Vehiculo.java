@@ -23,11 +23,11 @@ public class Vehiculo {
         ManejoArchivos vehiculos = new ManejoArchivos();
         Arraylist vehiculos1 = vehiculos.LeeFichero("vehiculos.txt");
         for (i=0;i<vehiculos1.length;i++){
-            this.codigoVehiculo = vehiculos1[i][0];
-            this.placa = vehiculos1[i][1];
-            this.modelo = vehiculos1[i][2];
-            this.marca = vehiculos1[i][3];
-            this.tipoVehiculo = vehiculos1[i][4]
+            this.codigoVehiculo = vehiculos1[i].split(",")[0];
+            this.placa = vehiculos1[i].split(",")[1];
+            this.modelo = vehiculos1[i].split(",")[2];
+            this.marca = vehiculos1[i].split(",")[3];
+            this.tipoVehiculo = vehiculos1[i].split(",")[4]
         }
         
         //this.codigoVehiculo = ;
@@ -41,11 +41,11 @@ public class Vehiculo {
         ManejoArchivos vehiculos = new ManejoArchivos();
         Arraylist vehiculos1 = vehiculos.LeeFichero("vehiculos.txt");
         for (i=0;i<vehiculos1.length;i++){
-            int codV1 = Integer.valueOf(vehiculos1[i][1]);
-            String placa1 = vehiculos1[i][1];
-            String modelo1 = vehiculos1[i][2];
-            String marca1 = vehiculos1[i][3];
-            String tipoVehiculo1 = vehiculos1[i][4]
+            int codV1 = Integer.valueOf(vehiculos1[i].split(",")[1]);
+            String placa1 = vehiculos1[i].split(",")[1];
+            String modelo1 = vehiculos1[i].split(",")[2];
+            String marca1 = vehiculos1[i].split(",")[3];
+            String tipoVehiculo1 = vehiculos1[i].split(",")[4]
             if (codV.equals(codV1){
                 this.placa = placa1;
                 this.modelo = modelo1;
