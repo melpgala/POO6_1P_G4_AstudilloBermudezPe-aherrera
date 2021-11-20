@@ -56,19 +56,27 @@ public class Conductor {
         //this.codigoVehiculo = ;
         
     }
-    
-    private String getUser(){
-        return user;
+    private String getNombre(){
+        return nombre;
     }
+    private String getApellido(){
+        return apellido;
+    }
+    private int getNumCelular(){
+        reuturn numCelular;
+    }
+    //private String getUser(){
+        //return user;
+    //}
     private String getEstado(){
         return estado;
     }
     private int getLicencia(){
         return licencia;
     }
-    private int getCodigoVehiculo(){
-        return codigoVehiculo;
-    }
+    //private int getCodigoVehiculo(){
+        //return codigoVehiculo;
+    //}
     
 
     
