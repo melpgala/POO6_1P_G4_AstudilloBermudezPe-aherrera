@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package Sistema;
+import Enums.tipoEncomienda;
 
 /**
  *
  * @author User
  */
 public class Encomienda {
-    
+    int cantidadProductos;
+    tipoEncomienda tipo;
 }
