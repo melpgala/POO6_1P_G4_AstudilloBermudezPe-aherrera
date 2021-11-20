@@ -4,16 +4,14 @@
  * and open the template in the editor.
  */
 package Sistema;
+import java.util.ArrayList;
 
 /**
  *
  * @author User
  */
 public class Pedido {
-    String pedido;
-    
-    private double calcularValorPagar(){
-        //calculo de valor a pagar
-    }
+    List objetosComprados = new ArrayList();
+    List cantPorObjeto = new ArrayList();
     
 }
