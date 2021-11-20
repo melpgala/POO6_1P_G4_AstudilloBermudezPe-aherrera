@@ -10,8 +10,12 @@ package Sistema;
  * @author User
  */
 public class Usuario {
-    protected String Usuaario;
+    protected String Usuario;
     protected String Contrasenia;
+    
+    protected Usuario(String Usuario,String Contrasenia);
+    this.Usuario=Usuario;
+    this.Contrasenia=Contrasenia;
     
     protected String identificarUsusario(String Usuario,String Contrasenia){
         ManejoArchivos usuarioC=new ManejoArchivos();
