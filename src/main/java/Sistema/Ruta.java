@@ -9,6 +9,17 @@ package Sistema;
  *
  * @author User
  */
+import java.util.Scanner;
 public class Ruta {
+    private String origen;
+    private String destino;
+    private Scanner sc;
     
+    private Ruta(){
+        sc = new Scanner(System.in);
+        System.out.println("Ingrese origen: ");
+        origen = sc.nextLine();
+        System.out.println("Ingrese destino: ");
+        destino = sc.nextLine();
+    }
 }
