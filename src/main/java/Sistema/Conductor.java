@@ -10,5 +10,7 @@ package Sistema;
  * @author User
  */
 public class Conductor {
+    private estado estadoConductor;
+    private int numeroLicencia;
     
 }
