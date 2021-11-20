@@ -18,7 +18,7 @@ public class Usuario {
         ManejoArchivos usuarioC=new ManejoArchivos();
         Arraylist usuarioCl = usuarioC.LeeFichero(Usuario.txt);
 
-        for (i=0;i<usuarioCl.length;i++){
+        for (int i=0;i<usuarioCl.length;i++){
             this.Usuarios =usuarioCl[i].split(",")[3];
             this.Contraseña contra=usuarioCl[i].split(",")[4];
         }
