@@ -22,8 +22,8 @@ public class Cliente extends Usuario{
         ArrayList<String> clienteCL=cliente.LeeFichero("cliente.txt");
          for (int i=0;i<usuarioCl.length;i++){
             this.numtarjetaCredito =clienteCL[i].split(",")[2];
-            this.edad=clienteCL[i].split(",")[1];
-            this.cedula=cclienteCL[i][0];    
+            
+            this.cedula=cclienteCL.get(i).split(",")[0];    
             
     
     }
