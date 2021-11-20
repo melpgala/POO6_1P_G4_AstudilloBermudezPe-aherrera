@@ -4,11 +4,19 @@
  * and open the template in the editor.
  */
 package Sistema;
+import Enums.tipoPago;
 
 /**
  *
  * @author User
  */
 public class Pago {
+    Cliente cliente;
+    tipoPago tipo;
+    Servicio servicio;
+    
+    private calcularValorPagar (tipoPago){
+        
+    }
     
 }
