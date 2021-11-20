@@ -21,7 +21,7 @@ public class Cliente extends Usuario{
         ManejoArchivos cliente=new ManejoArchivos();
         ArrayList<String> clienteCL=cliente.LeeFichero("cliente.txt");
          for (int i=0;i<usuarioCl.length;i++){
-            this.numtarjetaCredito =clienteCL[i].split(",")[2];
+            this.numtarjetaCredito = Integer.valueOf(clienteCL[i].split(",")[2]);
             
             this.cedula=cclienteCL.get(i).split(",")[0];    
             
