@@ -10,25 +10,43 @@ package Sistema;
  * @author User
  */
 public class Conductor {
-    private String user;
+    //private String user;
     private String nombre; //se bucan en usuarios.txt a partir de user
     private String apellido; //
     private int numCelular; //
     private String estado;
     private int licencia;
-    private int codigoVehiculo;
+    //private int codigoVehiculo;
     private Vehiculo veh;
+    
     
     //leer archivo conductores.txt
     //user, licencia, estado, codigoVehiculo    
-    private Conductor(){
+    private Conductor(){        
+        
         ManejoArchivos conductores = new ManejoArchivos();
         Arraylist conductores1 = conductores.LeeFichero("conductores.txt");
         for (i=0;i<conductores1.length;i++){
-            this.user = conductores1[i][0];
+            String userCon = conductores1[i][0];
             this.licencia = Integer.valueOf(conductores1[i][1]);
             this.estado = conductores1[i][2];
             int codigoVeh = Integer.valueOf(conductores1[i][3]);
+        }
+        
+        //leer archivo usuarios.txt
+        //cedula, nombre, apellido, user, contraseña, celular, tipoUsuario
+        ManejoArchivos users = new ManejoArchivos();
+        Arraylist users1 = users.LeeFichero("usuarios.txt");
+        for (i=0;i<users1.length;i++){
+            String nom = users1[i][1];
+            String apell = users1[i][2];
+            String use1 = users1[i][3];
+            int numCel = Integer.valueOf(users1[i][5]);
+            if(use1.equals(userCon)){
+                this.nombre = nom;
+                this.apellido = apell;
+                this.numCelular = numCel;
+            }
         }
         
         this.veh = Vehiculo(codigoVeh);
