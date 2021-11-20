@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Sistema;
+import java.util.ArrayList;
+import manejoArchivos.ManejoArchivos;
 
 /**
  *
@@ -15,8 +17,8 @@ public class Usuario {
     
     protected Usuario(){
     
-        ManejoArchivos usuarioC=new ManejoArchivos();
-        Arraylist<String> usuarioCl = usuarioC.LeeFichero(Usuario.txt);
+        
+        ArrayList<String> usuarioCl = ManejoArchivos.LeeFichero("Usuario.txt");
 
         for (int i=0;i<usuarioCl.length;i++){
             this.Usuarios =usuarioCl.get(i).split(",")[3];
@@ -31,17 +33,17 @@ public class Usuario {
         return Contraseña;
     }
     protected String identificarUsusario(String Usuarios,String Contrasenia){
-        ManejoArchivos usuarioC=new ManejoArchivos();
-        Arraylist<String> usuarioCl = usuarioC.LeeFichero(Usuario.txt);
-
+        
+        ArrayList<String> usuarioCl = ManejoArchivos.LeeFichero(Usuario.txt);
+        String tipoDU1="";
         for (int i=0;i<usuarioCl.length;i++){
             String user =usuarioCl.get(i).split(",")[3];
             String contra=usuarioCl.get(i).split(",")[4];
             String tipoDU=ususarioCl.get(i).split(",")[6];    
-            if (Usuario.equals(User) && Contrasenia.equals(contra)){
+            if (Usuarios.equals(user) && Contrasenia.equals(contra)){
                 
-                return tipoDU;
-                break
+                tipoDU1= tipoDU;
+                
             }
     
          
@@ -49,7 +51,7 @@ public class Usuario {
             
                 
         }
-           
+        return tipoDU1;
             
     
     
