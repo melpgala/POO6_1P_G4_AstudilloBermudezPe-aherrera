@@ -22,10 +22,20 @@ public class Conductor {
     //leer archivo conductores.txt
     //user, licencia, estado, codigoVehiculo    
     private Conductor(){
-        this.user = ;
-        this.licencia = ;
-        this.estado = ;
-        this.codigoVehiculo = ;
+        ManejoArchivos conductores = new ManejoArchivos();
+        Arraylist conductores1 = conductores.LeeFichero("conductores.txt");
+        for (i=0;i<conductores1.length;i++){
+            this.user = conductores1[i][0];
+            this.licencia = conductores1[i][1];
+            this.estado = conductores1[i][2];
+            int codigoVeh = Integer.valueOf(conductores1[i][3]);
+        }
+        
+        this.veh = Vehiculo(codigoVeh)
+        //this.user = ;
+        //this.licencia = ;
+        //this.estado = ;
+        //this.codigoVehiculo = ;
         
     }
 
