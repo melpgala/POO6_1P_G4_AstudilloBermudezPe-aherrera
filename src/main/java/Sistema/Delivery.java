@@ -9,7 +9,7 @@ package Sistema;
  *
  * @author User
  */
-public class Delivery {
+public class Delivery extends Servicio {
     String pedido;
     
     private double calcularValorPagar(){
