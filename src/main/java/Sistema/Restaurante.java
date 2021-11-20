@@ -4,11 +4,18 @@
  * and open the template in the editor.
  */
 package Sistema;
+import java.util.ArrayList;
 
 /**
  *
  * @author User
  */
 public class Restaurante {
+    ArrayList listadoPlatosDisponibles= new ArrayList();
+    
+    private void platos(){
+    
+    }
+    
     
 }
