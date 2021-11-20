@@ -10,5 +10,10 @@ package Sistema;
  * @author User
  */
 public class Pedido {
+    String pedido;
+    
+    private double calcularValorPagar(){
+        //calculo de valor a pagar
+    }
     
 }
