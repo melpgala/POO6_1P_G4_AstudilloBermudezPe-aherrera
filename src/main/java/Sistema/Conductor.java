@@ -26,7 +26,7 @@ public class Conductor {
         
         ManejoArchivos conductores = new ManejoArchivos();
         Arraylist conductores1 = conductores.LeeFichero("conductores.txt");
-        for (i=0;i<conductores1.length;i++){
+        for (int i=0;i<conductores1.length;i++){
             String userCon = conductores1[i][0];
             this.licencia = Integer.valueOf(conductores1[i][1]);
             this.estado = conductores1[i][2];
