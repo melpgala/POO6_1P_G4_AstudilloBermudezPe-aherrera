@@ -9,6 +9,21 @@ package Sistema;
  *
  * @author User
  */
-public class Cliente {
-    
+public class Cliente extends Usuario{
+    private int numtarjetaCredito;
+    protected Arraylist ServiciosPedidos;
+    protecte void solicitarDelivery (){
+        
+    Delivery serviciodeilivery = new delivery();
+    }
+    protected void consultarServicios(){
+    //aqui va lo de consultar servicio
+    }
+    protected void solicitarTaxi(){
+    Taxi serviciotaxi= new Taxi();
+    }
+    protected void Encomientda(){
+    Encomienda servicioencomienda =new Encomienda();
+        
+    }
 }
