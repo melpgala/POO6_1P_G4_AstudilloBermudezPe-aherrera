@@ -16,11 +16,11 @@ public class Usuario {
     protected Usuario(){
     
         ManejoArchivos usuarioC=new ManejoArchivos();
-        Arraylist usuarioCl = usuarioC.LeeFichero(Usuario.txt);
+        Arraylist<String> usuarioCl = usuarioC.LeeFichero(Usuario.txt);
 
         for (int i=0;i<usuarioCl.length;i++){
-            this.Usuarios =usuarioCl[i].split(",")[3];
-            this.Contraseña contra=usuarioCl[i].split(",")[4];
+            this.Usuarios =usuarioCl.get(i).split(",")[3];
+            this.Contraseña contra=usuarioCl.get(i).split(",")[4];
         }
     }
     protected String getUsuarios(){
@@ -35,9 +35,9 @@ public class Usuario {
         Arraylist<String> usuarioCl = usuarioC.LeeFichero(Usuario.txt);
 
         for (int i=0;i<usuarioCl.length;i++){
-            String user =usuarioCl[i].split(",")[3];
-            String contra=usuarioCl[i].split(",")[4];
-            String tipoDU=ususarioCl[i].split(",")[6];    
+            String user =usuarioCl.get(i).split(",")[3];
+            String contra=usuarioCl.get(i).split(",")[4];
+            String tipoDU=ususarioCl.get(i).split(",")[6];    
             if (Usuario.equals(User) && Contrasenia.equals(contra)){
                 
                 return tipoDU;
