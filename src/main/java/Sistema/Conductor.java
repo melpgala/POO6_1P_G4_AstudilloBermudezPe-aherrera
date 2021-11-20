@@ -10,7 +10,30 @@ package Sistema;
  * @author User
  */
 public class Conductor {
-    private estado estadoConductor;
-    private int numeroLicencia;
+    private String user;
+    private String nombre; //se bucan en usuarios.txt a partir de user
+    private String apellido; //
+    private int numCelular; //
+    private String estado;
+    private int licencia;
+    private int codigoVehiculo;
+    private Vehiculo veh;
+    
+    //leer archivo conductores.txt
+    //user, licencia, estado, codigoVehiculo    
+    private Conductor(){
+        this.user = ;
+        this.licencia = ;
+        this.estado = ;
+        this.codigoVehiculo = ;
+        
+    }
+
+    
+    @Override
+    protected void consultarServicio(){
+        //ver servicios asignados
+        
+    }
     
 }
