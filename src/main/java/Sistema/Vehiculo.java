@@ -54,4 +54,22 @@ public class Vehiculo {
             }
         }
     }
+    private int getCodigoVehiculo(){
+        return codigoVehiculo;
+    }
+    private String getPlaca(){
+        return placa;
+    }
+    private String getModelo(){
+        return modelo;
+    }
+    private String getMarca(){
+        return marca;
+    }
+    private String getTipoVehiculo(){
+        return tipoVehiculo;
+    }
+    
+    
 }
+                
