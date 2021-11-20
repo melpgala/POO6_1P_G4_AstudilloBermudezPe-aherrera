@@ -19,7 +19,7 @@ public class Cliente extends Usuario{
     private Cliente(){
         manejoArchivos cliente=new manejoArchivos();
         Arraylist<String> cliente.LeeFichero(cliente.txt);
-         for (i=0;i<usuarioCl.length;i++){
+         for (int i=0;i<usuarioCl.length;i++){
             this. =usuarioCl[i][3];
             String contra=usuarioCl[i].counte;
             String tipoDU=ususarioCl[i][6];    
