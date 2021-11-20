@@ -10,10 +10,10 @@ package Sistema;
  * @author User
  */
 public class Usuario {
-    protected String Ususario;
-    protected String Contraseña;
+    protected String Usuaario;
+    protected String Contrasenia;
     
-    protected String identificarUsusario(String Ususario,String Contraseña){
+    protected String identificarUsusario(String Usuario,String Contrasenia){
         ManejoArchivos usuarioC=new ManejoArchivos();
         Arraylist usuarioCl = usuarioC.LeeFichero(clientes.txt);
 
