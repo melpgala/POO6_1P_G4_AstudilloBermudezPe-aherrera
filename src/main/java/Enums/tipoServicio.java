@@ -10,5 +10,6 @@ package Enums;
  * @author User
  */
 public enum tipoServicio {
+    Taxi, Delivery, Encomienda;
     
 }
