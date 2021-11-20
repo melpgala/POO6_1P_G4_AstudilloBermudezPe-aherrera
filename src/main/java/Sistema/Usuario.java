@@ -19,8 +19,8 @@ public class Usuario {
         Arraylist usuarioCl = usuarioC.LeeFichero(Usuario.txt);
 
         for (i=0;i<usuarioCl.length;i++){
-            this.Usuarios =usuarioCl[i][3];
-            this.Contrasenia contra=usuarioCl[i][4];
+            this.Usuarios =usuarioCl[i].split(",")[3];
+            this.Contrasenia contra=usuarioCl[i].split(",")[4];
 
     
     protected String getUsuarios();
@@ -34,9 +34,9 @@ public class Usuario {
         Arraylist usuarioCl = usuarioC.LeeFichero(Usuario.txt);
 
         for (i=0;i<usuarioCl.length;i++){
-            String user =usuarioCl[i][3];
-            String contra=usuarioCl[i][4];
-            String tipoDU=ususarioCl[i][6];    
+            String user =usuarioCl[i].split(",")[3];
+            String contra=usuarioCl[i].split(",")[4];
+            String tipoDU=ususarioCl[i].split(",")[6];    
             if (Usuario.equals(User) && Contraseña.equals(contra)){
                 
                 return tipoDU;
