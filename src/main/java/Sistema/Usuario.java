@@ -11,7 +11,7 @@ package Sistema;
  */
 public class Usuario {
     protected String Usuarios;
-    protected String Contraseña;
+    protected String Contrasenia;
     
     protected Usuario();
     
@@ -26,20 +26,21 @@ public class Usuario {
     protected String getUsuarios();
         return Usuarios;
     
-    protected String getContraseña();
+    protected String getContrasenia();
         return Contraseña;
     
     protected String identificarUsusario(String Usuarios,String Contrasenia){
         ManejoArchivos usuarioC=new ManejoArchivos();
-        Arraylist usuarioCl = usuarioC.LeeFichero(Usuario.txt);
+        Arraylist<String> usuarioCl = usuarioC.LeeFichero(Usuario.txt);
 
         for (int i=0;i<usuarioCl.length;i++){
             String user =usuarioCl[i].split(",")[3];
             String contra=usuarioCl[i].split(",")[4];
             String tipoDU=ususarioCl[i].split(",")[6];    
-            if (Usuario.equals(User) && Contraseña.equals(contra)){
+            if (Usuario.equals(User) && Contrasenia.equals(contra)){
                 
                 return tipoDU;
+                break
             }
     
          
