@@ -9,7 +9,7 @@ package Sistema;
  *
  * @author User
  */
-public class Conductor {
+public class Conductor extends Usuario{
     //private String user;
     private String nombre; //se bucan en usuarios.txt a partir de user
     private String apellido; //
@@ -22,15 +22,18 @@ public class Conductor {
     
     //leer archivo conductores.txt
     //user, licencia, estado, codigoVehiculo    
-    private Conductor(){        
+    private Conductor(String Usuarios){        
+        super(Usuarios);
         
         ManejoArchivos conductores = new ManejoArchivos();
         Arraylist conductores1 = conductores.LeeFichero("conductores.txt");
         for (int i=0;i<conductores1.length;i++){
-            String userCon = conductores1[i][0];
-            this.licencia = Integer.valueOf(conductores1[i][1]);
-            this.estado = conductores1[i][2];
-            int codigoVeh = Integer.valueOf(conductores1[i][3]);
+            String userCon = conductores1[i].split(",")[0];
+            if(userCon.equals(Usuarios)){
+                this.licencia = Integer.valueOf(conductores1[i].split(",")[1]);
+                this.estado = conductores1[i].split(",")[2];
+                int codigoVeh = Integer.valueOf(conductores1[i].split(",")[3]);
+            }
         }
         
         //leer archivo usuarios.txt
@@ -38,10 +41,10 @@ public class Conductor {
         ManejoArchivos users = new ManejoArchivos();
         Arraylist users1 = users.LeeFichero("usuarios.txt");
         for (i=0;i<users1.length;i++){
-            String nom = users1[i][1];
-            String apell = users1[i][2];
-            String use1 = users1[i][3];
-            int numCel = Integer.valueOf(users1[i][5]);
+            String nom = users1[i].split(",")[1];
+            String apell = users1[i].split(",")[2];
+            String use1 = users1[i].split(",")[3];
+            int numCel = Integer.valueOf(users1[i].split(",")[5]);
             if(use1.equals(userCon)){
                 this.nombre = nom;
                 this.apellido = apell;
