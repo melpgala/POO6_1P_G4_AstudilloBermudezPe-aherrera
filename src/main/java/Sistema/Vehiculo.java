@@ -10,5 +10,10 @@ package Sistema;
  * @author User
  */
 public class Vehiculo {
+    private tipo tipoVehiculo;
+    private String placa;
+    private String color;
+    private String marca;
+    private String modelo;
     
 }
