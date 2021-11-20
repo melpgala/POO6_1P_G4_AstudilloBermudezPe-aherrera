@@ -13,16 +13,15 @@ public class Usuario {
     protected String Usuarios;
     protected String Contrasenia;
     
-    protected Usuario(String Usuarios,String Contrasenia);
+    protected Usuario();
     
-    ManejoArchivos usuarioC=new ManejoArchivos();
-    Arraylist usuarioCl = usuarioC.LeeFichero(Usuario.txt);
-    this.Usuarios=Usuarios;
-    this.Contrasenia=Contrasenia;
-    for (i=0;i<usuarioCl.length;i++){
-        String user =usuarioCl[i][3];
-        String contra=usuarioCl[i][4];
-         
+        ManejoArchivos usuarioC=new ManejoArchivos();
+        Arraylist usuarioCl = usuarioC.LeeFichero(Usuario.txt);
+
+        for (i=0;i<usuarioCl.length;i++){
+            this.Usuarios =usuarioCl[i][3];
+            this.Contrasenia contra=usuarioCl[i][4];
+
     
     protected String getUsuarios();
         return Usuarios;
