@@ -13,4 +13,8 @@ import Enums.tipoEncomienda;
 public class Encomienda {
     int cantidadProductos;
     tipoEncomienda tipo;
+    private double calcularValorPagar(){
+        //calculo valor a pagar
+    }
+    
 }
