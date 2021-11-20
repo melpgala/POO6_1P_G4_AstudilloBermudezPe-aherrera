@@ -10,5 +10,15 @@ package Sistema;
  * @author User
  */
 public class Servicio {
+    private tipoServicio tipo;
+    private date fecha;
+    private String horadePartida;
+    protected boolean aceptarServicio;
     
+    protected void escojerServicio(){
+    
+    
+    }
+    protected void Conductor(){
+    }
 }

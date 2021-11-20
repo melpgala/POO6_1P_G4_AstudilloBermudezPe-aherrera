@@ -10,5 +10,22 @@ package Sistema;
  * @author User
  */
 public class Vehiculo {
+    private String tipoVehiculo;
+    private String placa;
+    private String marca;
+    private String modelo;
+    private int codigoVehiculo;
     
+    //leer archivo vehiculos.txt
+    //codigoVehiculo, placa, modelo, marca, tipoVehiculo
+    
+    private Vehiculo(){
+        this.codigoVehiculo = ;
+        this.placa = ;
+        this.marca = ;
+        this.modelo = ;
+        this.tipoVehiculo = ;
+        
+    }
+        
 }
