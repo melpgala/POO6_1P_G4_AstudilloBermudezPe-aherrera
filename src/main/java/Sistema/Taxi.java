@@ -10,5 +10,10 @@ package Sistema;
  * @author User
  */
 public class Taxi {
+    private int numeroPasajeros;
+    
+    private double calcularValorPagar(){
+        //calculo de valor a pagar
+    }
     
 }
