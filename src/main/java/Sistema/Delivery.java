@@ -10,5 +10,9 @@ package Sistema;
  * @author User
  */
 public class Delivery {
+    String pedido;
     
+    private calcularValorPagar(){
+        // calculo de valor a pagar
+    }
 }
