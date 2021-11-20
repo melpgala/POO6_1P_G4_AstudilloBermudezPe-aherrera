@@ -27,7 +27,7 @@ public class Conductor extends Usuario{
         
         ManejoArchivos conductores = new ManejoArchivos();
         Arraylist conductores1 = conductores.LeeFichero("conductores.txt");
-        for (int i=0;i<conductores1.length;i++){
+        for (int i=0;i<conductores1.size();i++){
             String userCon = conductores1[i].split(",")[0];
             if(userCon.equals(Usuarios)){
                 this.licencia = Integer.valueOf(conductores1[i].split(",")[1]);
@@ -40,7 +40,7 @@ public class Conductor extends Usuario{
         //cedula, nombre, apellido, user, contraseña, celular, tipoUsuario
         ManejoArchivos users = new ManejoArchivos();
         Arraylist users1 = users.LeeFichero("usuarios.txt");
-        for (i=0;i<users1.length;i++){
+        for (i=0;i<users1.size();i++){
             String nom = users1[i].split(",")[1];
             String apell = users1[i].split(",")[2];
             String use1 = users1[i].split(",")[3];
