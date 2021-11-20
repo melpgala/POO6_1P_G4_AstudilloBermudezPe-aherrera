@@ -12,7 +12,8 @@ package Sistema;
 public class Delivery {
     String pedido;
     
-    private calcularValorPagar(){
+    private double calcularValorPagar(){
         // calculo de valor a pagar
+        return ; //double
     }
 }
