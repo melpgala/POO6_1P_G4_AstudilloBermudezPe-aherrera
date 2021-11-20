@@ -9,6 +9,9 @@ package Sistema;
  *
  * @author User
  */
+
+import java.util.ArrayList;
+import manejoArchivos.ManejoArchivos;
 public class Vehiculo {
     private int codigoVehiculo;
     private String placa;
@@ -20,14 +23,14 @@ public class Vehiculo {
     //codigoVehiculo, placa, modelo, marca, tipoVehiculo
     
     private Vehiculo(){
-        ManejoArchivos vehiculos = new ManejoArchivos();
-        Arraylist vehiculos1 = vehiculos.LeeFichero("vehiculos.txt");
+        //ManejoArchivos vehiculos = new ManejoArchivos();
+        ArrayList<String> vehiculos1 = vehiculos.LeeFichero("vehiculos.txt");
         for (i=0;i<vehiculos1.size();i++){
-            this.codigoVehiculo = vehiculos1[i].split(",")[0];
-            this.placa = vehiculos1[i].split(",")[1];
-            this.modelo = vehiculos1[i].split(",")[2];
-            this.marca = vehiculos1[i].split(",")[3];
-            this.tipoVehiculo = vehiculos1[i].split(",")[4]
+            this.codigoVehiculo = Integer.valueOf(vehiculos1.get(i).split(",")[0]);
+            this.placa = vehiculos1.get(i).split(",")[1];
+            this.modelo = vehiculos1.get(i).split(",")[2];
+            this.marca = vehiculos1.get(i).split(",")[3];
+            this.tipoVehiculo = vehiculos1.get(i).split(",")[4];
         }
         
         //this.codigoVehiculo = ;
@@ -38,15 +41,15 @@ public class Vehiculo {
         
     }
     private Vehiculo(int codV){
-        ManejoArchivos vehiculos = new ManejoArchivos();
-        Arraylist vehiculos1 = vehiculos.LeeFichero("vehiculos.txt");
+        //ManejoArchivos vehiculos = new ManejoArchivos();
+        ArrayList<String> vehiculos1 = vehiculos.LeeFichero("vehiculos.txt");
         for (i=0;i<vehiculos1.size();i++){
             int codV1 = Integer.valueOf(vehiculos1[i].split(",")[1]);
-            String placa1 = vehiculos1[i].split(",")[1];
-            String modelo1 = vehiculos1[i].split(",")[2];
-            String marca1 = vehiculos1[i].split(",")[3];
-            String tipoVehiculo1 = vehiculos1[i].split(",")[4]
-            if (codV.equals(codV1){
+            String placa1 = vehiculos1.get(i).split(",")[1];
+            String modelo1 = vehiculos1.get(i).split(",")[2];
+            String marca1 = vehiculos1.get(i).split(",")[3];
+            String tipoVehiculo1 = vehiculos1.get(i).split(",")[4]
+            if (codV==codV1){
                 this.placa = placa1;
                 this.modelo = modelo1;
                 this.marca = marca1;
@@ -54,19 +57,19 @@ public class Vehiculo {
             }
         }
     }
-    private int getCodigoVehiculo(){
+    public int getCodigoVehiculo(){
         return codigoVehiculo;
     }
-    private String getPlaca(){
+    public String getPlaca(){
         return placa;
     }
-    private String getModelo(){
+    public String getModelo(){
         return modelo;
     }
-    private String getMarca(){
+    public String getMarca(){
         return marca;
     }
-    private String getTipoVehiculo(){
+    public String getTipoVehiculo(){
         return tipoVehiculo;
     }
     
