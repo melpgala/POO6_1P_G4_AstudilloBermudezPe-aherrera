@@ -31,9 +31,11 @@ public class Usuario {
             String user =usuarioCl[i][3];
             String contra=usuarioCl[i][4];
             String tipoDU=ususarioCl[i][6];    
-            if (Usuario.equals(User) and Contraseña.equals(contra)
+            if (Usuario.equals(User) && Contraseña.equals(contra)){
+                
                 return tipoDU;
                 break
+            }
     
          
         
