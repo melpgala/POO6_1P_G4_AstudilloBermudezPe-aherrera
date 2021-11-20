@@ -10,11 +10,12 @@ import Enums.tipoEncomienda;
  *
  * @author User
  */
-public class Encomienda {
+public class Encomienda extends Servicio{
     int cantidadProductos;
     tipoEncomienda tipo;
     private double calcularValorPagar(){
         //calculo valor a pagar
+        return ; //double
     }
     
 }
