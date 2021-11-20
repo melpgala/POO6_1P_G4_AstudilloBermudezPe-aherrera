@@ -9,6 +9,9 @@ package Sistema;
  *
  * @author User
  */
+import java.util.ArrayList;
+import manejoArchivos.ManejoArchivos;
+
 public class Conductor extends Usuario{
     //private String user;
     private String nombre; //se bucan en usuarios.txt a partir de user
@@ -16,35 +19,36 @@ public class Conductor extends Usuario{
     private int numCelular; //
     private String estado;
     private int licencia;
-    //private int codigoVehiculo;
+    private int codigoVeh;
     private Vehiculo veh;
     
     
     //leer archivo conductores.txt
     //user, licencia, estado, codigoVehiculo    
     private Conductor(String Usuarios){        
-        super(Usuarios);
+        super();
         
-        ManejoArchivos conductores = new ManejoArchivos();
-        Arraylist conductores1 = conductores.LeeFichero("conductores.txt");
+        //ManejoArchivos conductores = new ManejoArchivos();
+        ArrayList<String> conductores1 = ManejoArchivos.LeeFichero("conductores.txt");
+        String userCon = "";
         for (int i=0;i<conductores1.size();i++){
-            String userCon = conductores1[i].split(",")[0];
+            String userCon = conductores1.get(i).split(",")[0];
             if(userCon.equals(Usuarios)){
-                this.licencia = Integer.valueOf(conductores1[i].split(",")[1]);
-                this.estado = conductores1[i].split(",")[2];
-                int codigoVeh = Integer.valueOf(conductores1[i].split(",")[3]);
+                this.licencia = Integer.valueOf(conductores1.get(i).split(",")[1]);
+                this.estado = conductores1.get(i).split(",")[2];
+                int codigoVeh = Integer.valueOf(conductores1.get(i).split(",")[3]);
             }
         }
         
         //leer archivo usuarios.txt
         //cedula, nombre, apellido, user, contraseña, celular, tipoUsuario
-        ManejoArchivos users = new ManejoArchivos();
-        Arraylist users1 = users.LeeFichero("usuarios.txt");
+        //ManejoArchivos users = new ManejoArchivos();
+        ArrayList<String> users1 = ManejoArchivos.LeeFichero("usuarios.txt");
         for (i=0;i<users1.size();i++){
-            String nom = users1[i].split(",")[1];
-            String apell = users1[i].split(",")[2];
-            String use1 = users1[i].split(",")[3];
-            int numCel = Integer.valueOf(users1[i].split(",")[5]);
+            String nom = users1.get(i).split(",")[1];
+            String apell = users1.get(i).split(",")[2];
+            String use1 = users1.get(i).split(",")[3];
+            int numCel = Integer.valueOf(users1.get(i).split(",")[5]);
             if(use1.equals(userCon)){
                 this.nombre = nom;
                 this.apellido = apell;
@@ -59,22 +63,22 @@ public class Conductor extends Usuario{
         //this.codigoVehiculo = ;
         
     }
-    private String getNombre(){
+    public String getNombre(){
         return nombre;
     }
-    private String getApellido(){
+    public String getApellido(){
         return apellido;
     }
-    private int getNumCelular(){
+    public int getNumCelular(){
         reuturn numCelular;
     }
     //private String getUser(){
         //return user;
     //}
-    private String getEstado(){
+    public String getEstado(){
         return estado;
     }
-    private int getLicencia(){
+    public int getLicencia(){
         return licencia;
     }
     //private int getCodigoVehiculo(){
