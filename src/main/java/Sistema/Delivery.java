@@ -12,8 +12,8 @@ package Sistema;
 public class Delivery extends Servicio {
     String pedido;
     
-    public Delivery(tipoServicio tipo, Date fecha, String horadePartida, boolean aceptarServicio, int codigo, String pedido) {
-        super(tipo, fecha, horadePartida, aceptarServicio, codigo);
+    public Delivery(tipoServicio tipo, Date fecha, String horadePartida, int codigo, String pedido) {
+        super(tipo, fecha, horadePartida, codigo);
         this.pedido = pedido;
     }
 
