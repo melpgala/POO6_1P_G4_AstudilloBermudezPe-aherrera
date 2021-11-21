@@ -41,18 +41,18 @@ public class Servicio {
     private double calcularValorPagar(tipoPago tp){
         double numAleatorio =Math.random()*10;
         double valorPagar= 0;
-        if (tp.equals(tipoPago.Efectivo)){
+        if (tp.equals(tipoPago.EFECTIVO)){
             valorPagar=numAleatorio;
-        }else if (tp.equals(tipoPago.Tarjeta)){
+        }else if (tp.equals(tipoPago.TARJETA)){
             valorPagar=numAleatorio*1.1;
         }
         
         return valorPagar; //double
     }
     
-    protected int generarCodServicio(){
-    codigo=(int)(Math.random()*(99999-10000)+10000);
-        return codigo;
+    protected static int generarCodServicio(){
+    int cod=(int)(Math.random()*(99999-10000)+10000);
+        return cod;
     
     }
 }
