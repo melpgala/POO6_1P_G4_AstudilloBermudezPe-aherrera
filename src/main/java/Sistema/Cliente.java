@@ -105,7 +105,7 @@ public class Cliente extends Usuario{
         int codigo = Servicio.generarCodServicio();
         Taxi serviciotaxi= new Taxi(TAXI, fechaHora, codigo,numPasajeros);
     }
-    protected void Encomienda(){
+    protected void solicitarEncomienda(){
         
         System.out.println("Ingrese cantidad de productos: ");
         int cantProd = sc.nextInt();
