@@ -24,4 +24,18 @@ public class Servicio {
     }
     protected void buscarConductor(){
     }
+    private double calcularValorPagar(tipoPago tp){
+        
+        Ruta rutaorigendestino= new Ruta();
+        rutaorigendestino.Ruta();
+        double numAleatorio =Math.random()*10;
+        double valorapagar= 0;
+        if (tp.equals(tipoPago.Efectivo)){
+            valorapagar=numAleatorio;
+        }else if (tp.equals(tipoPago.Tarjeta)){
+            valorapagar=numAleatorio*1.1;
+        }
+        
+        return valorPagar; //double
+    }
 }
