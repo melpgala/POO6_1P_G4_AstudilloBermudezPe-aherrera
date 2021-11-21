@@ -15,7 +15,7 @@ public class Ruta {
     private String destino;
     private Scanner sc;
     
-    private Ruta(){
+    protected Ruta(){
         sc = new Scanner(System.in);
         System.out.println("Ingrese origen: ");
         origen = sc.nextLine();
