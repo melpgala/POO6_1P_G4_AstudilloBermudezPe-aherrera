@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Sistema;
+import Enums.tipoPago;
 import Enums.tipoServicio;
 import java.util.Date;
 
@@ -18,11 +20,10 @@ public class Servicio {
     protected boolean aceptarServicio;
     private int codigo;
     
-    protected Servicio(tipoServicio tipoS, Date fecha, String horadePartida, boolean aceptarServicio, int codigo){
-        this.tipo = tipo;
+    protected Servicio(tipoServicio tipoS, Date fecha, String horadePartida, int codigo){
+        this.tipoS = tipoS;
         this.fecha = fecha;
         this.horadePartida = horadePartida;
-        this.aceptarCodigo = aceptarCodigo;
         this.codigo = codigo;
         
     }
@@ -30,15 +31,12 @@ public class Servicio {
     protected void buscarConductor(){
     }
     private double calcularValorPagar(tipoPago tp){
-        
-        Ruta rutaorigendestino= new Ruta();
-        rutaorigendestino.Ruta();
         double numAleatorio =Math.random()*10;
-        double valorapagar= 0;
+        double valorPagar= 0;
         if (tp.equals(tipoPago.Efectivo)){
-            valorapagar=numAleatorio;
+            valorPagar=numAleatorio;
         }else if (tp.equals(tipoPago.Tarjeta)){
-            valorapagar=numAleatorio*1.1;
+            valorPagar=numAleatorio*1.1;
         }
         
         return valorPagar; //double
@@ -46,7 +44,7 @@ public class Servicio {
     
     protected int generarCodServicio(){
     codigo=(int)(Math.random()*(99999-10000)+10000);
-        
+        return codigo;
     
     }
 }
