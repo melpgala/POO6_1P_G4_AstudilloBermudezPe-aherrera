@@ -15,6 +15,14 @@ public class Ruta {
     private String destino;
     private Scanner sc;
     
+    protected String getOrigen(){
+        return origen;
+    }
+    
+    protected String getDestino(){
+        return destino;
+    }
+    
     protected Ruta(){
         sc = new Scanner(System.in);
         System.out.println("Ingrese origen: ");
