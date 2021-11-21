@@ -12,8 +12,8 @@ package Sistema;
 public class Taxi extends Servicio {
     private int numeroPasajeros;
     
-    public Taxi(tipoServicio tipo, Date fecha, String horadePartida, boolean aceptarServicio, int codigo, int numeroPasajeros) {
-        super(tipo, fecha, horadePartida, aceptarServicio, codigo);
+    public Taxi(tipoServicio tipo, Date fecha, String horadePartida, int codigo, int numeroPasajeros) {
+        super(tipo, fecha, horadePartida, codigo);
         this.numeroPasajeros = numeroPasajeros;
     }    
     
