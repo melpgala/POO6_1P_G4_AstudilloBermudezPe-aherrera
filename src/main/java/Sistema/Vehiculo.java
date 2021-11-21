@@ -40,7 +40,7 @@ public class Vehiculo {
         //this.tipoVehiculo = ;
         
     }
-    private Vehiculo(int codV){
+    protected Vehiculo(int codV){
         //ManejoArchivos vehiculos = new ManejoArchivos();
         ArrayList<String> vehiculos1 = ManejoArchivos.LeeFichero("vehiculos.txt");
         for (int i=0;i<vehiculos1.size();i++){
