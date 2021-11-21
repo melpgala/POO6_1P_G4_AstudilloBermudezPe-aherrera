@@ -6,7 +6,7 @@
 package Sistema;
 import Enums.tipoEncomienda;
 import Enums.tipoServicio;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -23,8 +23,8 @@ public class Encomienda extends Servicio{
         return tipoE;
     }
     
-    private Encomienda(tipoServicio tipoS, Date fecha, String horadePartida, int codigo, int cantProd, tipoEncomienda tipoE){
-        super(tipoS, fecha, horadePartida, codigo);       
+    private Encomienda(tipoServicio tipoS, DateTimeFormatter fechaHora, int codigo, int cantProd, tipoEncomienda tipoE){
+        super(tipoS, fechaHora, codigo);       
         this.cantidadProductos = cantProd;
         this.tipoE = tipoE;
     }
