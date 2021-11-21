@@ -17,24 +17,6 @@ public class Delivery extends Servicio {
         this.pedido = pedido;
     }
     
-    public tipoServicio getTipo(){
-        return tipo;
-    }
-    public Date getFecha(){
-        return fecha;
-    }
-    public String getHoraDePartida(){
-        return horadePartida;
-    }
-    public int getCodigo(){
-        return codigo;
-    }
-    public String getPedido(){
-        return pedido;
-    }
-    
-
-    
     protected double calcularValorPagar(tipoPago tp){
         
         double valorPagar = 0;
