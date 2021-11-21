@@ -12,9 +12,12 @@ package Sistema;
 public class Taxi extends Servicio {
     private int numeroPasajeros;
     
-    private double calcularValorPagar(){
+    
+    
+    protected int generarCodServicio(){
+    codigo=(int)(Math.random()*(<99999-10000)+10000);
         
-        return ; //double
+    
     }
     
 }
