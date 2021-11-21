@@ -7,6 +7,7 @@
 package Sistema;
 import Enums.tipoPago;
 import Enums.tipoServicio;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -15,26 +16,21 @@ import java.util.Date;
  */
 public class Servicio {
     private tipoServicio tipoS;
-    private Date fecha;
-    private String horaDePartida;
+    private DateTimeFormatter fechaHora;
     protected boolean aceptarServicio;
     private int codigo;
     
-    protected Servicio(tipoServicio tipoS, Date fecha, String horaDePartida, int codigo){
+    protected Servicio(tipoServicio tipoS, DateTimeFormatter fechaHora, int codigo){
         this.tipoS = tipoS;
-        this.fecha = fecha;
-        this.horaDePartida = horaDePartida;
+        this.fechaHora = fechaHora;
         this.codigo = codigo;
         
     }
     protected tipoServicio getTipo(){
         return tipoS;
     }
-    protected Date getFecha(){
-        return fecha;
-    }
-    protected String getHoraDePartida(){
-        return horaDePartida;
+    protected DateTimeFormatter getFechaHora(){
+        return fechaHora;
     }
     protected int getCodigo(){
         return codigo;
