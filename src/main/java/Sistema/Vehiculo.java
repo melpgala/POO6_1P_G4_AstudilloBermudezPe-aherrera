@@ -24,8 +24,8 @@ public class Vehiculo {
     
     private Vehiculo(){
         //ManejoArchivos vehiculos = new ManejoArchivos();
-        ArrayList<String> vehiculos1 = vehiculos.LeeFichero("vehiculos.txt");
-        for (i=0;i<vehiculos1.size();i++){
+        ArrayList<String> vehiculos1 = ManejoArchivos.LeeFichero("vehiculos.txt");
+        for (int i=0;i<vehiculos1.size();i++){
             this.codigoVehiculo = Integer.valueOf(vehiculos1.get(i).split(",")[0]);
             this.placa = vehiculos1.get(i).split(",")[1];
             this.modelo = vehiculos1.get(i).split(",")[2];
@@ -42,9 +42,9 @@ public class Vehiculo {
     }
     private Vehiculo(int codV){
         //ManejoArchivos vehiculos = new ManejoArchivos();
-        ArrayList<String> vehiculos1 = vehiculos.LeeFichero("vehiculos.txt");
-        for (i=0;i<vehiculos1.size();i++){
-            int codV1 = Integer.valueOf(vehiculos1[i].split(",")[1]);
+        ArrayList<String> vehiculos1 = ManejoArchivos.LeeFichero("vehiculos.txt");
+        for (int i=0;i<vehiculos1.size();i++){
+            int codV1 = Integer.valueOf(vehiculos1.get(i).split(",")[1]);
             String placa1 = vehiculos1.get(i).split(",")[1];
             String modelo1 = vehiculos1.get(i).split(",")[2];
             String marca1 = vehiculos1.get(i).split(",")[3];
