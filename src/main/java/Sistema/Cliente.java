@@ -4,8 +4,18 @@
  * and open the template in the editor.
  */
 package Sistema;
+import Enums.tipoEncomienda;
+import static Enums.tipoEncomienda.DOCUMENTOS;
+import static Enums.tipoEncomienda.MEDICINA;
+import static Enums.tipoEncomienda.EFECTIVO;
+import static Enums.tipoServicio.DELIVERY;
+import static Enums.tipoServicio.ENCOMIENDA;
+import static Enums.tipoServicio.TAXI;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import manejoArchivos.ManejoArchivos;
+import java.util.Scanner;
 
 /**
  *
@@ -14,9 +24,11 @@ import manejoArchivos.ManejoArchivos;
 public class Cliente extends Usuario{
     private int numtarjetaCredito;
     private String cedula;
+    
+    Scanner sc = new Scanner(System.in);
 
     
-    protected ArrayList ServiciosPedidos;
+    protected ArrayList <Servicio>ServiciosPedidos;
     
     private Cliente(){
         
@@ -30,18 +42,62 @@ public class Cliente extends Usuario{
     
     protected void solicitarDelivery (){
         
-        Delivery serviciodeilivery = new Delivery();
+        DateTimeFormatter fechaHora = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        int codigo = Servicio.generarCodServicio();
+        ArrayList pedido =//objetoPedido.getPlatosComprados();
+        Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido);
     }
     @Override
     protected void consultarServicio(){
         //ver servicios asignados
+        for(Servicio serv: ServiciosPedidos){
+            System.out.println("Tipo: "+serv.getTipo());
+            if(serv instanceof Delivery){
+                System.out.println("Restaurante: ");//imprimir restaurante
+                System.out.println("Pedido: "+((Delivery) serv).getPedido());  
+            } else if (serv instanceof Encomienda){
+                System.out.println("Tipo encomienda: "+((Encomienda) serv).getTipoE());
+                System.out.println("Cantidad: "+((Encomienda) serv).getCantidadProductos());
+            }else if (serv instanceof Taxi){
+                System.out.println("Cantidad de pasajeros: "+((Taxi) serv).getNumeroPasajeros());
+ 
+            }
+            System.out.println("Fecha - Hora: "+serv.getFechaHora().format(LocalDateTime.now()));
+            System.out.println("Desde: ");//ruta origen
+            System.out.println("Hasta: ");//ruta destino 
+            
+        }
         
     }
     protected void solicitarTaxi(){
-        Taxi serviciotaxi= new Taxi();
+        System.out.println("Ingrese número de pasajeros: ");
+        int numPasajeros = sc.nextInt();
+        sc.nextLine();
+        DateTimeFormatter fechaHora = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        int codigo = Servicio.generarCodServicio();
+        Taxi serviciotaxi= new Taxi(TAXI, fechaHora, codigo,numPasajeros);
     }
-    protected void Encomientda(){
-        Encomienda servicioencomienda =new Encomienda();
+    protected void Encomienda(){
         
+        System.out.println("Ingrese cantidad de productos: ");
+        int cantProd = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Ingrese tipo de encomienda: ");
+        String tipoEncomienda= sc.nextLine();
+        tipoEncomienda tipoE = null;
+        switch (tipoEncomienda){
+            case "DOCUMENTO":
+                tipoE = DOCUMENTOS;
+                break;
+            case "MEDICINA":
+                tipoE = MEDICINA;
+                break;
+            case "EFECTIVO":
+                tipoE = EFECTIVO;
+                break;
+        }
+        DateTimeFormatter fechaHora = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        int codigo = Servicio.generarCodServicio();
+        Encomienda servicioEncomienda = new Encomienda(ENCOMIENDA, fechaHora, codigo, cantProd, tipoE);
     }
 }
