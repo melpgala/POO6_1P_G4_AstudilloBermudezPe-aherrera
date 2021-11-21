@@ -5,6 +5,10 @@
  */
 package Sistema;
 
+import Enums.tipoPago;
+import Enums.tipoServicio;
+import java.util.Date;
+
 /**
  *
  * @author User
@@ -16,11 +20,12 @@ public class Delivery extends Servicio {
         super(tipo, fecha, horadePartida, codigo);
         this.pedido = pedido;
     }
+
     
     protected double calcularValorPagar(tipoPago tp){
         
         double valorPagar = 0;
         // calculo de valor a pagar
-        return ; //double
+        return valorPagar;
     }
 }
