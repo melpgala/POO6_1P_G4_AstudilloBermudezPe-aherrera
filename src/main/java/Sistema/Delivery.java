@@ -20,7 +20,10 @@ public class Delivery extends Servicio {
         super(tipo, fecha, horadePartida, codigo);
         this.pedido = pedido;
     }
-
+    
+    protected String getPedido(){
+        return pedido;
+    }
     
     protected double calcularValorPagar(tipoPago tp){
         
