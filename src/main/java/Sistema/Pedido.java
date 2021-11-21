@@ -11,7 +11,15 @@ import java.util.ArrayList;
  * @author User
  */
 public class Pedido {
-    List objetosComprados = new ArrayList();
-    List cantPorObjeto = new ArrayList();
+    ArrayList  <Platos> platosComprados  = new ArrayList();
     
+    protected ArrayList <Platos> getPlatosComprados(){
+        return platosComprados;
+    }
+    
+    protected void agregarPlatos(){
+        
+        // metodo switch para elegir un plato del menu que se muestra
+        System.out.println("Ingrese Plato:");   
+    }
 }
