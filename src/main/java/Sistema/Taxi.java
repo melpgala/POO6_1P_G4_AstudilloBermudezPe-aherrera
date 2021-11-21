@@ -13,7 +13,7 @@ public class Taxi extends Servicio {
     private int numeroPasajeros;
     
     private double calcularValorPagar(){
-        //calculo de valor a pagar
+        
         return ; //double
     }
     
