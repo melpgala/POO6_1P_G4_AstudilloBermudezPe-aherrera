@@ -5,13 +5,13 @@
  */
 package Sistema;
 
+import java.util.ArrayList;
+import manejoArchivos.ManejoArchivos;
+
 /**
  *
  * @author User
  */
-import java.util.ArrayList;
-import manejoArchivos.ManejoArchivos;
-
 public class Conductor extends Usuario{
     //private String user;
     private String nombre; //se bucan en usuarios.txt a partir de user
@@ -27,23 +27,21 @@ public class Conductor extends Usuario{
     //user, licencia, estado, codigoVehiculo    
     private Conductor(String Usuarios){        
         super();
-        
-        //ManejoArchivos conductores = new ManejoArchivos();
-        ArrayList<String> conductores1 = ManejoArchivos.LeeFichero("conductores.txt");
-        String userCon = "";
+       
+        ArrayList <String> conductores1 = ManejoArchivos.LeeFichero("conductores.txt");
+        String userCon="";
         for (int i=0;i<conductores1.size();i++){
             userCon = conductores1.get(i).split(",")[0];
             if(userCon.equals(Usuarios)){
                 this.licencia = Integer.valueOf(conductores1.get(i).split(",")[1]);
                 this.estado = conductores1.get(i).split(",")[2];
-                int codigoVeh = Integer.valueOf(conductores1.get(i).split(",")[3]);
+                codigoVeh = Integer.valueOf(conductores1.get(i).split(",")[3]);
             }
         }
         
         //leer archivo usuarios.txt
         //cedula, nombre, apellido, user, contraseña, celular, tipoUsuario
-        //ManejoArchivos users = new ManejoArchivos();
-        ArrayList<String> users1 = ManejoArchivos.LeeFichero("usuarios.txt");
+        ArrayList <String> users1 = ManejoArchivos.LeeFichero("usuarios.txt");
         for (int i=0;i<users1.size();i++){
             String nom = users1.get(i).split(",")[1];
             String apell = users1.get(i).split(",")[2];
@@ -56,7 +54,7 @@ public class Conductor extends Usuario{
             }
         }
         
-        this.veh = Vehiculo(codigoVeh);
+        this.veh = new Vehiculo(codigoVeh);
         //this.user = ;
         //this.licencia = ;
         //this.estado = ;
