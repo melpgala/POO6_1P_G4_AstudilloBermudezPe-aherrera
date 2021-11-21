@@ -45,7 +45,7 @@ public class Servicio {
     }
     
     protected int generarCodServicio(){
-    codigo=(int)(Math.random()*(<99999-10000)+10000);
+    codigo=(int)(Math.random()*(99999-10000)+10000);
         
     
     }
