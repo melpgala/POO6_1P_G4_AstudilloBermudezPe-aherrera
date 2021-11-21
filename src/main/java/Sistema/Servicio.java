@@ -16,6 +16,7 @@ public class Servicio {
     private Date fecha;
     private String horadePartida;
     protected boolean aceptarServicio;
+    private int codigo;
     
     protected void escojerServicio(){
     
