@@ -12,16 +12,21 @@ import java.util.Date;
  * @author User
  */
 public class Servicio {
-    private tipoServicio tipo;
+    private tipoServicio tipoS;
     private Date fecha;
     private String horadePartida;
     protected boolean aceptarServicio;
     private int codigo;
     
-    protected void escojerServicio(){
-    
-    
+    protected Servicio(tipoServicio tipoS, Date fecha, String horadePartida, boolean aceptarServicio, int codigo){
+        this.tipo = tipo;
+        this.fecha = fecha;
+        this.horadePartida = horadePartida;
+        this.aceptarCodigo = aceptarCodigo;
+        this.codigo = codigo;
+        
     }
+    
     protected void buscarConductor(){
     }
     private double calcularValorPagar(tipoPago tp){
