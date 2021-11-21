@@ -5,6 +5,9 @@
  */
 package Sistema;
 
+import Enums.tipoServicio;
+import java.util.Date;
+
 /**
  *
  * @author User
