@@ -18,10 +18,10 @@ public class Cliente extends Usuario{
     protected ArrayList ServiciosPedidos;
     
     private Cliente(){
-        ManejoArchivos cliente=new ManejoArchivos();
+        //ManejoArchivos cliente=new ManejoArchivos();
         ArrayList<String> clienteCL=cliente.LeeFichero("cliente.txt");
-         for (int i=0;i<usuarioCl.length;i++){
-            this.numtarjetaCredito = Integer.valueOf(clienteCL[i].split(",")[2]);
+         for (int i=0;i<clienteCL.size();i++){
+            this.numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
             
             this.cedula=cclienteCL.get(i).split(",")[0];    
             
