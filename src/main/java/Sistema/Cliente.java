@@ -33,11 +33,39 @@ public class Cliente extends Usuario{
     private Cliente(){
         
 
-        ArrayList <String > clienteCL= ManejoArchivos.LeeFichero("cliente.txt");
+        protected Cliente(String Usuario){  
+        
+        ArrayList <String > clienteCL= ManejoArchivos.LeeFichero("Usuario.txt");
          for (int i=0 ; i < clienteCL.size();i++){
-            this.numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
-            this.cedula = clienteCL.get(i).split(",")[0];    
+            NumtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
+            Cedula = clienteCL.get(i).split(",")[0];
+            String nombre =clienteCL.get(i).split(",")[1];
+            String apellido=clienteCL.get(i).split(",")[2];
+            Usuarios=Usuario;
+            Contrasenia=clienteCL.get(i).split(",")[4];
+            String Celular= clienteCL.get(i).split(",")[5];
+            
+        
         }
+    }
+    protected void  Crearcuenta(String Cedula, String nombre,String Apellido,String User,String Contrasenia, String celular,String numtarjeta,String edad){
+        String linea=Cedula+","+nombre+","+Apellido+","+User+","+Contrasenia+","+celular ;
+        String linea2=Cedula+","+edad+","+numtarjeta ;
+        ManejoArchivos.EscribirArchivo("Usuario.txt",linea);
+        ManejoArchivos.EscribirArchivo("Cliente",linea2 );
+    }
+    protected void setcedula(String a){
+        
+        Cedula=a;
+    }
+    protected void setnumtarjetaCredito(int a){
+        NumtarjetaCredito=a;
+    }
+    protected String getcedula(){
+        return Cedula;
+    }
+    protected int  getnumtarjetaCredito(){
+        return NumtarjetaCredito;
     }
     
     protected void solicitarDelivery (){
