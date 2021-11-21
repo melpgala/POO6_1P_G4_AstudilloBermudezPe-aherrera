@@ -12,10 +12,14 @@ import Enums.tipoEncomienda;
  */
 public class Encomienda extends Servicio{
     int cantidadProductos;
-    tipoEncomienda tipo;
-    private double calcularValorPagar(){
-        //calculo valor a pagar
-        return ; //double
+    tipoEncomienda tipoE;
+    
+    privat Encomienda(tipoServicio tipoS, Date fecha, String horadePartida, boolean aceptarServicio, int codigo, int cantProd, tipoEncomienda tipoE){
+        super(tipo, fecha, horadePartida, aceptarServicio, codigo);       
+        this.cantidadProductos = cantProd;
+        this.tipoE = tipoE;
     }
+    
+   
     
 }
