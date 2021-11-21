@@ -12,6 +12,12 @@ package Sistema;
 public class Delivery extends Servicio {
     String pedido;
     
+    public Delivery(tipoServicio tipo, Date fecha, String horadePartida, boolean aceptarServicio, int codigo, String pedido) {
+        super(tipo, fecha, horadePartida, aceptarServicio, codigo);
+        this.pedido = pedido;
+    }
+
+    
     protected double calcularValorPagar(tipoPago tp){
         
         double valorPagar = 0;
