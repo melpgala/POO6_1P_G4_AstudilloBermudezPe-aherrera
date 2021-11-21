@@ -12,7 +12,9 @@ package Sistema;
 public class Delivery extends Servicio {
     String pedido;
     
-    private double calcularValorPagar(){
+    protected double calcularValorPagar(tipoPago tp){
+        
+        double valorPagar = 0;
         // calculo de valor a pagar
         return ; //double
     }
