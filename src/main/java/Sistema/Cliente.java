@@ -24,7 +24,7 @@ public class Cliente extends Usuario{
             this.numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
             
             this.cedula=cclienteCL.get(i).split(",")[0];    
-            
+         }
     
     }
     
