@@ -14,26 +14,28 @@ import manejoArchivos.ManejoArchivos;
 public class Cliente extends Usuario{
     private int numtarjetaCredito;
     private String cedula;
+
     
     protected ArrayList ServiciosPedidos;
     
     private Cliente(){
-        //ManejoArchivos cliente=new ManejoArchivos();
-        ArrayList<String> clienteCL=cliente.LeeFichero("cliente.txt");
-         for (int i=0;i<clienteCL.size();i++){
+        
+
+        ArrayList <String > clienteCL= ManejoArchivos.LeeFichero("cliente.txt");
+         for (int i=0 ; i < clienteCL.size();i++){
             this.numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
-            
-            this.cedula=cclienteCL.get(i).split(",")[0];    
-         }
-    
+            this.cedula = clienteCL.get(i).split(",")[0];    
+        }
     }
     
     protected void solicitarDelivery (){
         
         Delivery serviciodeilivery = new Delivery();
     }
-    protected void consultarServicios(){
-    //aqui va lo de consultar servicio
+    @Override
+    protected void consultarServicio(){
+        //ver servicios asignados
+        
     }
     protected void solicitarTaxi(){
         Taxi serviciotaxi= new Taxi();
