@@ -7,7 +7,7 @@ package Sistema;
 
 import Enums.tipoPago;
 import Enums.tipoServicio;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -16,14 +16,15 @@ import java.util.Date;
 public class Delivery extends Servicio {
     String pedido;
     
-    public Delivery(tipoServicio tipo, Date fecha, String horadePartida, int codigo, String pedido) {
-        super(tipo, fecha, horadePartida, codigo);
+    public Delivery(tipoServicio tipo, DateTimeFormatter fechaHora, int codigo, String pedido) {
+        super(tipo, fechaHora, codigo);
         this.pedido = pedido;
     }
     
     protected String getPedido(){
         return pedido;
     }
+
     
     protected double calcularValorPagar(tipoPago tp){
         
