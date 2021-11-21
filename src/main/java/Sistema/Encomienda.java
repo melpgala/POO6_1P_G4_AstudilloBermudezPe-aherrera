@@ -14,8 +14,8 @@ public class Encomienda extends Servicio{
     int cantidadProductos;
     tipoEncomienda tipoE;
     
-    privat Encomienda(tipoServicio tipoS, Date fecha, String horadePartida, boolean aceptarServicio, int codigo, int cantProd, tipoEncomienda tipoE){
-        super(tipo, fecha, horadePartida, aceptarServicio, codigo);       
+    privat Encomienda(tipoServicio tipoS, Date fecha, String horadePartida, int codigo, int cantProd, tipoEncomienda tipoE){
+        super(tipo, fecha, horadePartida, codigo);       
         this.cantidadProductos = cantProd;
         this.tipoE = tipoE;
     }
