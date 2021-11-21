@@ -11,7 +11,7 @@ package Sistema;
  */
 public class Servicio {
     private tipoServicio tipo;
-    private date fecha;
+    private Date fecha;
     private String horadePartida;
     protected boolean aceptarServicio;
     
@@ -19,6 +19,6 @@ public class Servicio {
     
     
     }
-    protected void Conductor(){
+    protected void buscarConductor(){
     }
 }
