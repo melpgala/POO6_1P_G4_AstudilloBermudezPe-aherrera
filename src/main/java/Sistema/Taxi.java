@@ -15,6 +15,10 @@ import java.util.Date;
 public class Taxi extends Servicio {
     private int numeroPasajeros;
     
+    protected int getNumeroPasajeros(){
+        return numeroPasajeros;
+    }
+    
     public Taxi(tipoServicio tipo, Date fecha, String horadePartida, int codigo, int numeroPasajeros) {
         super(tipo, fecha, horadePartida, codigo);
         this.numeroPasajeros = numeroPasajeros;
