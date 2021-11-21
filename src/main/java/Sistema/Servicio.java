@@ -38,4 +38,10 @@ public class Servicio {
         
         return valorPagar; //double
     }
+    
+    protected int generarCodServicio(){
+    codigo=(int)(Math.random()*(<99999-10000)+10000);
+        
+    
+    }
 }
