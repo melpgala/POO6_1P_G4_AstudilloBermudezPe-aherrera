@@ -16,17 +16,30 @@ import java.util.Date;
 public class Servicio {
     private tipoServicio tipoS;
     private Date fecha;
-    private String horadePartida;
+    private String horaDePartida;
     protected boolean aceptarServicio;
     private int codigo;
     
-    protected Servicio(tipoServicio tipoS, Date fecha, String horadePartida, int codigo){
+    protected Servicio(tipoServicio tipoS, Date fecha, String horaDePartida, int codigo){
         this.tipoS = tipoS;
         this.fecha = fecha;
-        this.horadePartida = horadePartida;
+        this.horaDePartida = horaDePartida;
         this.codigo = codigo;
         
     }
+    protected tipoServicio getTipo(){
+        return tipoS;
+    }
+    protected Date getFecha(){
+        return fecha;
+    }
+    protected String getHoraDePartida(){
+        return horaDePartida;
+    }
+    protected int getCodigo(){
+        return codigo;
+    }
+    
     
     protected void buscarConductor(){
     }
