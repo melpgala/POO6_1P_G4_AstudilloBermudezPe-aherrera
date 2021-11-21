@@ -19,7 +19,7 @@ public class Taxi extends Servicio {
         return numeroPasajeros;
     }
     
-    public Taxi(tipoServicio tipo, DateTimeFormatter fechaHora, String horadePartida, int codigo, int numeroPasajeros) {
+    public Taxi(tipoServicio tipo, DateTimeFormatter fechaHora, int codigo, int numeroPasajeros) {
         super(tipo, fechaHora, codigo);
         this.numeroPasajeros = numeroPasajeros;
     }    
