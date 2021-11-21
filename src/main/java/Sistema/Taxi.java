@@ -6,7 +6,7 @@
 package Sistema;
 
 import Enums.tipoServicio;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -19,8 +19,8 @@ public class Taxi extends Servicio {
         return numeroPasajeros;
     }
     
-    public Taxi(tipoServicio tipo, Date fecha, String horadePartida, int codigo, int numeroPasajeros) {
-        super(tipo, fecha, horadePartida, codigo);
+    public Taxi(tipoServicio tipo, DateTimeFormatter fechaHora, String horadePartida, int codigo, int numeroPasajeros) {
+        super(tipo, fechaHora, codigo);
         this.numeroPasajeros = numeroPasajeros;
     }    
     
