@@ -10,6 +10,5 @@ package Enums;
  * @author User
  */
 public enum tipoPago {
-    Efectivo, Tarjeta;
-    
+    EFECTIVO, TARJETA;
 }
