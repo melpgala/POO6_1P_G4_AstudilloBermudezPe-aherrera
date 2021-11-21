@@ -11,18 +11,18 @@ import manejoArchivos.ManejoArchivos;
  *
  * @author User
  */
-public class Usuario {
+public abstract class Usuario {
     protected String Usuarios;
     protected String Contrasenia;
     
     protected Usuario(){
     
-        
-        ArrayList<String> usuarioCl = ManejoArchivos.LeeFichero("Usuario.txt");
 
-        for (int i=0;i<usuarioCl.length;i++){
+        ArrayList <String> usuarioCl = ManejoArchivos.LeeFichero("Usuario.txt");
+
+        for (int i=0;i<usuarioCl.size();i++){
             this.Usuarios =usuarioCl.get(i).split(",")[3];
-            this.Contraseña contra=usuarioCl.get(i).split(",")[4];
+            this.Contrasenia =usuarioCl.get(i).split(",")[4];
         }
     }
     protected String getUsuarios(){
@@ -30,33 +30,25 @@ public class Usuario {
     }
     
     protected String getContrasenia(){
-        return Contraseña;
+        return Contrasenia;
     }
-    protected String identificarUsusario(String Usuarios,String Contrasenia){
+    protected String identificarUsuario(String Usuarios,String Contrasenia){
+ 
+        ArrayList <String> usuarioCl = ManejoArchivos.LeeFichero("Usuario.txt");
         
-        ArrayList<String> usuarioCl = ManejoArchivos.LeeFichero(Usuario.txt);
         String tipoDU1="";
-        for (int i=0;i<usuarioCl.length;i++){
+        for (int i=0;i<usuarioCl.size();i++){
             String user =usuarioCl.get(i).split(",")[3];
             String contra=usuarioCl.get(i).split(",")[4];
-            String tipoDU=ususarioCl.get(i).split(",")[6];    
+            String tipoDU=usuarioCl.get(i).split(",")[6];    
             if (Usuarios.equals(user) && Contrasenia.equals(contra)){
                 
-                tipoDU1= tipoDU;
+                tipoDU1=tipoDU;
                 
             }
-    
-         
-        
-            
-                
         }
         return tipoDU1;
-            
-    
-    
-        
-    
-    
-    
+    }
+    protected abstract void consultarServicio();
+
 }
