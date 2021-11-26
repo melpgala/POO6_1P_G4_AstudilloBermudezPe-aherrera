@@ -23,7 +23,7 @@ public class Encomienda extends Servicio{
         return tipoE;
     }
     
-    private Encomienda(tipoServicio tipoS, DateTimeFormatter fechaHora, int codigo, int cantProd, tipoEncomienda tipoE){
+    public Encomienda(tipoServicio tipoS, DateTimeFormatter fechaHora, int codigo, int cantProd, tipoEncomienda tipoE){
         super(tipoS, fechaHora, codigo);       
         this.cantidadProductos = cantProd;
         this.tipoE = tipoE;
