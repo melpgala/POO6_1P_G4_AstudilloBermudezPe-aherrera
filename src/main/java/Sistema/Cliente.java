@@ -35,8 +35,8 @@ public class Cliente extends Usuario{
 
     ArrayList <String > clienteCL= ManejoArchivos.LeeFichero("Usuario.txt");
      for (int i=0 ; i < clienteCL.size();i++){
-        NumtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
-        Cedula = clienteCL.get(i).split(",")[0];
+        numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
+        cedula = clienteCL.get(i).split(",")[0];
         String nombre =clienteCL.get(i).split(",")[1];
         String apellido=clienteCL.get(i).split(",")[2];
         Usuarios=Usuario;
