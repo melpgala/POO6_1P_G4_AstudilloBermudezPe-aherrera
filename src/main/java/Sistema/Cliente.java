@@ -46,7 +46,7 @@ public class Cliente extends Usuario{
         }
     }
     protected void  Crearcuenta(String Cedula, String nombre,String Apellido,String User,String Contrasenia, String celular,String numtarjeta,String edad){
-        String linea=Cedula+","+nombre+","+Apellido+","+User+","+Contrasenia+","+celular ;
+        String linea=Cedula+","+nombre+","+Apellido+","+User+","+Contrasenia+","+celular+ "C"  ;
         String linea2=Cedula+","+edad+","+numtarjeta ;
         ManejoArchivos.EscribirArchivo("Usuario.txt",linea);
         ManejoArchivos.EscribirArchivo("Cliente",linea2 );
