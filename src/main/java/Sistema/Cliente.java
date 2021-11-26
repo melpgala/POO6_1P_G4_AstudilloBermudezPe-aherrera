@@ -37,11 +37,10 @@ public class Cliente extends Usuario{
      for (int i=0 ; i < clienteCL.size();i++){
         numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
         cedula = clienteCL.get(i).split(",")[0];
-        String nombre =clienteCL.get(i).split(",")[1];
-        String apellido=clienteCL.get(i).split(",")[2];
+        
         Usuarios=Usuario;
         Contrasenia=clienteCL.get(i).split(",")[4];
-        String Celular= clienteCL.get(i).split(",")[5];
+        
 
 
         }
