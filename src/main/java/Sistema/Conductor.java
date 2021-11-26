@@ -24,15 +24,15 @@ public class Conductor extends Usuario{
     
     
     //leer archivo conductores.txt
-    //user, licencia, estado, codigoVehiculo    
-    private Conductor(String Usuarios){        
+    //cedula, licencia, estado, codigoVehiculo    
+    private Conductor(String cedula){        
         super();
        
         ArrayList <String> conductores1 = ManejoArchivos.LeeFichero("conductores.txt");
         String userCon="";
         for (int i=0;i<conductores1.size();i++){
-            userCon = conductores1.get(i).split(",")[0];
-            if(userCon.equals(Usuarios)){
+            cedCon = conductores1.get(i).split(",")[0];
+            if(cedCon.equals(cedula)){
                 this.licencia = Integer.valueOf(conductores1.get(i).split(",")[1]);
                 this.estado = conductores1.get(i).split(",")[2];
                 codigoVeh = Integer.valueOf(conductores1.get(i).split(",")[3]);
@@ -45,9 +45,9 @@ public class Conductor extends Usuario{
         for (int i=0;i<users1.size();i++){
             String nom = users1.get(i).split(",")[1];
             String apell = users1.get(i).split(",")[2];
-            String use1 = users1.get(i).split(",")[3];
+            String ced1 = users1.get(i).split(",")[0];
             int numCel = Integer.valueOf(users1.get(i).split(",")[5]);
-            if(use1.equals(userCon)){
+            if(ced1.equals(cedCon)){
                 this.nombre = nom;
                 this.apellido = apell;
                 this.numCelular = numCel;
