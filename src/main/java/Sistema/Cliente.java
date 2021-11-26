@@ -25,28 +25,26 @@ public class Cliente extends Usuario{
     private int numtarjetaCredito;
     private String cedula;
     
-    Scanner sc = new Scanner(System.in);
-
     
     protected ArrayList <Servicio>ServiciosPedidos;
-    
-    private Cliente(){
+    Scanner sc = new Scanner(System.in);
+    public Cliente(){
         
+    }
+    public Cliente(String Usuario){  
 
-        protected Cliente(String Usuario){  
-        
-        ArrayList <String > clienteCL= ManejoArchivos.LeeFichero("Usuario.txt");
-         for (int i=0 ; i < clienteCL.size();i++){
-            NumtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
-            Cedula = clienteCL.get(i).split(",")[0];
-            String nombre =clienteCL.get(i).split(",")[1];
-            String apellido=clienteCL.get(i).split(",")[2];
-            Usuarios=Usuario;
-            Contrasenia=clienteCL.get(i).split(",")[4];
-            String Celular= clienteCL.get(i).split(",")[5];
-            
-        
-        }
+    ArrayList <String > clienteCL= ManejoArchivos.LeeFichero("Usuario.txt");
+     for (int i=0 ; i < clienteCL.size();i++){
+        NumtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
+        Cedula = clienteCL.get(i).split(",")[0];
+        String nombre =clienteCL.get(i).split(",")[1];
+        String apellido=clienteCL.get(i).split(",")[2];
+        Usuarios=Usuario;
+        Contrasenia=clienteCL.get(i).split(",")[4];
+        String Celular= clienteCL.get(i).split(",")[5];
+
+
+    }
     }
     protected void  Crearcuenta(String Cedula, String nombre,String Apellido,String User,String Contrasenia, String celular,String numtarjeta,String edad){
         String linea=Cedula+","+nombre+","+Apellido+","+User+","+Contrasenia+","+celular ;
