@@ -17,7 +17,7 @@ public class Plato {
     
     Scanner sc = new Scanner(System.in);
     
-    public Plato(String nombrePlato, double precioPlato){
+    public Plato(String nombrePlato, double precioPlato){//creacion del objeto plato para cada platillo del menu
         this.nombrePlato = nombrePlato;
         this.precioPlato = precioPlato;
     }
