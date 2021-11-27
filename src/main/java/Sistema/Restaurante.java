@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Restaurante {
     
     
-    ArrayList<String> listadoPlatosDisponibles= new ArrayList();
+    ArrayList<String> listadoPlatosDisponibles;
     public Restaurante(int codigo){
         
         for (int i=0;i<listaPlatos.size();i++){
