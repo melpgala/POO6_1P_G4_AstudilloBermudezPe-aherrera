@@ -1,14 +1,24 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Enums que pueden ser usados en el proyecto.
  */
 package Enums;
 
 /**
- *
- * @author User
+ * Tipos de servicios que pueden ser utilizados
+ * @author Melanie Peñaherrera
+ * @see Servicio
  */
 public enum tipoServicio {
-    TAXI, DELIVERY, ENCOMIENDA;
+    /**
+    * Tipo de servicio de taxi.
+    */
+    TAXI, 
+    /**
+    * Tipo de servicio de delivery de comida.
+    */
+    DELIVERY, 
+    /**
+    * Tipo de servicio de entrega de encomiendas.
+    */
+    ENCOMIENDA;
 }
