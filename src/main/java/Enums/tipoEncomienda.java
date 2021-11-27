@@ -10,5 +10,5 @@ package Enums;
  * @author User
  */
 public enum tipoEncomienda {
-    DOCUMENTOS, MEDICINA, EFECTIVO;   
+    DOCUMENTOS, MEDICINA, DINERO_EFECTIVO;   
 }
