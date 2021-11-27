@@ -112,13 +112,13 @@ public class Sistema {
         Cliente cliente= new Cliente(User);
         String cli_cond=cliente.identificarUsuario(User,Contra);
         
-        if (cli_cond.equals("C")){
+        if (cli_cond.equals("C")){//si, tipo de cliente es igual cliente
             System.out.println("Usuario cliente encontrado");
             x=false;
             tipoUsuario=cli_cond;
             
             
-        }else if(cli_cond.equals("R")){
+        }else if(cli_cond.equals("R")){//ai tipo de conductor es igual a conductor
 //            Conductor conductor=new Conductor(User);
             System.out.println("Usuario conductor encontrado");
             x=false;
@@ -127,7 +127,7 @@ public class Sistema {
             
             
         }
-        else{
+        else{// caso contrario que el usuario no este registrado y solo admitimos registrar clientes se crea una cuenta
             
             System.out.println("Ingrese Cedula");
             String cedula=sc.nextLine();
