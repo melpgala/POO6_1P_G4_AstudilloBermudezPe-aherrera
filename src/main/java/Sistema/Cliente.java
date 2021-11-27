@@ -12,7 +12,6 @@ import static Enums.tipoServicio.DELIVERY;
 import static Enums.tipoServicio.ENCOMIENDA;
 import static Enums.tipoServicio.TAXI;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import manejoArchivos.ManejoArchivos;
 import java.util.Scanner;
@@ -59,7 +58,7 @@ public class Cliente extends Usuario{
     }
     protected void solicitarDelivery (){
         
-        DateTimeFormatter fechaHora = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
         ArrayList pedido = //objetoPedido.getPlatosComprados();
         Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido);
@@ -90,7 +89,7 @@ public class Cliente extends Usuario{
         System.out.println("Ingrese número de pasajeros: ");
         int numPasajeros = sc.nextInt();
         sc.nextLine();
-        DateTimeFormatter fechaHora = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
         Taxi serviciotaxi= new Taxi(TAXI, fechaHora, codigo,numPasajeros);
     }
@@ -113,7 +112,7 @@ public class Cliente extends Usuario{
                 tipoE = EFECTIVO;
                 break;
         }
-        DateTimeFormatter fechaHora = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
         Encomienda servicioEncomienda = new Encomienda(ENCOMIENDA, fechaHora, codigo, cantProd, tipoE);
     }
