@@ -100,8 +100,15 @@ public class Sistema {
 }
 **/
     static Scanner sc= new Scanner (System.in);
-    
-    
+    /**
+    *@author Astudillo Dante
+    */
+    /**
+    *Metodo Static para iniciar Sesion, caso no estar registrado, pide los datos para crear cuenta
+    *@return {String} tipo de Usuario: "C" or "R"
+    *@param{String,String}
+    *
+    */
     
     
     private static String iniciarSesion(String User,String Contra ) {
@@ -150,6 +157,12 @@ public class Sistema {
         return tipoUsuario;
     }   
     
+  /**
+  *@author AstudilloDante
+  *Metodo para Mostrar menu una vez inicia sesion
+  *@return {int} eleccion de las opciones propuestas
+  *@param {String}
+    */
     
     private static int mostrarMenu(String tipoUsuario) {
         
@@ -167,9 +180,10 @@ public class Sistema {
         return sc.nextInt();
     }
     
-        
-        
-        
+    /**
+    *@author Astudillo Dante
+    *Metodo Main principal del Programa 
+    */   
     
 
     public static void main(String[] args) {
