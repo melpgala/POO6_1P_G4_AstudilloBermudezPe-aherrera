@@ -1,14 +1,23 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Enums contiene los tipos de enums utilizados en el proyecto.
  */
 package Enums;
 
 /**
- *
- * @author User
+ * tipos de encomienda que pueden ser usados.
+ * @author 
  */
 public enum tipoEncomienda {
-    DOCUMENTOS, MEDICINA, DINERO_EFECTIVO;   
+    /**
+    * Encomienda de documentos.
+    */
+    DOCUMENTOS,
+    /**
+    *Encomienda de medicina.
+    */
+    MEDICINA, 
+    /**
+    *Enconmienda de dinero en efectivo.
+    */
+    DINERO_EFECTIVO;   
 }
