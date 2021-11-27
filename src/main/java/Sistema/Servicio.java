@@ -10,7 +10,7 @@ import Enums.tipoServicio;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import manejoArchivos.ManejoArchivos;
-import Sistema.Ruta;
+import java.util.Scanner;
 
 /**
  *
@@ -20,14 +20,20 @@ public class Servicio {
     private tipoServicio tipoS;
     private LocalDateTime fechaHora;
     private int codigo;
-    private String rutaServicio
+    private Ruta ruta;
     
+    Scanner sc = new Scanner(System.in);
+    
+    public Ruta getRuta(){
+        return ruta;
+    }
+     
     protected Servicio(tipoServicio tipoS, LocalDateTime fechaHora, int codigo){
         this.tipoS = tipoS;
         this.fechaHora = fechaHora;
         this.codigo = codigo;
-        this.rutaServicio = Ruta();
-        
+        Ruta ruta = new Ruta();   
+        this.ruta = ruta;
     }
     protected tipoServicio getTipo(){
         return tipoS;
@@ -38,7 +44,6 @@ public class Servicio {
     protected int getCodigo(){
         return codigo;
     }
-    
     
     protected String buscarConductor(){
         ArrayList <String> conductores = ManejoArchivos.LeeFichero("conductores.txt");
@@ -70,21 +75,29 @@ public class Servicio {
         } 
         return conductorAsignado;
     }
-    private double calcularValorPagar(tipoPago tp){
+    protected void calcularValorPagar(tipoPago tp){
         double numAleatorio =Math.random()*10;
-        double valorPagar= 0;
+        double valorTotalPagar= 0;
         if (tp.equals(tipoPago.EFECTIVO)){
-            valorPagar=numAleatorio;
+            valorTotalPagar=numAleatorio;
         }else if (tp.equals(tipoPago.TARJETA)){
-            valorPagar=numAleatorio*1.1;
+            valorTotalPagar=numAleatorio*1.1;
         }
-        
-        return valorPagar; //double
+        System.out.println("El valor total a pagar es: "+valorTotalPagar);
+    }
+    
+    protected void calcularValorPagar(double valorTotalPagar,tipoPago tp){
+        double precioEntrega =Math.random()*5;
+        if (tp.equals(tipoPago.EFECTIVO)){
+            valorTotalPagar+=precioEntrega;
+        }else if (tp.equals(tipoPago.TARJETA)){
+            valorTotalPagar=(valorTotalPagar+precioEntrega)*1.1;
+        }
+        System.out.println("El valor total a pagar es: "+valorTotalPagar);
     }
     
     protected static int generarCodServicio(){
     int cod=(int)(Math.random()*(99999-10000)+10000);
         return cod;
-    
     }
 }
