@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author User
+ * @author Astudillo Dante
  */
 public class Plato {
     private String nombrePlato;
@@ -18,27 +18,38 @@ public class Plato {
     Scanner sc = new Scanner(System.in);
     /**
     *
-    *@author Astudillo Dante
-    *Representa un Platillo del menu
-    *@constructor
-    *@param{String} nombre del platillo
-    *@param{String} precio del platillo en 1 unidad
+    * @author Astudillo Dante
+    * Representa un Platillo del menu
+    * @constructor
+    * @param{String} nombre del platillo
+    * @param{String} precio del platillo en 1 unidad
     */
     public Plato(String nombrePlato, double precioPlato){//creacion del objeto plato para cada platillo del menu
         this.nombrePlato = nombrePlato;
         this.precioPlato = precioPlato;
     }
+    /**
+    * Metodo que devuelve el nombre del plato
+    * @return {String} Retorna el nombre del plato 
+    */
     
     public String getNombrePlato(){
         return nombrePlato;
     }
+    
+    /**
+    * Metodo que devuelve el precio del plato
+    * @return {String} Retorna el precio del plato 
+    */
+    
     public double getPrecioPlato(){
         return precioPlato;
     }
     /**
-    *@author Astudillo Dante
-    *Maneja el precio del plato multiplicado por n veces elejido por el cliente
-    *@return{Double} retorna el precio al contado 
+    * 
+    * Metodo que maneja el precio del plato multiplicado por n veces elejido por el cliente
+    * @return{Double} retorna el precio al contado 
+    *
     */
     
     protected double precioxPlatos(){
