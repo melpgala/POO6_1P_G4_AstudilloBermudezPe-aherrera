@@ -25,9 +25,11 @@ public class Cliente extends Usuario{
     private int numtarjetaCredito;
     private String cedula;
     
+    Scanner sc = new Scanner(System.in);
+
     
     protected ArrayList <Servicio>ServiciosPedidos;
-    Scanner sc = new Scanner(System.in);
+    
     public Cliente(){
         
     }
@@ -35,41 +37,31 @@ public class Cliente extends Usuario{
 
     ArrayList <String > clienteCL= ManejoArchivos.LeeFichero("Usuario.txt");
      for (int i=0 ; i < clienteCL.size();i++){
+         
         numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
         cedula = clienteCL.get(i).split(",")[0];
-        
-        Usuarios=Usuario;
+        this.Usuario=Usuario;
         Contrasenia=clienteCL.get(i).split(",")[4];
-        
-
-
         }
     }
     protected void  Crearcuenta(String Cedula, String nombre,String Apellido,String User,String Contrasenia, String celular,String numtarjeta,String edad){
-        String linea=Cedula+","+nombre+","+Apellido+","+User+","+Contrasenia+","+celular+ "C"  ;
+        String linea=Cedula+","+nombre+","+Apellido+","+User+","+Contrasenia+","+celular ;
         String linea2=Cedula+","+edad+","+numtarjeta ;
         ManejoArchivos.EscribirArchivo("Usuario.txt",linea);
         ManejoArchivos.EscribirArchivo("Cliente",linea2 );
     }
-    protected void setcedula(String a){
-        
-        Cedula=a;
-    }
-    protected void setnumtarjetaCredito(int a){
-        NumtarjetaCredito=a;
-    }
+
     protected String getcedula(){
-        return Cedula;
+        return cedula;
     }
     protected int  getnumtarjetaCredito(){
-        return NumtarjetaCredito;
+        return numtarjetaCredito;
     }
-    
     protected void solicitarDelivery (){
         
         DateTimeFormatter fechaHora = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         int codigo = Servicio.generarCodServicio();
-        ArrayList pedido =//objetoPedido.getPlatosComprados();
+        ArrayList pedido = //objetoPedido.getPlatosComprados();
         Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido);
     }
     @Override
