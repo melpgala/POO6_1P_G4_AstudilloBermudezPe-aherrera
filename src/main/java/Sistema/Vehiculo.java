@@ -17,7 +17,7 @@ public class Vehiculo {
     private String placa;
     private String modelo;
     private String marca;    
-    private String tipoVehiculo;
+    private String tipoVehiculo; //A auto - M moto
     
     //leer archivo vehiculos.txt
     //codigoVehiculo, placa, modelo, marca, tipoVehiculo
@@ -48,7 +48,7 @@ public class Vehiculo {
             String placa1 = vehiculos1.get(i).split(",")[1];
             String modelo1 = vehiculos1.get(i).split(",")[2];
             String marca1 = vehiculos1.get(i).split(",")[3];
-            String tipoVehiculo1 = vehiculos1.get(i).split(",")[4]
+            String tipoVehiculo1 = vehiculos1.get(i).split(",")[4];
             if (codV==codV1){
                 this.placa = placa1;
                 this.modelo = modelo1;
@@ -75,4 +75,3 @@ public class Vehiculo {
     
     
 }
-                
