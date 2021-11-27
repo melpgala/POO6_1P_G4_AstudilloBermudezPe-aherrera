@@ -12,7 +12,12 @@ import java.util.ArrayList;
  * @Astudillo Dante
  */
 public class Pedido {
-    ArrayList  <Plato> platosElegidos  = new ArrayList();// {}
+    private String nombreRestaurante;
+    private ArrayList  <Plato> platosElegidos  = new ArrayList();// {}
+    /**
+    *Metodo que devuelve el atributo ArrayList<Plato>
+    *@return {ArrayList<plato>} platosElegidos devuelve un Arraylist<Plato>
+    */
      
     public ArrayList <Plato> getPlatosElegidos(){
         return platosElegidos;
@@ -28,6 +33,7 @@ public class Pedido {
             pedido+= p.getNombrePlato(); // Plato x =new Plato(String amburgueza)
         }
         return pedido;// hambru ,papas, 
+        
         
     }
      /**
