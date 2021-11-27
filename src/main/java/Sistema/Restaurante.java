@@ -5,6 +5,7 @@
  */
 package Sistema;
 import java.util.ArrayList;
+import manejoArchivos.ManejoArchivos;
 
 /**
  *
@@ -12,26 +13,26 @@ import java.util.ArrayList;
  */
 public class Restaurante {
     
-    ArrayList<int> listadoPreciosPlatos;
-    ArrayList<String> listadoPlatosDisponibles;
-    public Restaurante(int codigo){
-        ArrayList<String> listaplatos= ManejoArchivos.LeerInformacion("menus.txt");
-        for (int i=0;i<listaPlatos.size();i++){
-            if (codigo.equals(listaPlatos.get(i).split(",")[0])){                
-               listadoPlatosDisponibles.add(listaPlatos.get(i).split(",")[1]);
-               listadoPreciosPlatos.add(listaPlatos.get(i).split(",")[2]);
-            }
-            
-        
-        }
+    private ArrayList<Double> listadoPreciosPlatos;
+    private ArrayList<String> listadoPlatosDisponibles;
     
+    public ArrayList<Double> getListadoPreciosPlatos(){
+        return listadoPreciosPlatos;
+    }
+    public ArrayList<String> getListadoPlatosDisponibles(){
+        return listadoPlatosDisponibles;
     }
     
     
-        
-        
+    public Restaurante(String codigo){
+        ArrayList<String> listaPlatos= ManejoArchivos.LeeFichero("menus.txt");
+        for (int i=0;i<listaPlatos.size();i++){
+            if (codigo.equals(listaPlatos.get(i).split(",")[0])){                
+               listadoPlatosDisponibles.add(listaPlatos.get(i).split(",")[1]);
+               listadoPreciosPlatos.add(Double.valueOf(listaPlatos.get(i).split(",")[2]));
+            }
+        }
+    }
     
-    
-    
-    
+  
 }
