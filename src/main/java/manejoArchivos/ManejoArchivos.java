@@ -1,20 +1,29 @@
+    /**
+    * manejoArchivos contiene a la clase ManejoArchivos.
+    */
 package manejoArchivos;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
- *
+ * ManejoArchivos Esta clase contiene los metodos para el manejo de archivos.
  * @author Verónica
  */
 public class ManejoArchivos {
-
+    
+    /**
+    * Metodo constructor por defecto.
+    */
+    public ManejoArchivos(){
+    }
+    
+    /**
+    * Metodo para leer un archivo.
+    * @param nombrearchivo Nombre del archivo que se quiere leer.
+    * @return ArrayList con las lineas del archivo.
+    */
     public static ArrayList<String> LeeFichero(String nombrearchivo) {
         ArrayList<String> lineas = new ArrayList<>();
         File archivo = null;
@@ -54,6 +63,11 @@ public class ManejoArchivos {
 
     }
 
+    /**
+    * Metodo que escribe en un archivo.
+    * @param nombreArchivo Nombre del archivo en el que se quiere escribir.
+    * @linea linea Cadena que se quiere escribir en el archivo.
+    */
     public static void EscribirArchivo(String nombreArchivo, String linea) {
 
         FileWriter fichero = null;
