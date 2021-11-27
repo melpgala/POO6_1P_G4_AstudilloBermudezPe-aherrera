@@ -16,7 +16,13 @@ public class Plato {
     private int cantPlatos;
     
     Scanner sc = new Scanner(System.in);
-    
+    /**
+    *
+    *@author Astudillo Dante
+    *Representa un Platillo del menu
+    *@constructor
+    *
+    */
     public Plato(String nombrePlato, double precioPlato){//creacion del objeto plato para cada platillo del menu
         this.nombrePlato = nombrePlato;
         this.precioPlato = precioPlato;
@@ -28,6 +34,11 @@ public class Plato {
     public double getPrecioPlato(){
         return precioPlato;
     }
+    /**
+    *@author Astudillo Dante
+    *Maneja el precio del plato multiplicado por n veces elejido por el cliente
+    *@return{Double} retorna el precio al contado 
+    */
     
     protected double precioxPlatos(){
         System.out.println("Ingrese que cantidad desea de este mismo plato: ");
