@@ -7,6 +7,7 @@ package Sistema;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import manejoArchivos.ManejoArchivos;
 
 /**
  *
@@ -105,7 +106,7 @@ public class Sistema {
     
     private static String iniciarSesion(String User,String Contra ) {
         boolean x=true;
-        String va="";
+        String tipoUsuario="";
         while(x){
         
         Cliente cliente= new Cliente(User);
@@ -114,22 +115,21 @@ public class Sistema {
         if (cli_cond.equals("C")){
             System.out.println("Usuario cliente encontrado");
             x=false;
-            va=cli_cond;
+            tipoUsuario=cli_cond;
             
             
         }else if(cli_cond.equals("R")){
 //            Conductor conductor=new Conductor(User);
-            System.out.println("Usuario conductor concedido");
+            System.out.println("Usuario conductor encontrado");
             x=false;
-            va=cli_cond;
+            tipoUsuario=cli_cond;
             
             
             
         }
         else{
             
-            for (int i=0; i<8;i++)
-                System.out.println("Ingrese Cedula");
+            System.out.println("Ingrese Cedula");
             String cedula=sc.nextLine();
             System.out.println("Ingrese su nombre");
             String nombre=sc.nextLine();
@@ -144,47 +144,26 @@ public class Sistema {
             System.out.println("Ingrese Cedula");
             
             cliente.Crearcuenta(cedula, nombre, apellido, User, Contra, celular, numtarjeta, edad);
-            System.out.println("Cuenta Creada, vuelva a ingresar su usuario y contraseña");
-            return null;
-            
-//        ArrayList <String> usuarioCl = ManejoArchivos.LeeFichero("Usuario.txt");
-//        
-//        boolean tipoDU1 = false;
-//        for (int i=0;i<usuarioCl.size();i++){
-//            String user =usuarioCl.get(i).split(",")[3];
-//            String contra=usuarioCl.get(i).split(",")[4];
-//            String tipoDU=usuarioCl.get(i).split(",")[6];    
-//            if (User.equals(user) && Contra.equals(contra)){
-//                System.out.println("Usuario encontrado");
-//
-//                
-//            }else {
-//                CuentaNueva(User,Contra);
-//        }
-//        return tipoDU1;
-            
+            System.out.println("Cuenta Creada");
             }
-        
         }
-        return va;
-    
+        return tipoUsuario;
     }   
-    private static int mostrarMenu(String C) {
-        System.out.println("---------------MENU---------------\n");
-
-        System.out.println("Bienvenido");
+    
+    
+    private static int mostrarMenu(String tipoUsuario) {
         
-        if ("C".equalsIgnoreCase(C )) {///cliente
+        if ("C".equalsIgnoreCase(tipoUsuario )) {///cliente
             System.out.println("1. Solicitar servicio de taxi");
             System.out.println("2. Solicitar comida a domicilio");
             System.out.println("3. Solicitar entrega encomienda");
             System.out.println("4. Consultar servicios");
-        } else if ("R".equalsIgnoreCase(C)) {//conductor
-            System.out.println("1. Consultar Servicio Asingnado");
-        
-            
+        } else if ("R".equalsIgnoreCase(tipoUsuario)) {//conductor
+            System.out.println("1. Consultar Servicio Asingnado");  
         
         }
+        System.out.print("Ingrese opcion:");
+        
         return sc.nextInt();
     }
     
@@ -194,20 +173,19 @@ public class Sistema {
     
 
     public static void main(String[] args) {
+        System.out.println("---------------MENU---------------\n");
+
+        System.out.println("Bienvenido");
+        
         System.out.println("Usuario: ");
         String User=sc.next() ;
-        System.out.println("Contraseña; ");
+        System.out.println("Contraseña: ");
         String Contra=sc.next();
         
-        String tipo= iniciarSesion(User,Contra );
+        String tipo= iniciarSesion(User,Contra);
         
+        int valor = mostrarMenu(tipo);
         
-
-        
-        
-        int valor =mostrarMenu(tipo);
-        
-        System.out.print("Ingrese opcion:");
         if("C".equals(tipo)){
             Cliente c=new Cliente(User);
             switch (valor) {
@@ -224,15 +202,24 @@ public class Sistema {
                     c.solicitarEncomienda();
                     break;
                 case 4:
-                    c.consultarServicios();
+                    c.consultarServicio();
                     break;
                 default:
                     //la opcion ingreada no esta dentro de las opciones del menu
                     System.out.println("Opcion invalida");
                     break;
             }
-        }else if ("R".equalsIgnoreCase(tipo)) {
-                Conductor c=new Conductor(User);
+        }else if ("R".equals(tipo)) {
+                ArrayList<String> datos=ManejoArchivos.LeeFichero("usuarios.txt");
+                String cedula="";
+                for(int i=0;i<datos.size();i++){
+                    String usuario=datos.get(i).split(",")[3];
+                    if(usuario.equals(User)){
+                        cedula=datos.get(i).split(",")[0];
+                        
+                    }
+                }
+                Conductor c=new Conductor(cedula);
                     switch (valor) {
                         case 1:
                             c.consultarServicio();
