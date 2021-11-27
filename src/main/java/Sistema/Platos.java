@@ -24,7 +24,7 @@ public class Platos {
     
     protected double precioxPlatos(){
         precioalcontado= cantPlatos*precioPlato;
-            returno precioalcontado;
+            return precioalcontado;
     }
     
 }
