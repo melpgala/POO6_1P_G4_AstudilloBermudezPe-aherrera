@@ -148,7 +148,7 @@ public class Cliente extends Usuario{
         for(Servicio serv : ServiciosPedidos){
             System.out.println("Tipo: "+serv.getTipo());
             if(serv instanceof Delivery){
-                System.out.println("Restaurante: "+((Delivery) serv).pedido.getNombreRestaurante());//imprimir restaurante
+                System.out.println("Restaurante: "+((Delivery) serv).getPedido().getNombreRestaurante());//imprimir restaurante
                 System.out.println("Pedido: "+((Delivery) serv).getPedido().getNombresPedido());  
             } else if (serv instanceof Encomienda){
                 System.out.println("Tipo encomienda: "+((Encomienda) serv).getTipoE());
