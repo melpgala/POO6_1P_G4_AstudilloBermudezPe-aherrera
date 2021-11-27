@@ -24,7 +24,7 @@ public class Conductor extends Usuario{
     
     //leer archivo conductores.txt
     //user, licencia, estado, codigoVehiculo    
-    private Conductor(String cedula){        
+    public Conductor(String cedula){        
 
         ArrayList <String> conductores1 = ManejoArchivos.LeeFichero("conductores.txt");
         String cedConductor="";
