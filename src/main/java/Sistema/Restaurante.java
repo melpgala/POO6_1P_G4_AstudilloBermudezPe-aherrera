@@ -12,14 +12,14 @@ import java.util.ArrayList;
  */
 public class Restaurante {
     
-    
+    ArrayList<int> listadoPreciosPlatos;
     ArrayList<String> listadoPlatosDisponibles;
     public Restaurante(int codigo){
-        
+        ArrayList<String> listaplatos= ManejoArchivos.LeerInformacion("menus.txt");
         for (int i=0;i<listaPlatos.size();i++){
             if (codigo.equals(listaPlatos.get(i).split(",")[0])){                
-               listadoPlatosDisponibles.add(listaPlatos.get(i).split(",")[1])
-                
+               listadoPlatosDisponibles.add(listaPlatos.get(i).split(",")[1]);
+               listadoPreciosPlatos.add(listaPlatos.get(i).split(",")[2]);
             }
             
         
