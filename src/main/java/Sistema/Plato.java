@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Sistema;
+import java.util.Scanner;
 
 /**
  *
@@ -13,6 +14,8 @@ public class Plato {
     private String nombrePlato;
     private double precioPlato;
     private int cantPlatos;
+    
+    Scanner sc = new Scanner(System.in);
     
     public Plato(String nombrePlato, double precioPlato){
         this.nombrePlato = nombrePlato;
@@ -27,7 +30,10 @@ public class Plato {
     }
     
     protected double precioxPlatos(){
+        System.out.println("Ingrese que cantidad desea de este mismo plato: ");
+        cantPlatos = sc.nextInt();
+        sc.nextLine();
         double precioalcontado= cantPlatos*precioPlato;
-            return precioalcontado;
+        return precioalcontado;
     }
 }
