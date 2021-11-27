@@ -12,26 +12,28 @@ import manejoArchivos.ManejoArchivos;
  * @author User
  */
 public abstract class Usuario {
-    protected String Usuarios;
+    protected String Usuario;
     protected String Contrasenia;
     
-    protected Usuario(){
+   
     
 
-        ArrayList <String> usuarioCl = ManejoArchivos.LeeFichero("Usuario.txt");
-
-        for (int i=0;i<usuarioCl.size();i++){
-            this.Usuarios =usuarioCl.get(i).split(",")[3];
-            this.Contrasenia =usuarioCl.get(i).split(",")[4];
-        }
-    }
+//        ArrayList <String> usuarioCl = ManejoArchivos.LeeFichero("Usuario.txt");
+//
+//        for (int i=0;i<usuarioCl.size();i++){
+//            this.Usuarios =usuarioCl.get(i).split(",")[3];
+//            this.Contrasenia =usuarioCl.get(i).split(",")[4];
+//        }
+    
     protected String getUsuarios(){
-        return Usuarios;
+        return Usuario;
     }
     
     protected String getContrasenia(){
         return Contrasenia;
     }
+    
+    
     protected String identificarUsuario(String Usuarios,String Contrasenia){
  
         ArrayList <String> usuarioCl = ManejoArchivos.LeeFichero("Usuario.txt");
