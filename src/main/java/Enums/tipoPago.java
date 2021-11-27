@@ -1,14 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Enums contiene los tipo enums que pueden ser usados.
  */
 package Enums;
 
 /**
- *
- * @author User
+ *Tipos de pago que pueden ser usados.
+ * @author Melanie Peñaherrera
+ * @see Pago
  */
 public enum tipoPago {
-    EFECTIVO, TARJETA;
+    /**
+    * Tipo de pago de dinero en efectivo.
+    */
+    EFECTIVO, 
+    /**
+    *Tipo de pago con tarjeta de credito.
+    */
+    TARJETA;
 }
