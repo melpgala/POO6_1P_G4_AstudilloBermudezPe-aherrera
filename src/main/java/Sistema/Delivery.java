@@ -15,22 +15,24 @@ import java.time.LocalDateTime;
  * @author User
  */
 public class Delivery extends Servicio {
-    String pedido;
+    Pedido pedido;
     
-    public Delivery(tipoServicio tipo, LocalDateTime fechaHora, int codigo, String pedido) {
+    public Delivery(tipoServicio tipo, LocalDateTime fechaHora, int codigo, Pedido pedido) {
         super(tipo, fechaHora, codigo);
         this.pedido = pedido;
     }
-    
-    protected String getPedido(){
+    public Pedido getPedido(){
         return pedido;
     }
-
     
     protected double calcularValorPagar(tipoPago tp){
         
         double valorPagar = 0;
         // calculo de valor a pagar
         return valorPagar;
+    }
+    
+    public void mostrarMenuRestaurantes(){
+        
     }
 }
