@@ -5,7 +5,6 @@
  */
 package Sistema;
 
-import Enums.tipoPago;
 import Enums.tipoServicio;
 import java.time.LocalDateTime;
 
@@ -23,16 +22,5 @@ public class Delivery extends Servicio {
     }
     public Pedido getPedido(){
         return pedido;
-    }
-    
-    protected double calcularValorPagar(tipoPago tp){
-        
-        double valorPagar = 0;
-        // calculo de valor a pagar
-        return valorPagar;
-    }
-    
-    public void mostrarMenuRestaurantes(){
-        
     }
 }
