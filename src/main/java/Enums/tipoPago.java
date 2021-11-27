@@ -1,5 +1,5 @@
 /*
- * Enums contiene los tipo enums que pueden ser usados.
+ * Enums contiene los tipo enums que pueden ser usados en el proyecto.
  */
 package Enums;
 
