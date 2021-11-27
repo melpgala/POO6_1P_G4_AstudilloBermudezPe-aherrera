@@ -7,7 +7,8 @@ package Sistema;
 import Enums.tipoEncomienda;
 import static Enums.tipoEncomienda.DOCUMENTOS;
 import static Enums.tipoEncomienda.MEDICINA;
-import static Enums.tipoEncomienda.EFECTIVO;
+import static Enums.tipoEncomienda.DINERO_EFECTIVO;
+import Enums.tipoPago;
 import static Enums.tipoServicio.DELIVERY;
 import static Enums.tipoServicio.ENCOMIENDA;
 import static Enums.tipoServicio.TAXI;
@@ -60,6 +61,7 @@ public class Cliente extends Usuario{
         
         LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
+        double valorTotalPagar = 0;
         
         Pedido pedido = new Pedido();
         System.out.println("BIENVENIDO ELIJA UN RESTAURANTE");
@@ -89,7 +91,7 @@ public class Cliente extends Usuario{
             String nombrePlato= restaurante.getListadoPlatosDisponibles().get(indicelistaplatillo);//
             Double precioPlato= restaurante.getListadoPreciosPlatos().get(indicelistaplatillo);
             Plato plato =new Plato(nombrePlato,precioPlato);
-
+            valorTotalPagar += plato.precioxPlatos();
             pedido.agregarPlatos(plato);
             System.out.println("Desea continuar? (Si/No)");
             String confirmar=sc.nextLine();
@@ -98,6 +100,10 @@ public class Cliente extends Usuario{
             } 
         }
         Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido);
+        
+        Servicio servicioDel = (Servicio)servicioDelivery;
+        tipoPago tipoDePago = Pago.elegirTipoPago();
+        servicioDel.calcularValorPagar(valorTotalPagar,tipoDePago);
     }
     @Override
     protected void consultarServicio(){
@@ -115,8 +121,8 @@ public class Cliente extends Usuario{
  
             }
             System.out.println("Fecha - Hora: "+serv.getFechaHora());
-            System.out.println("Desde: ");//ruta origen
-            System.out.println("Hasta: ");//ruta destino 
+            System.out.println("Desde: "+serv.getRuta().getOrigen());//ruta origen
+            System.out.println("Hasta: "+serv.getRuta().getDestino());//ruta destino 
             
         }
         
@@ -127,7 +133,10 @@ public class Cliente extends Usuario{
         sc.nextLine();
         LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
-        Taxi serviciotaxi= new Taxi(TAXI, fechaHora, codigo,numPasajeros);
+        Taxi servicioTaxi= new Taxi(TAXI, fechaHora, codigo,numPasajeros);
+        tipoPago tipoDePago = Pago.elegirTipoPago();
+        servicioTaxi.calcularValorPagar(tipoDePago);
+        
     }
     protected void solicitarEncomienda(){
         
@@ -145,11 +154,13 @@ public class Cliente extends Usuario{
                 tipoE = MEDICINA;
                 break;
             case "EFECTIVO":
-                tipoE = EFECTIVO;
+                tipoE = DINERO_EFECTIVO;
                 break;
         }
         LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
         Encomienda servicioEncomienda = new Encomienda(ENCOMIENDA, fechaHora, codigo, cantProd, tipoE);
+        tipoPago tipoDePago = Pago.elegirTipoPago();
+        servicioEncomienda.calcularValorPagar(tipoDePago);
     }
 }
