@@ -21,7 +21,8 @@ public class Plato {
     *@author Astudillo Dante
     *Representa un Platillo del menu
     *@constructor
-    *
+    *@param{String} nombre del platillo
+    *@param{String} precio del platillo en 1 unidad
     */
     public Plato(String nombrePlato, double precioPlato){//creacion del objeto plato para cada platillo del menu
         this.nombrePlato = nombrePlato;
