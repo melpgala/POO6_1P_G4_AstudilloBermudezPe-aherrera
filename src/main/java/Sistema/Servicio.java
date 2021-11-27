@@ -8,6 +8,8 @@ package Sistema;
 import Enums.tipoPago;
 import Enums.tipoServicio;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import manejoArchivos.ManejoArchivos;
 
 /**
  *
@@ -16,7 +18,6 @@ import java.time.LocalDateTime;
 public class Servicio {
     private tipoServicio tipoS;
     private LocalDateTime fechaHora;
-    protected boolean aceptarServicio;
     private int codigo;
     
     protected Servicio(tipoServicio tipoS, LocalDateTime fechaHora, int codigo){
@@ -36,7 +37,35 @@ public class Servicio {
     }
     
     
-    protected void buscarConductor(){
+    protected String buscarConductor(){
+        ArrayList <String> conductores = ManejoArchivos.LeeFichero("conductores.txt");
+        String conductorAsignado ="";
+        for(String conductor : conductores){
+            String estadoCond = conductor.split(",")[2];
+            int codVehiculo = Integer.valueOf(conductor.split(",")[3]);
+            if (estadoCond == "D" ){
+                Vehiculo veh = new Vehiculo(codVehiculo);
+                String tipo = veh.getTipoVehiculo();
+                switch(this.tipoS){
+                    case TAXI:
+                        if (tipo.equals("A")){
+                            conductorAsignado = conductor;
+                        }
+                        break;
+                    case DELIVERY:
+                        if (tipo.equals("M")){
+                            conductorAsignado = conductor;
+                        }
+                        break;
+                    case ENCOMIENDA:
+                        if (tipo.equals("M")){
+                            conductorAsignado = conductor;
+                        }
+                        break;
+                } 
+            }
+        } 
+        return conductorAsignado;
     }
     private double calcularValorPagar(tipoPago tp){
         double numAleatorio =Math.random()*10;
