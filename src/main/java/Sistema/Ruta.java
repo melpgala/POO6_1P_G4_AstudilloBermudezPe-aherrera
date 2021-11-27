@@ -14,6 +14,11 @@ public class Ruta {
     private String origen;
     private String destino;
     private Scanner sc;
+    protected Ruta(String origen, String destino){
+        this.origen=origen;
+        this.destino=destino;
+    
+    }
     
     protected String getOrigen(){
         return origen;
