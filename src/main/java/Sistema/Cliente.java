@@ -60,7 +60,43 @@ public class Cliente extends Usuario{
         
         LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
-        ArrayList pedido = //objetoPedido.getPlatosComprados();
+        
+        Pedido pedido = new Pedido();
+        System.out.println("BIENVENIDO ELIJA UN RESTAURANTE");
+        ArrayList<String> listaRestaurante= ManejoArchivos.LeeFichero("restaurantes");
+        ArrayList<String> listaCodigo= new ArrayList();
+        int i =0;
+        for(String cadena : listaRestaurante){
+            listaCodigo.add(cadena.split(",")[0]);
+            System.out.println(i+".- "+cadena.split(",")[1]);// 1.-KFC
+            i++;
+        }
+        System.out.println("Elija un numero: ");
+        
+        int numero= sc.nextInt();
+        sc.nextLine();
+        Restaurante restaurante=new Restaurante(listaCodigo.get(numero));
+        boolean continuar = true;
+        while(continuar){
+            for (int o=0 ; o<restaurante.getListadoPlatosDisponibles().size() ;o++){
+                String nombreplatillo=restaurante.getListadoPlatosDisponibles().get(o);
+                System.out.println(o+".- "+nombreplatillo);// 1.-Ambogueza
+
+            }
+            System.out.println("Elija el platillo: ");
+            int indicelistaplatillo= sc.nextInt();
+            sc.nextLine();
+            String nombrePlato= restaurante.getListadoPlatosDisponibles().get(indicelistaplatillo);//
+            Double precioPlato= restaurante.getListadoPreciosPlatos().get(indicelistaplatillo);
+            Plato plato =new Plato(nombrePlato,precioPlato);
+
+            pedido.agregarPlatos(plato);
+            System.out.println("Desea continuar? (Si/No)");
+            String confirmar=sc.nextLine();
+            if("no".equalsIgnoreCase(confirmar)){
+                continuar = false;
+            } 
+        }
         Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido);
     }
     @Override
@@ -70,7 +106,7 @@ public class Cliente extends Usuario{
             System.out.println("Tipo: "+serv.getTipo());
             if(serv instanceof Delivery){
                 System.out.println("Restaurante: ");//imprimir restaurante
-                System.out.println("Pedido: "+((Delivery) serv).getPedido());  
+                System.out.println("Pedido: "+((Delivery) serv).getPedido().getNombresPedido());  
             } else if (serv instanceof Encomienda){
                 System.out.println("Tipo encomienda: "+((Encomienda) serv).getTipoE());
                 System.out.println("Cantidad: "+((Encomienda) serv).getCantidadProductos());
