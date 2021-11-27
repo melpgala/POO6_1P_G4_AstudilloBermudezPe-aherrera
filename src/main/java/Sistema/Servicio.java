@@ -10,6 +10,7 @@ import Enums.tipoServicio;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import manejoArchivos.ManejoArchivos;
+import Sistema.Ruta;
 
 /**
  *
@@ -19,11 +20,13 @@ public class Servicio {
     private tipoServicio tipoS;
     private LocalDateTime fechaHora;
     private int codigo;
+    private String rutaServicio
     
     protected Servicio(tipoServicio tipoS, LocalDateTime fechaHora, int codigo){
         this.tipoS = tipoS;
         this.fechaHora = fechaHora;
         this.codigo = codigo;
+        this.rutaServicio = Ruta();
         
     }
     protected tipoServicio getTipo(){
