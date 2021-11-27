@@ -9,7 +9,8 @@ import manejoArchivos.ManejoArchivos;
 
 /**
  *
- * @author User
+ * @author melpgala
+ * @author AstudilloDante
  */
 public abstract class Usuario {
     protected String Usuario;
@@ -32,7 +33,12 @@ public abstract class Usuario {
     protected String getContrasenia(){
         return Contrasenia;
     }
-    
+    /**
+    *@return {String} tipoDU1, returno el tipo de usuario "C" cliente y "R" conductor
+    *@param{String} Usuarios, el nickname del usuario 
+    *@param{String} Contrasenia, contraseña del usuario
+    *
+    */
     
     protected String identificarUsuario(String Usuarios,String Contrasenia){
  
