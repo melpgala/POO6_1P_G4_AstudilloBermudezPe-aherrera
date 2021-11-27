@@ -78,7 +78,7 @@ public class Cliente extends Usuario{
                 System.out.println("Cantidad de pasajeros: "+((Taxi) serv).getNumeroPasajeros());
  
             }
-            System.out.println("Fecha - Hora: "+serv.getFechaHora().format(LocalDateTime.now()));
+            System.out.println("Fecha - Hora: "+serv.getFechaHora());
             System.out.println("Desde: ");//ruta origen
             System.out.println("Hasta: ");//ruta destino 
             
