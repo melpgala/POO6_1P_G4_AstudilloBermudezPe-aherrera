@@ -8,15 +8,19 @@ import java.util.ArrayList;
 
 /**
  *
- * @author User
+ * @author mgpala
+ * @Astudillo Dante
  */
 public class Pedido {
     ArrayList  <Plato> platosElegidos  = new ArrayList();// {}
-    
+     
     public ArrayList <Plato> getPlatosElegidos(){
         return platosElegidos;
     }
-    
+    /**
+    *@return {String} pedido, devuelve un String del nombre de todos los platos escojidos por el usuario
+    *
+    */
     public String getNombresPedido(){
         
         String pedido="";
@@ -26,6 +30,10 @@ public class Pedido {
         return pedido;// hambru ,papas, 
         
     }
+     /**
+    *param {plato} p, agregar los objetos Plato en el arraylist<plato> platosElegidos
+    *
+    */
     
     protected void agregarPlatos(Plato p){
         platosElegidos.add(p);
