@@ -44,10 +44,10 @@ public class Cliente extends Usuario{
         Contrasenia=clienteCL.get(i).split(",")[4];
         }
     }
-    protected void  Crearcuenta(String Cedula, String nombre,String Apellido,String User,String Contrasenia, String celular,String numtarjeta,String edad){
+    protected void  Crearcuenta(String Cedula, String nombre,String Apellido,String User,String Contrasenia, String celular,String numtarjeta,String edad){// creacion de cuenta  para cliente
         String linea=Cedula+","+nombre+","+Apellido+","+User+","+Contrasenia+","+celular ;
         String linea2=Cedula+","+edad+","+numtarjeta ;
-        ManejoArchivos.EscribirArchivo("Usuario.txt",linea);
+        ManejoArchivos.EscribirArchivo("Usuario.txt",linea);//se guarda los datos en un orden al archivo "  .txt"
         ManejoArchivos.EscribirArchivo("Cliente",linea2 );
     }
 
