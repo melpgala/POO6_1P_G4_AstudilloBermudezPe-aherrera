@@ -11,15 +11,23 @@ import java.util.ArrayList;
  * @author User
  */
 public class Pedido {
-    ArrayList  <Platos> platosComprados  = new ArrayList();
+    ArrayList  <Plato> platosElegidos  = new ArrayList();// {}
     
-    protected ArrayList <Platos> getPlatosComprados(){
-        return platosComprados;
+    public ArrayList <Plato> getPlatosElegidos(){
+        return platosElegidos;
     }
     
-    protected void agregarPlatos(){
+    public String getNombresPedido(){
         
-        // metodo switch para elegir un plato del menu que se muestra
-        System.out.println("Ingrese Plato:");   
+        String pedido="";
+        for (Plato p: platosElegidos){  //String x="amburgueza"
+            pedido+= p.getNombrePlato(); // Plato x =new Plato(String amburgueza)
+        }
+        return pedido;// hambru ,papas, 
+        
+    }
+    
+    protected void agregarPlatos(Plato p){
+        platosElegidos.add(p);
     }
 }
