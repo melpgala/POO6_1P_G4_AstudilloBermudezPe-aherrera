@@ -27,12 +27,11 @@ public class Restaurante {
     
     }
     
-    private int listadeplatos(int codigo){
-        ArrayList<String> listaplatos= ManejoArchivos.LeerInformacion("menus.txt");
+    
         
         
     
-    }
+    
     
     
 }
