@@ -9,7 +9,7 @@ import manejoArchivos.ManejoArchivos;
 
 /**
  *
- * @author User
+ * @author Astudillo Dante
  */
 public class Restaurante {
     
@@ -22,7 +22,13 @@ public class Restaurante {
     public ArrayList<String> getListadoPlatosDisponibles(){
         return listadoPlatosDisponibles;
     }
-    
+    /**
+    *
+    *Representa la lista de Platillos del Restaurant Seleccionado
+    *@constructor
+    *@param {String} codigo recive el codigo del restaurant y buscar su informacion
+    *
+    */
     
     public Restaurante(String codigo){
         ArrayList<String> listaPlatos= ManejoArchivos.LeeFichero("menus.txt");
