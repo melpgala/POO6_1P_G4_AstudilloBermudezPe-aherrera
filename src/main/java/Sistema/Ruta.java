@@ -23,11 +23,12 @@ public class Ruta {
         return destino;
     }
     
-    protected Ruta(){
+    protected String Ruta(){
         sc = new Scanner(System.in);
         System.out.println("Ingrese origen: ");
         origen = sc.nextLine();
         System.out.println("Ingrese destino: ");
         destino = sc.nextLine();
+        return origen +","+ destino;
     }
 }
