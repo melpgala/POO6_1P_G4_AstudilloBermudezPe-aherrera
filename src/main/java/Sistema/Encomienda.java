@@ -6,14 +6,14 @@ import Enums.tipoEncomienda;
 import Enums.tipoServicio;
 import java.time.LocalDateTime;
 
-
 /**
  * Esta clase contiene los atributos y métodos de una encomienda.
  * @author Alex Bermudez
+ * @see Servicio
  */
 public class Encomienda extends Servicio{
-    int cantidadProductos;
-    tipoEncomienda tipoE;
+    private int cantidadProductos;
+    private tipoEncomienda tipoE;
     
     /**
     * Método que devuelve la cantidad de productos de una encomienda.
@@ -29,8 +29,7 @@ public class Encomienda extends Servicio{
     */
     protected tipoEncomienda getTipoE(){
         return tipoE;
-    }
-    
+    }  
     
     /**
     * Método constructor parametrizado de Encomienda.
@@ -46,5 +45,4 @@ public class Encomienda extends Servicio{
         this.cantidadProductos = cantProd;
         this.tipoE = tipoE;
     }
-    
 }
