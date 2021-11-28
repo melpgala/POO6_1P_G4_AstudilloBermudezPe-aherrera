@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * @author Dante Astudillo
  */
 public class Pedido {
+    private int codPedido
     private String nombreRestaurante;
     private ArrayList  <Plato> platosElegidos  = new ArrayList();
     
@@ -47,5 +48,10 @@ public class Pedido {
     */
     protected void agregarPlatos(Plato p){
         platosElegidos.add(p);
+    }
+    
+    protected static int generarCodPedido(){
+    int codP=(int)(Math.random()*(9999-1000)+1000);
+        return codP;
     }
 }
