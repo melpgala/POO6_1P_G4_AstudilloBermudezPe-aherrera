@@ -49,8 +49,5 @@ public class Pedido {
         platosElegidos.add(p);
     }
     
-    protected static int generarCodPedido(){
-    int codP=(int)(Math.random()*(9999-1000)+1000);
-        return codP;
-    }
+    
 }
