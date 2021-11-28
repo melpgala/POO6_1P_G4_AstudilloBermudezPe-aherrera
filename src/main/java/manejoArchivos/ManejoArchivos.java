@@ -1,8 +1,7 @@
     /**
-    * manejoArchivos contiene a la clase ManejoArchivos.
+    * manejoArchivos contiene a la clase ManejoArchivos del proyecto.
     */
 package manejoArchivos;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -20,9 +19,9 @@ public class ManejoArchivos {
     }
     
     /**
-    * Metodo para leer un archivo.
+    * Método estatico para leer un archivo.
     * @param nombrearchivo Nombre del archivo que se quiere leer.
-    * @return ArrayList con las lineas del archivo.
+    * @return ArrayList con objetos String con las lineas del archivo.
     */
     public static ArrayList<String> LeeFichero(String nombrearchivo) {
         ArrayList<String> lineas = new ArrayList<>();
@@ -64,9 +63,9 @@ public class ManejoArchivos {
     }
 
     /**
-    * Metodo que escribe en un archivo.
+    * Método estatico que escribe en un archivo.
     * @param nombreArchivo Nombre del archivo en el que se quiere escribir.
-    * @linea linea Cadena que se quiere escribir en el archivo.
+    * @param linea Cadena que se quiere escribir en el archivo.
     */
     public static void EscribirArchivo(String nombreArchivo, String linea) {
 
