@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
  * @author Melanie Peñaherrera
  */
 public class Delivery extends Servicio {
-    Pedido pedido;
+     private Pedido pedido;
     
     /**
     * Método constructor parametrizado de Delivery.
