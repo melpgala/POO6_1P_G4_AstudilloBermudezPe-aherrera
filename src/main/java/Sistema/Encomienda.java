@@ -17,7 +17,7 @@ public class Encomienda extends Servicio{
     
     /**
     * Método que devuelve la cantidad de productos de una encomienda.
-    * @return Devuelve la cantidad de productos de una encomienda.
+    * @return Devuelve un int que indica la cantidad de productos de una encomienda.
     */
     protected int getCantidadProductos(){
         return cantidadProductos;
@@ -25,7 +25,7 @@ public class Encomienda extends Servicio{
     
     /**
     * Método que devuelve el tipo de encomienda.
-    * @return Devuelve el tipo de encomienda.
+    * @return Devuelve in tipoEncomienda que indica el tipo de encomienda.
     */
     protected tipoEncomienda getTipoE(){
         return tipoE;
@@ -33,7 +33,7 @@ public class Encomienda extends Servicio{
     
     
     /**
-    * Método constructor parametrizado.
+    * Método constructor parametrizado de Encomienda.
     * @tipoS Tipo de servicio.
     * @fechaHora Fecha y hora actual en la que se realizo la encomienda.
     * @codigo Codigo de servicio. 
