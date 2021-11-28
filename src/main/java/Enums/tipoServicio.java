@@ -6,7 +6,6 @@ package Enums;
 /**
  * Tipos de servicios que pueden ser utilizados
  * @author Melanie Peñaherrera
- * @see Servicio
  */
 public enum tipoServicio {
     /**
