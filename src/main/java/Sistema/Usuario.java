@@ -36,7 +36,7 @@ public abstract class Usuario {
     * @return Devuelve el tipo de usuario; "C" cliente y "R" conductor.
     */
     protected String identificarUsuario(String Usuarios,String Contrasenia){
-        ArrayList <String> usuarioCl = ManejoArchivos.LeeFichero("Usuario.txt");
+        ArrayList <String> usuarioCl = ManejoArchivos.LeeFichero("usuarios.txt");
         String tipoDU1="";
         for (int i=0;i<usuarioCl.size();i++){
             String user =usuarioCl.get(i).split(",")[3];
