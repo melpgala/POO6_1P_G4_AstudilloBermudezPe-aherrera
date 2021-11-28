@@ -10,132 +10,38 @@ import java.util.Scanner;
 import manejoArchivos.ManejoArchivos;
 
 /**
- *
- * @author User
+ * Esta clase contiene los métodos y atributos del sistema principal.
+ * @author Melanie Peñaherrera
+ * @author Astudillo Dante
  */
 public class Sistema {
-
-  /**  private static ArrayList<Usuario> usuarios = new ArrayList();
-
-    private static boolean iniciarSesion(Usuario u, String contrasenia) {
-        if (usuarios.contains(u) && u.getContrasenia.equals(contrasenia)) {
-            System.out.println("Usuario valido");
-            return true;
-
-        } else {
-            System.out.println("Usuario invalido");
-        }
-    }
-
-    private static void mostrarMenu(Usuario u) {
-        System.out.println("---------------MENU---------------\n");
-
-        System.out.println("Bienvenido");
-
-        Cliente cPrueba = new Cliente();
-        Conductor conPrueba = new Conductor();
-        if ("cliente".equalsIgnoreCase(u.identificarUsuario())) {///cliente
-            System.out.println("1. Solicitar servicio de taxi");
-            System.out.println("2. Solicitar comida a domicilio");
-            System.out.println("3. Solicitar entrega encomienda");
-            System.out.println("4. Consultar servicios");
-        } else if ("conductor".equalsIgnoreCase(u.indentificarUsuario)) {//conductor
-            System.out.println("1. Consultar Servicio Asingnado");
-        }
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Ingrese usuario: ");
-
-        Usuario u = sc.nextLine();
-        System.out.println("Ingrese contraseña: ");
-        String contrasenia = sc.nextLine();
-        
-        iniciarSesion(u, contrasenia);
-        mostrarMenu(u);
-
-        String entrada = "";
-
-        mostrarMenu(u);
-        System.out.print("Ingrese opcion:");
-        entrada = sc.nextLine();
-        switch (entrada) {
-            if("cliente".equalsIgnoreCase(u.indentificarUsuario)){
-                case "1":
-                //llamamos a metodo realizartest()
-                u.solicitarTaxi();
-                break;
-            case "2":
-                //mostramos mensaje de finalizacion
-                u.solicitarDelivery();
-                break;
-            case "3":
-                u.solicitarEncomienda();
-                break;
-            case "4":
-                u.consultarServicios();
-                break;
-            default:
-                //la opcion ingreada no esta dentro de las opciones del menu
-                System.out.println("Opcion invalida");
-                break;
-        }else if ("conductor".equalsIgnoreCase(u.indentificarUsuario) {
-                    switch (entrada) {
-                        case "1":
-                            u.consultarServicio();
-                            break;
-                        default:
-                            System.out.println("Opcion invalida");
-                            break;
-
-                    }
-                }
-
-    }
-
-}
-
-}
-**/
     static Scanner sc= new Scanner (System.in);
+  
     /**
-    *@author Astudillo Dante
+    * Método Static para iniciar Sesion; caso no estar registrado, pide los datos para crear cuenta
+    * @param User Usuario.
+    * @param Contra Contraseña del usuario.
+    * @return Devuelve un String que representa el tipo de usuario que inició sesión.
+    * @author Dante Astudillo
     */
-    /**
-    *Metodo Static para iniciar Sesion, caso no estar registrado, pide los datos para crear cuenta
-    *@return {String} tipo de Usuario: "C" or "R"
-    *@param{String,String}
-    *
-    */
-    
-    
     private static String iniciarSesion(String User,String Contra ) {
         boolean x=true;
         String tipoUsuario="";
         while(x){
-        
         Cliente cliente= new Cliente(User);
-        String cli_cond=cliente.identificarUsuario(User,Contra);
-        
+        String cli_cond=cliente.identificarUsuario(User,Contra);     
         if (cli_cond.equals("C")){//si, tipo de cliente es igual cliente
             System.out.println("Usuario cliente encontrado");
             x=false;
             tipoUsuario=cli_cond;
-            
-            
+ 
         }else if(cli_cond.equals("R")){//ai tipo de conductor es igual a conductor
 //            Conductor conductor=new Conductor(User);
             System.out.println("Usuario conductor encontrado");
             x=false;
-            tipoUsuario=cli_cond;
-            
-            
-            
+            tipoUsuario=cli_cond;  
         }
         else{// caso contrario que el usuario no este registrado y solo admitimos registrar clientes se crea una cuenta
-            
             System.out.println("Ingrese Cedula");
             String cedula=sc.nextLine();
             System.out.println("Ingrese su nombre");
@@ -149,7 +55,6 @@ public class Sistema {
             System.out.println("Ingrese su edad");
             String edad=sc.nextLine();
             System.out.println("Ingrese Cedula");
-            
             cliente.Crearcuenta(cedula, nombre, apellido, User, Contra, celular, numtarjeta, edad);
             System.out.println("Cuenta Creada");
             }
@@ -157,59 +62,49 @@ public class Sistema {
         return tipoUsuario;
     }   
     
-  /**
-  *@author AstudilloDante
-  *Metodo para Mostrar menu una vez inicia sesion
-  *@return {int} eleccion de las opciones propuestas
-  *@param {String}
+    /**
+    * Método que muestra el menu dependiendo del tipo de usuario.
+    * @param tipoUsuario Tipo de usuario.
+    * @return Devuelve in int que indica la eleccion de las opciones del menu.
+    * @author Melanie Peñaherrera
+    * @author Dante Astudillo
     */
-    
-    private static int mostrarMenu(String tipoUsuario) {
-        
+    private static int mostrarMenu(String tipoUsuario) { 
         if ("C".equalsIgnoreCase(tipoUsuario )) {///cliente
             System.out.println("1. Solicitar servicio de taxi");
             System.out.println("2. Solicitar comida a domicilio");
             System.out.println("3. Solicitar entrega encomienda");
             System.out.println("4. Consultar servicios");
+            System.out.println("4. Salir");
         } else if ("R".equalsIgnoreCase(tipoUsuario)) {//conductor
-            System.out.println("1. Consultar Servicio Asingnado");  
-        
+            System.out.println("1. Consultar Servicio Asignado");
+            System.out.println("2. Salir");
         }
-        System.out.print("Ingrese opcion:");
-        
+        System.out.print("Ingrese opcion:"); 
         return sc.nextInt();
     }
     
     /**
-    *@author Astudillo Dante
-    *Metodo Main principal del Programa 
+    * Método static Main principal del Programa 
+    * @author Dante Astudillo
+    * @author Melanie Peñaherrera
     */   
-    
-
     public static void main(String[] args) {
         System.out.println("---------------MENU---------------\n");
-
         System.out.println("Bienvenido");
-        
         System.out.println("Usuario: ");
         String User=sc.next() ;
         System.out.println("Contraseña: ");
         String Contra=sc.next();
-        
         String tipo= iniciarSesion(User,Contra);
-        
         int valor = mostrarMenu(tipo);
-        
         if("C".equals(tipo)){
             Cliente c=new Cliente(User);
             switch (valor) {
-            
                 case 1:
-                    //llamamos a metodo realizartest()
                     c.solicitarTaxi();
                     break;
                 case 2:
-                    //mostramos mensaje de finalizacion
                     c.solicitarDelivery();
                     break;
                 case 3:
@@ -218,6 +113,9 @@ public class Sistema {
                 case 4:
                     c.consultarServicio();
                     break;
+                case 5:
+                  System.out.println("Ha salido exitosamente");
+                  break;
                 default:
                     //la opcion ingreada no esta dentro de las opciones del menu
                     System.out.println("Opcion invalida");
@@ -230,7 +128,6 @@ public class Sistema {
                     String usuario=datos.get(i).split(",")[3];
                     if(usuario.equals(User)){
                         cedula=datos.get(i).split(",")[0];
-                        
                     }
                 }
                 Conductor c=new Conductor(cedula);
@@ -238,13 +135,13 @@ public class Sistema {
                         case 1:
                             c.consultarServicio();
                             break;
+                        case 2:
+                            System.out.println("Ha salido exitosamente");
+                            break;
                         default:
                             System.out.println("Opcion invalida");
                             break;
-
                     }
                 }
-
     }
-
 }
