@@ -22,8 +22,7 @@ public class Servicio {
     private int codigo;
     private Ruta ruta;
     
-    private Scanner sc;
-    sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     
     /**
     * Método que devuelve la ruta del servicio.
