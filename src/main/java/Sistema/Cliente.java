@@ -161,7 +161,7 @@ public class Cliente extends Usuario{
     * @author Melanie Peñaherrera
     */
 
-    protected void solicitarTaxi(){
+    protected Taxi solicitarTaxi(){
         System.out.println("Ingrese número de pasajeros: ");
         int numPasajeros = sc.nextInt();
         sc.nextLine();
@@ -170,7 +170,7 @@ public class Cliente extends Usuario{
         Taxi servicioTaxi = new Taxi(TAXI, fechaHora, codigo,numPasajeros);
         tipoPago tipoDePago = Pago.elegirTipoPago();
         servicioTaxi.calcularValorPagar(tipoDePago);
-        
+        return servicioTaxi;
     }
     /**
     * Método que crea un servicio de entrega de encomiendas.
