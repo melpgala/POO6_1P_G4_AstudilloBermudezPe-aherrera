@@ -1,33 +1,40 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Sistema contiene las clases del proyecto.
  */
 package Sistema;
 import java.util.ArrayList;
 import manejoArchivos.ManejoArchivos;
 
 /**
- *
- * @author Astudillo Dante
+ * Esta clase contiene los métodos y atributos de un restaurante.
+ * @author Dante Astudillo
  */
 public class Restaurante {
     
     private ArrayList<Double> listadoPreciosPlatos;
     private ArrayList<String> listadoPlatosDisponibles;
     
+    /**
+    * Método que devuelve el listado de precios de los platos disponibles.
+    * @return Devuelve un ArrayList <double> que indica el listado de precios de los platos disponibles.
+    */
     public ArrayList<Double> getListadoPreciosPlatos(){
         return listadoPreciosPlatos;
     }
+    
+    /**
+    * Método que devuelve un listado de platos dispibles.
+    * @return Devuelve un ArrayList <String> que indica el listado de platos disponibles.
+    */
     public ArrayList<String> getListadoPlatosDisponibles(){
         return listadoPlatosDisponibles;
     }
+    
     /**
     *
-    *Representa la lista de Platillos del Restaurant Seleccionado
-    *@constructor
-    *@param {String} codigo recive el codigo del restaurant y buscar su informacion
-    *
+    * Método constructor parametrizado de la clase Restaurante.
+    * @param codigo Código del restaurante elegido por el cliente.
+    * @author Dante Astudillo
     */
     
     public Restaurante(String codigo){
@@ -39,6 +46,4 @@ public class Restaurante {
             }
         }
     }
-    
-  
 }
