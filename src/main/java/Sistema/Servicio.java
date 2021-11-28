@@ -157,4 +157,8 @@ public class Servicio {
     int cod=(int)(Math.random()*(99999-10000)+10000);
         return cod;
     }
+    protected static int generarCodPedido(){
+    int codP=(int)(Math.random()*(9999-1000)+1000);
+        return codP;
+    }
 }
