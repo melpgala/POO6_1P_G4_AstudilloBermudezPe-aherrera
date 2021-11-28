@@ -33,7 +33,7 @@ public class Cliente extends Usuario{
     * @author Dante Astudillo
     */
     public Cliente(String Usuario){
-    ArrayList <String > clienteCL = ManejoArchivos.LeeFichero("Usuario.txt");
+    ArrayList <String > clienteCL = ManejoArchivos.LeeFichero("usuarios.txt");
      for (int i = 0 ; i < clienteCL.size() ; i++){
         numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
         cedula = clienteCL.get(i).split(",")[0];
@@ -57,8 +57,8 @@ public class Cliente extends Usuario{
     protected void  Crearcuenta(String Cedula, String nombre,String Apellido,String User,String Contrasenia, String celular,String numtarjeta,String edad){// creacion de cuenta  para cliente
         String linea = Cedula+","+nombre+","+Apellido+","+User+","+Contrasenia+","+celular ;
         String linea2 = Cedula+","+edad+","+numtarjeta ;
-        ManejoArchivos.EscribirArchivo("Usuario.txt",linea);//se guarda los datos en un orden al archivo "  .txt"
-        ManejoArchivos.EscribirArchivo("Cliente.txt",linea2);
+        ManejoArchivos.EscribirArchivo("usuarios.txt",linea);//se guarda los datos en un orden al archivo "  .txt"
+        ManejoArchivos.EscribirArchivo("clientes.txt",linea2);
     }
     
     /**
