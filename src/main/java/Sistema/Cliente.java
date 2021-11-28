@@ -85,6 +85,7 @@ public class Cliente extends Usuario{
     protected Delivery solicitarDelivery (){
         LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
+        int codigoPedido= Servicio.generarCodPedido
         double valorTotalPagar = 0;
         Pedido pedido = new Pedido();
         System.out.println("Bienvenido!! Elija un restaurante: ");
