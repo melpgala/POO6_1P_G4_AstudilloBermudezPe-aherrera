@@ -1,13 +1,25 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Sistema contiene las clases del proyecto.
+ */
+package Sistema;
+import Enums.tipoPago;
+import static Enums.tipoPago.EFECTIVO;
+import static Enums.tipoPago.TARJETA;
+import java.util.Scanner;
+/*
+ * Esta clase contiene los métodos y atributos de un pago.
+ * @author Melanie Peñaherrera
  */
 public class Pago {
     Cliente cliente;
     tipoPago tipo;
     Servicio servicio;
-    
+
+    /**
+    * Método estatico que devuelve el tipo de pago.
+    * @return Devuelve el tipo de pago.
+    * @authoe Melanie Peñaherrera
+    */
     public static tipoPago elegirTipoPago(){
         Scanner sc = new Scanner(System.in);
         System.out.println("1. Efectivo \n2. Tarjeta \nIngrese que tipo de pago va a realizar: ");
