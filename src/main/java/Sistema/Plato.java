@@ -13,8 +13,7 @@ public class Plato {
     private double precioPlato;
     private int cantPlatos;
     
-    private Scanner sc;
-    sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     /**
     * Método constructor parametrizado de la clase plato.
     * @param nombrePlato Nombre del platillo
