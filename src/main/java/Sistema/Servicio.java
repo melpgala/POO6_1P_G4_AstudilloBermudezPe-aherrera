@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Sistema contiene las clases del proyecto.
  */
 
 package Sistema;
@@ -13,8 +11,10 @@ import manejoArchivos.ManejoArchivos;
 import java.util.Scanner;
 
 /**
- *
- * @author User
+ * Esta clase contiene los métodos y atributos de un servicio.
+ * @author Alex Bermudez
+ * @author Melanie Peñaherrera
+ * @author Dante Astudillo
  */
 public class Servicio {
     private tipoServicio tipoS;
@@ -22,12 +22,27 @@ public class Servicio {
     private int codigo;
     private Ruta ruta;
     
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc;
+    sc = new Scanner(System.in);
     
+    /**
+    * Método que devuelve la ruta del servicio.
+    * @return Devuelve una Ruta que indica el origen y destino del servicio.
+    * @author Dante Astudillo 
+    * @author Alex Bermudez
+    * @author Melanie Peñaherrera
+    */
     public Ruta getRuta(){
         return ruta;
     }
-     
+    
+    /**
+    * Método constructor parametrizado de la clase Servicio.
+    * @param tipoS Tipo de servicio.
+    * @param fechaHora Fecha y hora actual en la que se pidió el servicio.
+    * @param codigo Codigo del servicio.
+    * @author 
+    */
     protected Servicio(tipoServicio tipoS, LocalDateTime fechaHora, int codigo){
         this.tipoS = tipoS;
         this.fechaHora = fechaHora;
@@ -35,16 +50,37 @@ public class Servicio {
         Ruta ruta = new Ruta();   
         this.ruta = ruta;
     }
+    
+    /**
+    * Método que devuelve el tipo del servicio.
+    * @return Devuelve un tipoServicio que indica el tipo de servicio.
+    */
     protected tipoServicio getTipo(){
         return tipoS;
     }
+    
+    /**
+    * Método que devuelve la fecha y hora en la que se pidió el servicio.
+    * @return Devuelve un LocalDateTime que indica la fecha y hora en la que se pidio el servico.
+    */
     protected LocalDateTime getFechaHora(){
         return fechaHora;
     }
+    
+    /**
+    * Método que devuelve el código del servicio.
+    * @return Devuelve un int que representa el código del servicio.
+    */
     protected int getCodigo(){
         return codigo;
     }
     
+    /**
+    * Método que devuelve el nombre de un conductor que cumpla los requisitos para realizar el servicio.
+    * @return Devuelve un String que indica el nombre del conductor que cumpla los requisitos para realizar el servicio.
+    * @author Melanie Peñaherrera
+    * @author 
+    */
     protected String buscarConductor(){
         ArrayList <String> conductores = ManejoArchivos.LeeFichero("conductores.txt");
         String conductorAsignado ="";
@@ -75,6 +111,11 @@ public class Servicio {
         } 
         return conductorAsignado;
     }
+    
+    /**
+    * Método que cálcula y muestra el valor a pagar de un servicio.
+    * @param tp Tipo de pago que realizara.
+    */
     protected void calcularValorPagar(tipoPago tp){
         double numAleatorio =Math.random()*10;
         double valorTotalPagar= 0;
@@ -86,6 +127,11 @@ public class Servicio {
         System.out.println("El valor total a pagar es: "+valorTotalPagar);
     }
     
+    /**
+    * Método que cálcula y muestra el valor a pagar de un servicio.
+    * @param valorTotalPagar Valor total a pagar por los platos.
+    * @param tp Tipo de pago que realizara.
+    */
     protected void calcularValorPagar(double valorTotalPagar,tipoPago tp){
         double precioEntrega =Math.random()*5;
         if (tp.equals(tipoPago.EFECTIVO)){
@@ -96,6 +142,10 @@ public class Servicio {
         System.out.println("El valor total a pagar es: "+valorTotalPagar);
     }
     
+    /**
+    * Método estatico que generaa un código por el servicio.
+    * @return Devuelve un int que indica el código por el servicio.
+    */
     protected static int generarCodServicio(){
     int cod=(int)(Math.random()*(99999-10000)+10000);
         return cod;
