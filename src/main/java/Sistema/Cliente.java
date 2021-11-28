@@ -1,5 +1,5 @@
 /*
- * Sistema contiene la clase cliente.
+ * Sistema contiene las clases proyecto.
  */
 package Sistema;
 import Enums.tipoEncomienda;
