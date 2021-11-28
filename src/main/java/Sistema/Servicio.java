@@ -40,7 +40,6 @@ public class Servicio {
     * @param tipoS Tipo de servicio.
     * @param fechaHora Fecha y hora actual en la que se pidió el servicio.
     * @param codigo Codigo del servicio.
-    * @author 
     */
     protected Servicio(tipoServicio tipoS, LocalDateTime fechaHora, int codigo){
         this.tipoS = tipoS;
