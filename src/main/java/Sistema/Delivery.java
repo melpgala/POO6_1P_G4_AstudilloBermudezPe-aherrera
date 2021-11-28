@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
  */
 public class Delivery extends Servicio {
      private Pedido pedido;
+     private int codigoPedido;
     
     /**
     * Método constructor parametrizado de Delivery.
@@ -22,9 +23,10 @@ public class Delivery extends Servicio {
     * @param pedido Pedido de servicio Delivery.
     * @author Alex Bermudez
     */
-    public Delivery(tipoServicio tipo, LocalDateTime fechaHora, int codigo, Pedido pedido) {
+    public Delivery(tipoServicio tipo, LocalDateTime fechaHora, int codigo, Pedido pedido, int codigoPedido) {
         super(tipo, fechaHora, codigo);
         this.pedido = pedido;
+        this.codigoPedido = codigoPedido;
     }
     /**
     * Método que devuelve el pedido del delivery.
