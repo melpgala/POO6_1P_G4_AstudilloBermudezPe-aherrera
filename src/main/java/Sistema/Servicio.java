@@ -76,14 +76,14 @@ public class Servicio {
     }
     
     /**
-    * Método que devuelve el nombre de un conductor que cumpla los requisitos para realizar el servicio.
-    * @return Devuelve un String que indica el nombre del conductor que cumpla los requisitos para realizar el servicio.
+    * Método que devuelve la cédula de un conductor que cumpla los requisitos para realizar el servicio.
+    * @return Devuelve un String que indica la cédula del conductor que cumpla los requisitos para realizar el servicio.
     * @author Melanie Peñaherrera
-    * @author 
+    * @author Alex Bermudez
     */
     protected String buscarConductor(){
         ArrayList <String> conductores = ManejoArchivos.LeeFichero("conductores.txt");
-        String conductorAsignado ="";
+        String cedConductorAsignado ="";
         for(String conductor : conductores){
             String estadoCond = conductor.split(",")[2];
             int codVehiculo = Integer.valueOf(conductor.split(",")[3]);
@@ -93,23 +93,23 @@ public class Servicio {
                 switch(this.tipoS){
                     case TAXI:
                         if (tipo.equals("A")){
-                            conductorAsignado = conductor;
+                            cedConductorAsignado = conductor.split(",")[0];
                         }
                         break;
                     case DELIVERY:
                         if (tipo.equals("M")){
-                            conductorAsignado = conductor;
+                            cedConductorAsignado = conductor.split(",")[0];
                         }
                         break;
                     case ENCOMIENDA:
                         if (tipo.equals("M")){
-                            conductorAsignado = conductor;
+                            cedConductorAsignado = conductor.split(",")[0];
                         }
                         break;
                 } 
             }
         } 
-        return conductorAsignado;
+        return cedConductorAsignado;
     }
     
     /**
