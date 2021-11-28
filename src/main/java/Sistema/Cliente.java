@@ -30,12 +30,6 @@ public class Cliente extends Usuario{
     private ArrayList <Servicio>ServiciosPedidos;
     
     /**
-    * Metodo constructor por defecto de cliente.
-    */
-    public Cliente(){
-    }
-    
-    /**
     * Método constructor parametrizado de cliente.
     * @param Usuario Un tipo de Usuario.
     * @author Dante Astudillo
@@ -71,7 +65,7 @@ public class Cliente extends Usuario{
     
     /**
     * Método que devuelve el número de cédula del cliente.
-    * @return Devuelve el número de cédula del cliente.
+    * @return Devuelve un String que indica el número de cédula del cliente.
     */
     protected String getcedula(){
         return cedula;
@@ -79,7 +73,7 @@ public class Cliente extends Usuario{
     
     /**
     * Método que devuelve el número de tarjeta de crédito del cliente.
-    * @return Devuelve el número de tarjeta de crédito del cliente.
+    * @return Devuelve un int que indica el número de tarjeta de crédito del cliente.
     */
     protected int  getnumtarjetaCredito(){
         return numtarjetaCredito;
