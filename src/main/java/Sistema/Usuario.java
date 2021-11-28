@@ -11,7 +11,13 @@ import manejoArchivos.ManejoArchivos;
  * @author AstudilloDante
  */
 public abstract class Usuario {
+    /**
+     * Atributo Usuario de la clase abstracta Usuario
+     */
     protected String Usuario;
+    /**
+     * Atributo Contrasenia de la clase abstracta Usuario
+     */
     protected String Contrasenia;
     
     /**
