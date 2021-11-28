@@ -13,7 +13,8 @@ public class Plato {
     private double precioPlato;
     private int cantPlatos;
     
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc;
+    sc = new Scanner(System.in);
     /**
     * Método constructor parametrizado de la clase plato.
     * @param nombrePlato Nombre del platillo
@@ -28,7 +29,6 @@ public class Plato {
     * Metodo que devuelve el nombre del plato.
     * @return Devuelve un String que indica el nombre del plato.
     */
-    
     public String getNombrePlato(){
         return nombrePlato;
     }
@@ -37,7 +37,6 @@ public class Plato {
     * Metodo que devuelve el precio del plato.
     * @return Devuelve un double que indica el precio del plato.
     */
-    
     public double getPrecioPlato(){
         return precioPlato;
     }
