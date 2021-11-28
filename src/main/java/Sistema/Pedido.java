@@ -10,7 +10,6 @@ import java.util.ArrayList;
  * @author Dante Astudillo
  */
 public class Pedido {
-    private int codPedido
     private String nombreRestaurante;
     private ArrayList  <Plato> platosElegidos  = new ArrayList();
     
