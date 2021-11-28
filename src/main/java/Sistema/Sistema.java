@@ -106,7 +106,7 @@ public class Sistema {
                     int confirmar =sc.nextInt();
                     switch(confirmar){
                         case 1:
-                            
+                            //aqui iria el resto del programa si tuviera 
                         case 2:
                             mostrarMenu(tipoUsuario);
                         default:
@@ -119,7 +119,7 @@ public class Sistema {
                     int confirmar =sc.nextInt();
                     switch(confirmar){
                         case 1:
-                            
+                             //aqui iria el resto del programa si tuviera 
                         case 2:
                             mostrarMenu(tipoUsuario);
                         default:
@@ -127,7 +127,7 @@ public class Sistema {
                     break;
                 case 4:
                     c.consultarServicio();
-                    
+                     //aqui iria el resto del programa si tuviera 
                     break;
                 case 5:
                   System.out.println("Ha salido exitosamente");
