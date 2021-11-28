@@ -21,7 +21,7 @@ public class Servicio {
     private LocalDateTime fechaHora;
     private int codigo;
     private Ruta ruta;
-    private int valorapagar;
+    private Double valorapagar;
     
     Scanner sc = new Scanner(System.in);
     
