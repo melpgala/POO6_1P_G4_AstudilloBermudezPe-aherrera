@@ -25,8 +25,7 @@ public class Cliente extends Usuario{
     private int numtarjetaCredito;
     private String cedula;
     private ArrayList <Servicio>ServiciosPedidos;
-    private Scanner sc;
-    sc= new Scanner(System.in);
+     Scanner sc = new Scanner(System.in);
 
     /**
     * Método constructor parametrizado de cliente.
@@ -125,7 +124,7 @@ public class Cliente extends Usuario{
             } 
         }
         Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido);
-        servicioDelivery.pedido.setNombreRestaurante(nomRestaurante);
+        servicioDelivery.getPedido().setNombreRestaurante(nomRestaurante);
         Servicio servicioDel = (Servicio)servicioDelivery;
         tipoPago tipoDePago = Pago.elegirTipoPago();
         servicioDel.calcularValorPagar(valorTotalPagar,tipoDePago);
