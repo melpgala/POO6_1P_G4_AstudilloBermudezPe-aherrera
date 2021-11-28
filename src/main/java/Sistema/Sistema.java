@@ -88,42 +88,18 @@ public class Sistema {
                 case 1:
                     Taxi Taxidatosdelcliente= c.solicitarTaxi();
                     
-                    System.out.println("desea confirmar su compra? si 1.-/no 2.-");
-                    int confirmar =sc.nextInt();
-                    switch(confirmar){
-                        case 1:
-                            
-                        case 2:
-                            mostrarMenu(tipoUsuario);
-                        default:
-                            System.out.println("se cayo el programa ya fue me dio amsiedad" )
+                    confirmar();
                     }
                     break;
                 case 2:
                     Delivery Deliverydatosdelcliente= c.solicitarDelivery();
-           
-                    System.out.println("desea confirmar su compra? si 1.-/no 2.-");
-                    int confirmar =sc.nextInt();
-                    switch(confirmar){
-                        case 1:
-                            //aqui iria el resto del programa si tuviera 
-                        case 2:
-                            mostrarMenu(tipoUsuario);
-                        default:
-                            System.out.println("se cayo el programa ya fue me dio amsiedad" )
+                    confirmar();
+                    
                     break;
                 case 3:
                             
                     Encomienda Encomiendodatosdelcliente = c.solicitarEncomienda();
-                    System.out.println("desea confirmar su compra? si 1.-/no 2.- ");
-                    int confirmar =sc.nextInt();
-                    switch(confirmar){
-                        case 1:
-                             //aqui iria el resto del programa si tuviera 
-                        case 2:
-                            mostrarMenu(tipoUsuario);
-                        default:
-                            System.out.println("se cayo el programa ya fue me dio amsiedad" )
+                    confirmar();
                     break;
                 case 4:
                     c.consultarServicio();
@@ -159,6 +135,21 @@ public class Sistema {
                             break;
                     }
                 }
+    
+    }
+    public void confirmar(){
+        System.out.println("desea confirmar su compra? si 1.-/no 2.- ");
+        int confirmar =sc.nextInt();
+        switch(confirmar){
+            case 1:
+                 //aqui iria el resto del programa si tuviera 
+                break;
+            case 2:
+                mostrarMenu(tipoUsuario);
+                break;
+            default;
+                System.out.println("se cayo el programa ya fue me dio amsiedad" );
+                break;
     
     }
     
