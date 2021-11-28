@@ -16,7 +16,7 @@ public class Restaurante {
     
     /**
     * Método que devuelve el listado de precios de los platos disponibles.
-    * @return Devuelve un ArrayList <double> que indica el listado de precios de los platos disponibles.
+    * @return Devuelve un ArrayList con objetos double que indica el listado de precios de los platos disponibles.
     */
     public ArrayList<Double> getListadoPreciosPlatos(){
         return listadoPreciosPlatos;
@@ -24,7 +24,7 @@ public class Restaurante {
     
     /**
     * Método que devuelve un listado de platos dispibles.
-    * @return Devuelve un ArrayList <String> que indica el listado de platos disponibles.
+    * @return Devuelve un ArrayList con objetos String que indica el listado de platos disponibles.
     */
     public ArrayList<String> getListadoPlatosDisponibles(){
         return listadoPlatosDisponibles;
