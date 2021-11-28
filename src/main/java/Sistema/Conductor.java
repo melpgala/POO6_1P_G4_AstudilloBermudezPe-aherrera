@@ -106,7 +106,7 @@ public class Conductor extends Usuario{
                 fechahoraAsignado = datos.split(",")[5];
                 desde = datos.split(",")[3];
                 hasta = datos.split(",")[4];
-                recojer = "encomienda
+                recojer = "encomienda";
             }            
         }
         
