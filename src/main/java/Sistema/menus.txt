@@ -1,0 +1,26 @@
+codigoRestaurante,nombrePlato,precio
+678,mc bacon combo,4.82
+678,mc nuggets combo, 6.00
+678,mc flurry frutilla,1.90 
+678,mc flurry manjar,1.90
+678,mc flurry chocolate,190
+875,combo 1,3.50
+875,combo 2,5.60
+875,combo 3,6.75
+875,combo 4,4.50
+875,jugo de naranja,1.50
+736,milshake vainilla,4.50
+736,milshake chocolate,4.50
+736,cafe expreso,1.50
+736,tarta de jamon,3.50
+736,cheescake fresa,4.00
+822,desayuno tradicional,4.50
+822,bolon mixto,2.50
+822,desayuno americano,4.00
+822,tigrillo,2.50
+822,sanduche,1.25
+546,pizza pequeña,6.50
+546,pizza mediana,8.75
+546,pizza grande,11.50
+546,pizza personalizada,8.00
+546,bebida gaseosa,1.50

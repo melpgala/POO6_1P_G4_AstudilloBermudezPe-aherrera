@@ -1,0 +1,6 @@
+codigoVehiculo,placa,modelo,marca,tipo
+12,GTS1342,Onix,Chevrolet,A
+34,GET4355,CX3,Mazda,A
+15,GUW4745,E12,Honda,M
+22,GJE2342,G20,Suzuki,M
+26,GYE1374,A220,Mercedes,A

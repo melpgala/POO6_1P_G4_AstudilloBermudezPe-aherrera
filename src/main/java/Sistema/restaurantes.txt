@@ -1,0 +1,6 @@
+codigoRestaurante,nombreRestaurante
+678,Mc Donalds
+875,Naturissimo
+736,Sweet and Coffee
+822,Café de Tere
+546,Pizza Dominos
