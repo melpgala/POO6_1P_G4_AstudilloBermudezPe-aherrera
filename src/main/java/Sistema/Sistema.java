@@ -86,7 +86,7 @@ public class Sistema {
             Cliente c=new Cliente(User);
             switch (valor) {
                 case 1:
-                    c.solicitarTaxi();
+                    Taxi Taxidatosdelcliente= c.solicitarTaxi();
                     
                     System.out.println("desea confirmar su compra? si 1.-/no 2.-");
                     int confirmar =sc.nextInt();
@@ -100,7 +100,7 @@ public class Sistema {
                     }
                     break;
                 case 2:
-                    c.solicitarDelivery();
+                    Delivery Deliverydatosdelcliente= c.solicitarDelivery();
            
                     System.out.println("desea confirmar su compra? si 1.-/no 2.-");
                     int confirmar =sc.nextInt();
@@ -113,7 +113,8 @@ public class Sistema {
                             System.out.println("se cayo el programa ya fue me dio amsiedad" )
                     break;
                 case 3:
-                    c.solicitarEncomienda();
+                            
+                    Encomienda Encomiendodatosdelcliente = c.solicitarEncomienda();
                     System.out.println("desea confirmar su compra? si 1.-/no 2.- ");
                     int confirmar =sc.nextInt();
                     switch(confirmar){
