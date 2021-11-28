@@ -1,4 +1,4 @@
-/*
+/**
  * Contiene las clases del proyecto
  */
 package Sistema;
@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 /**
  * Esta clase contiene los atributos y métodos de una encomienda.
  * @author Alex Bermudez
- * @see Servicio
  */
 public class Encomienda extends Servicio{
     private int cantidadProductos;
@@ -33,11 +32,11 @@ public class Encomienda extends Servicio{
     
     /**
     * Método constructor parametrizado de Encomienda.
-    * @tipoS Tipo de servicio.
-    * @fechaHora Fecha y hora actual en la que se realizo la encomienda.
-    * @codigo Codigo de servicio. 
-    * @cantProd Cantidad de productos de la encomienda.
-    * @tipoE Tipo de encomienda.
+    * @param tipoS Tipo de servicio.
+    * @param fechaHora Fecha y hora actual en la que se realizo la encomienda.
+    * @param codigo Codigo de servicio. 
+    * @param cantProd Cantidad de productos de la encomienda.
+    * @param tipoE Tipo de encomienda.
     * @author Alex Bermudez
     */
     public Encomienda(tipoServicio tipoS, LocalDateTime fechaHora, int codigo, int cantProd, tipoEncomienda tipoE){
