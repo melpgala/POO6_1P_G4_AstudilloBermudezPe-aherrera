@@ -10,7 +10,6 @@ import manejoArchivos.ManejoArchivos;
  * Esta clase contiene los atributos y métodos de un conductor.
  * @author Melanie Peñaherrera
  * @author Alex Bermudez
- * @see Usuario
  */
 public class Conductor extends Usuario{
     private String nombre; 
@@ -75,19 +74,47 @@ public class Conductor extends Usuario{
         ArrayList <String> listaEncomiendas = ManejoArchivos.LeeFichero("encomiendas.txt");
         String nombreApellidoConductor = this.getNombreApellido();
         String datosConductor = "";
+        String tipoAsignado = "";
+        String fechahoraAsigando = "";
+        String desde = "";
+        String hasta = "";
+        String recojer = "";
         for (String datos : listaDelivery){
             datosConductor=datos.split(",")[2];
             if (nombreApellidoConductor.equals(datosConductor)){
-                
-            }
-            
+                tipoAsignado = "Delivery";
+                fechahoraAsignado = datos.split(",")[5];
+                desde = datos.split(",")[3];
+                hasta = datos.split(",")[4];
+                recojer = "el delivery"
+            }            
+        }
+        for (String datos : listaTaxi){
+            datosConductor=datos.split(",")[2];
+            if (nombreApellidoConductor.equals(datosConductor)){
+                tipoAsignado = "Taxi";
+                fechahoraAsignado = datos.split(",")[5];
+                desde = datos.split(",")[3];
+                hasta = datos.split(",")[4];
+                recojer = "pasajero(s)";
+            }            
+        }
+        for (String datos : listaEncomiendas){
+            datosConductor=datos.split(",")[2];
+            if (nombreApellidoConductor.equals(datosConductor)){
+                tipoAsignado = "Encomienda";
+                fechahoraAsignado = datos.split(",")[5];
+                desde = datos.split(",")[3];
+                hasta = datos.split(",")[4];
+                recojer = "encomienda
+            }            
         }
         
-        System.out.println("Usted tiene asignado el servicio de ");
-        System.out.println("Fecha - Hora: ");
-        System.out.println("Desde: ");//ruta origen
-        System.out.println("Hasta: ");//ruta destino 
-        System.out.println("Diríjase al sitio para");
+        System.out.println("Usted tiene asignado el servicio de "+tipoAsignado);
+        System.out.println("Fecha - Hora: "+fechahoraAsignado);
+        System.out.println("Desde: "+desde);//ruta origen
+        System.out.println("Hasta: "+hasta);//ruta destino 
+        System.out.println("Diríjase al sitio para recojer "+recojer);
         
 
     }
