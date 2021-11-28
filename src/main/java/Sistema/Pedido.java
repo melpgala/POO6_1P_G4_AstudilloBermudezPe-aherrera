@@ -14,11 +14,19 @@ public class Pedido {
     private ArrayList  <Plato> platosElegidos  = new ArrayList();
     
     /**
-    * Método que devuelve un ArrayList de platos.
-    * @return Devuelve un Arraylist de Platos.
+    * Método que devuelve el nombre del restaurante al que se hizo el pedido.
+    * @return Devuelve un String que indica el nombre del restaurante al que se hizo el pedido.
     */
-    public ArrayList <Plato> getPlatosElegidos(){
-        return platosElegidos;
+    public String getNombreRestaurante(){
+        return nombreRestaurante;
+    }
+    
+    /**
+    * Método que cambia el nombre del restaurante al que se hizo el pedido.
+    * @param nombreRestaurante Nombre del restaurante al que se hizo el pedido.
+    */
+    public void setNombreRestaurante(String nombreRestaurante){
+        this.nombreRestaurante = nombreRestaurante;
     }
     
     /**
