@@ -24,17 +24,16 @@ import java.util.Scanner;
 public class Cliente extends Usuario{
     private int numtarjetaCredito;
     private String cedula;
-    
-    Scanner sc = new Scanner(System.in);
-
     private ArrayList <Servicio>ServiciosPedidos;
-    
+    private Scanner sc;
+    sc= new Scanner(System.in);
+
     /**
     * Método constructor parametrizado de cliente.
     * @param Usuario Un tipo de Usuario.
     * @author Dante Astudillo
     */
-    public Cliente(String Usuario){  
+    public Cliente(String Usuario){
     ArrayList <String > clienteCL = ManejoArchivos.LeeFichero("Usuario.txt");
      for (int i = 0 ; i < clienteCL.size() ; i++){
         numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
@@ -60,7 +59,7 @@ public class Cliente extends Usuario{
         String linea = Cedula+","+nombre+","+Apellido+","+User+","+Contrasenia+","+celular ;
         String linea2 = Cedula+","+edad+","+numtarjeta ;
         ManejoArchivos.EscribirArchivo("Usuario.txt",linea);//se guarda los datos en un orden al archivo "  .txt"
-        ManejoArchivos.EscribirArchivo("Cliente.txt",linea2 );
+        ManejoArchivos.EscribirArchivo("Cliente.txt",linea2);
     }
     
     /**
@@ -80,7 +79,7 @@ public class Cliente extends Usuario{
     }
     
     /**
-    * Método que crea un objeto de servicio de delivery.
+    * Método que crea un servicio de delivery de comida.
     * @author Melanie Peñaherrera
     * @author Dante Astudillo 
     */
@@ -133,7 +132,7 @@ public class Cliente extends Usuario{
     }
     
     /**
-    * Método que muestra todos los servicios pedidos.
+    * Método sobrescrito que muestra todos los servicios pedidos.
     * @author Melanie Peñaherrera
     */
     @Override
@@ -157,7 +156,7 @@ public class Cliente extends Usuario{
     }
     
     /**
-    * Método que crea un objeto de servicio de taxi.
+    * Método que crea un servicio de taxi.
     * @author Melanie Peñaherrera
     */
 
@@ -173,7 +172,7 @@ public class Cliente extends Usuario{
         
     }
     /**
-    * Método que crea un objeto de servicio de encomiendas.
+    * Método que crea un servicio de entrega de encomiendas.
     * @author Melanie Peñaherrera
     */
     protected void solicitarEncomienda(){
