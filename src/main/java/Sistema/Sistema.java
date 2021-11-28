@@ -79,24 +79,8 @@ public class Sistema {
             System.out.println("2. Salir");
         }
         System.out.print("Ingrese opcion:"); 
-        return sc.nextInt();
-    }
-    
-    /**
-    * Método static Main principal del Programa 
-    * @author Dante Astudillo
-    * @author Melanie Peñaherrera
-    */   
-    public static void main(String[] args) {
-        System.out.println("---------------MENU---------------\n");
-        System.out.println("Bienvenido");
-        System.out.println("Usuario: ");
-        String User=sc.next() ;
-        System.out.println("Contraseña: ");
-        String Contra=sc.next();
-        String tipo= iniciarSesion(User,Contra);
-        int valor = mostrarMenu(tipo);
-        if("C".equals(tipo)){
+        Int valor sc.nextInt();
+          if("C".equals(tipo)){
             Cliente c=new Cliente(User);
             switch (valor) {
                 case 1:
@@ -141,5 +125,22 @@ public class Sistema {
                             break;
                     }
                 }
+    
     }
-}
+    
+    /**
+    * Método static Main principal del Programa 
+    * @author Dante Astudillo
+    * @author Melanie Peñaherrera
+    */   
+    public static void main(String[] args) {
+        System.out.println("---------------MENU---------------\n");
+        System.out.println("Bienvenido");
+        System.out.println("Usuario: ");
+        String User=sc.next() ;
+        System.out.println("Contraseña: ");
+        String Contra=sc.next();
+        String tipo= iniciarSesion(User,Contra);
+        int valor = mostrarMenu(tipo);
+      
+}}
