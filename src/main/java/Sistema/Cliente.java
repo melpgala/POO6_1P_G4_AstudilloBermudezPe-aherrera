@@ -124,7 +124,7 @@ public class Cliente extends Usuario{
                 continuar = false;
             } 
         }
-        Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido);
+        Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido,codigoPedido);
         servicioDelivery.getPedido().setNombreRestaurante(nomRestaurante);
         
         tipoPago tipoDePago = Pago.elegirTipoPago();
