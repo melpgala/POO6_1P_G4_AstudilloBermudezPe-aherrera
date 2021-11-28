@@ -35,4 +35,12 @@ public class Pago {
         }
         return tipoPago;
     }
+    
+    /**
+    * Método que
+    * @param b Booleano que indica si confirma o no el servicio
+    */
+    public void confirmarServicio(boolean b){
+        
+    }
 }
