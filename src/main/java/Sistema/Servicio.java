@@ -21,6 +21,7 @@ public class Servicio {
     private LocalDateTime fechaHora;
     private int codigo;
     private Ruta ruta;
+    private int valorapagar;
     
     Scanner sc = new Scanner(System.in);
     
@@ -74,6 +75,13 @@ public class Servicio {
     }
     
     /**
+    *Metodo que devuelve el codigo del servicio.
+    *@return {int} Devuelve un Double que representa el valor total a apgar
+    */
+    protected int getvalorapagar(){
+        return valorapagar
+        }
+    /**
     * Método que devuelve la cédula de un conductor que cumpla los requisitos para realizar el servicio.
     * @return Devuelve un String que indica la cédula del conductor que cumpla los requisitos para realizar el servicio.
     * @author Melanie Peñaherrera
@@ -114,15 +122,16 @@ public class Servicio {
     * Método que cálcula y muestra el valor a pagar de un servicio.
     * @param tp Tipo de pago que realizara.
     */
-    protected double calcularValorPagar(tipoPago tp){
+    protected void calcularValorPagar(tipoPago tp){
         double numAleatorio =Math.random()*10;
         double valorTotalPagar= 0;
         if (tp.equals(tipoPago.EFECTIVO)){
             valorTotalPagar=numAleatorio;
         }else if (tp.equals(tipoPago.TARJETA)){
             valorTotalPagar=numAleatorio*1.1;
+        
         }
-        return valorTotalPagar;
+        this.valorTotalPagar=valorTotalPagar;
     }
     
     /**
