@@ -67,7 +67,7 @@ public class Sistema {
     * @author Melanie Peñaherrera
     * @author Dante Astudillo
     */
-    private static int mostrarMenu(String tipoUsuario) { 
+    private static void mostrarMenu(String tipoUsuario) { 
         if ("C".equalsIgnoreCase(tipoUsuario )) {///cliente
             System.out.println("1. Solicitar servicio de taxi");
             System.out.println("2. Solicitar comida a domicilio");
@@ -79,21 +79,54 @@ public class Sistema {
             System.out.println("2. Salir");
         }
         System.out.print("Ingrese opcion:"); 
+        
         Int valor sc.nextInt();
-          if("C".equals(tipo)){
+        
+        if("C".equals(tipoUsuario)){
             Cliente c=new Cliente(User);
             switch (valor) {
                 case 1:
                     c.solicitarTaxi();
+                    
+                    System.out.println("desea confirmar su compra? si 1.-/no 2.-");
+                    int confirmar =sc.nextInt();
+                    switch(confirmar){
+                        case 1:
+                            
+                        case 2:
+                            mostrarMenu(tipoUsuario);
+                        default:
+                            System.out.println("se cayo el programa ya fue me dio amsiedad" )
+                    }
                     break;
                 case 2:
                     c.solicitarDelivery();
+           
+                    System.out.println("desea confirmar su compra? si 1.-/no 2.-");
+                    int confirmar =sc.nextInt();
+                    switch(confirmar){
+                        case 1:
+                            
+                        case 2:
+                            mostrarMenu(tipoUsuario);
+                        default:
+                            System.out.println("se cayo el programa ya fue me dio amsiedad" )
                     break;
                 case 3:
                     c.solicitarEncomienda();
+                    System.out.println("desea confirmar su compra? si 1.-/no 2.- ");
+                    int confirmar =sc.nextInt();
+                    switch(confirmar){
+                        case 1:
+                            
+                        case 2:
+                            mostrarMenu(tipoUsuario);
+                        default:
+                            System.out.println("se cayo el programa ya fue me dio amsiedad" )
                     break;
                 case 4:
                     c.consultarServicio();
+                    
                     break;
                 case 5:
                   System.out.println("Ha salido exitosamente");
@@ -103,7 +136,7 @@ public class Sistema {
                     System.out.println("Opcion invalida");
                     break;
             }
-        }else if ("R".equals(tipo)) {
+        }else if ("R".equals(tipoUsuario)) {
                 ArrayList<String> datos=ManejoArchivos.LeeFichero("usuarios.txt");
                 String cedula="";
                 for(int i=0;i<datos.size();i++){
