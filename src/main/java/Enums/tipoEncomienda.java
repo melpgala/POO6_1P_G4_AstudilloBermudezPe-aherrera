@@ -6,7 +6,6 @@ package Enums;
 /**
  * tipos de encomienda que pueden ser usados.
  * @author Melanie Peñaherrera
- * @see Encomienda
  */
 public enum tipoEncomienda {
     /**
