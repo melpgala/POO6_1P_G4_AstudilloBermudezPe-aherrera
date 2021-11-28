@@ -139,14 +139,14 @@ public class Servicio {
     * @param valorTotalPagar Valor total a pagar por los platos.
     * @param tp Tipo de pago que realizara.
     */
-    protected double calcularValorPagar(double valorTotalPagar,tipoPago tp){
+    protected void calcularValorPagar(double valorTotalPagar,tipoPago tp){
         double precioEntrega =Math.random()*5;
         if (tp.equals(tipoPago.EFECTIVO)){
             valorTotalPagar+=precioEntrega;
         }else if (tp.equals(tipoPago.TARJETA)){
             valorTotalPagar=(valorTotalPagar+precioEntrega)*1.1;
         }
-       return valorTotalPagar;
+       this.valorapagar=valorTotalPagar;
     }
     
     /**
