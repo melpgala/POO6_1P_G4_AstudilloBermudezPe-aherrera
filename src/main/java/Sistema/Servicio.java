@@ -131,7 +131,7 @@ public class Servicio {
             valorTotalPagar=numAleatorio*1.1;
         
         }
-        this.valorTotalPagar=valorTotalPagar;
+        this.valorapagar=valorTotalPagar;
     }
     
     /**
