@@ -128,7 +128,7 @@ public class Cliente extends Usuario{
         Servicio servicioDel = (Servicio)servicioDelivery;
         tipoPago tipoDePago = Pago.elegirTipoPago();
         servicioDel.calcularValorPagar(valorTotalPagar,tipoDePago);
-        return Delivery;
+        return serivicioDelivery;
     }
     
     /**
