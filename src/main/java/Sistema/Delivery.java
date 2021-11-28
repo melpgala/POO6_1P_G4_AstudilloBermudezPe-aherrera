@@ -16,7 +16,7 @@ public class Delivery extends Servicio {
     Pedido pedido;
     
     /**
-    * Método constructor parametrizado.
+    * Método constructor parametrizado de Delivery.
     * @author Alex Bermudez
     */
     public Delivery(tipoServicio tipo, LocalDateTime fechaHora, int codigo, Pedido pedido) {
@@ -25,7 +25,7 @@ public class Delivery extends Servicio {
     }
     /**
     * Método que devuelve el pedido del delivery.
-    * @return Devuelve un objeto pedido del delivery.
+    * @return Devuelve un objeto Pedido del delivery.
     */
     public Pedido getPedido(){
         return pedido;
