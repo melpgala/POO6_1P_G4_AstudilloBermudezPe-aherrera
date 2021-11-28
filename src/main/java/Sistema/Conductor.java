@@ -20,8 +20,8 @@ public class Conductor extends Usuario{
     private Vehiculo veh;
     
     /**
-    * Método que devuelve una cadena con el nombre y apellido del conductor.
-    * return Devuelve una cadena con el nombre y apellido del conductor.
+    * Método que devuelve el nombre y apellido del conductor.
+    * return Devuelve un String con el nombre y apellido del conductor.
     */
     public String getNombreApellido(){
         return nombre+" "+apellido;
@@ -30,7 +30,7 @@ public class Conductor extends Usuario{
     //leer archivo conductores.txt
     //user, licencia, estado, codigoVehiculo   
     /**
-    * Método constructor parametrizado.
+    * Método constructor parametrizado de conductor.
     * @param cedula Cedula del conductor.
     * @author Alex Bermudez
     */
