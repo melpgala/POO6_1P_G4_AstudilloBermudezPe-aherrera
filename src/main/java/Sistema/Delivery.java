@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Sistema contiene las clases del proyecto.
  */
 package Sistema;
 
@@ -10,16 +8,25 @@ import java.time.LocalDateTime;
 
 
 /**
- *
- * @author User
+ * Delivery contiene los métodos y atributos de un delivery de comida.
+ * @author Alex Bermudez
+ * @author Melanie Peñaherrera
  */
 public class Delivery extends Servicio {
     Pedido pedido;
     
+    /**
+    * Método constructor parametrizado.
+    * @author Alex Bermudez
+    */
     public Delivery(tipoServicio tipo, LocalDateTime fechaHora, int codigo, Pedido pedido) {
         super(tipo, fechaHora, codigo);
         this.pedido = pedido;
     }
+    /**
+    * Método que devuelve el pedido del delivery.
+    * @return Devuelve un objeto pedido del delivery.
+    */
     public Pedido getPedido(){
         return pedido;
     }
