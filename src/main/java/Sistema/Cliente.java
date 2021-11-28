@@ -82,7 +82,7 @@ public class Cliente extends Usuario{
     * @author Melanie Peñaherrera
     * @author Dante Astudillo 
     */
-    protected void solicitarDelivery (){
+    protected Delivery solicitarDelivery (){
         LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
         double valorTotalPagar = 0;
@@ -128,6 +128,7 @@ public class Cliente extends Usuario{
         Servicio servicioDel = (Servicio)servicioDelivery;
         tipoPago tipoDePago = Pago.elegirTipoPago();
         servicioDel.calcularValorPagar(valorTotalPagar,tipoDePago);
+        return Delivery;
     }
     
     /**
