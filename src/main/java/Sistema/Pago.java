@@ -17,8 +17,8 @@ public class Pago {
 
     /**
     * Método estatico que devuelve el tipo de pago.
-    * @return Devuelve el tipo de pago.
-    * @authoe Melanie Peñaherrera
+    * @return Devuelve un tipoPago que indica el tipo de pago.
+    * @author Melanie Peñaherrera
     */
     public static tipoPago elegirTipoPago(){
         Scanner sc = new Scanner(System.in);
