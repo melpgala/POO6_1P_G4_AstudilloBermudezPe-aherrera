@@ -6,7 +6,6 @@ package Enums;
 /**
  *Tipos de pago que pueden ser usados.
  * @author Melanie Peñaherrera
- * @see Pago
  */
 public enum tipoPago {
     /**
