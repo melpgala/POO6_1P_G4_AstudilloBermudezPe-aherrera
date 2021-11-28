@@ -1,13 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Sistema contiene las clases del proyecto.
  */
 package Sistema;
 import java.util.Scanner;
 
 /**
- *
+ * Esta clase contiene los métodos y atributos de un plato.
  * @author Astudillo Dante
  */
 public class Plato {
@@ -17,12 +15,10 @@ public class Plato {
     
     Scanner sc = new Scanner(System.in);
     /**
-    *
+    * Método constructor parametrizado de la clase plato.
+    * @param nombrePlato Nombre del platillo
+    * @param precioPlato Precio del platillo por unidad.
     * @author Astudillo Dante
-    * Representa un Platillo del menu
-    * @constructor
-    * @param{String} nombre del platillo
-    * @param{String} precio del platillo en 1 unidad
     */
     public Plato(String nombrePlato, double precioPlato){//creacion del objeto plato para cada platillo del menu
         this.nombrePlato = nombrePlato;
@@ -30,7 +26,7 @@ public class Plato {
     }
     /**
     * Metodo que devuelve el nombre del plato
-    * @return {String} Retorna el nombre del plato 
+    * @return Retorna el nombre del plato 
     */
     
     public String getNombrePlato(){
@@ -39,19 +35,17 @@ public class Plato {
     
     /**
     * Metodo que devuelve el precio del plato
-    * @return {String} Retorna el precio del plato 
+    * @return Retorna un double que indica el precio del plato.
     */
     
     public double getPrecioPlato(){
         return precioPlato;
     }
-    /**
-    * 
-    * Metodo que maneja el precio del plato multiplicado por n veces elejido por el cliente
-    * @return{Double} retorna el precio al contado 
-    *
-    */
     
+    /**
+    * Metodo que devuelve el precio del plato multiplicado por n veces cantidad elegida por el cliente.
+    * @return Devuelve un double que indica el precio de los platos al contado.
+    */
     protected double precioxPlatos(){
         System.out.println("Ingrese que cantidad desea de este mismo plato: ");
         cantPlatos = sc.nextInt();
