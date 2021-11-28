@@ -10,7 +10,7 @@ import manejoArchivos.ManejoArchivos;
 /**
  * Esta clase contiene los métodos y atributos del sistema principal.
  * @author Melanie Peñaherrera
- * @author Astudillo Dante
+ * @author Dante Astudillo 
  */
 public class Sistema {
     static Scanner sc= new Scanner (System.in);
@@ -130,9 +130,10 @@ public class Sistema {
     
     /**
     * Método static Main principal del Programa 
+    * @param args Codigo que ejecutara el programa principal.
     * @author Dante Astudillo
     * @author Melanie Peñaherrera
-    */   
+    */    
     public static void main(String[] args) {
         System.out.println("---------------MENU---------------\n");
         System.out.println("Bienvenido");
