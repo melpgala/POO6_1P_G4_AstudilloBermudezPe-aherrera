@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class Servicio {
     private tipoServicio tipoS;
     private LocalDateTime fechaHora;
-    private int codigo;
+    private int codigoServicio;
     private Ruta ruta;
     private Double valorapagar;
     
@@ -45,7 +45,7 @@ public class Servicio {
     protected Servicio(tipoServicio tipoS, LocalDateTime fechaHora, int codigo){
         this.tipoS = tipoS;
         this.fechaHora = fechaHora;
-        this.codigo = codigo;
+        this.codigoServicio = codigo;
         Ruta ruta = new Ruta();   
         this.ruta = ruta;
     }
