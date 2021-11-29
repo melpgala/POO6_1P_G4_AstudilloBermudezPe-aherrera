@@ -52,8 +52,9 @@ public class Encomienda extends Servicio{
     * @return Devuelve un String que indica la información a agregar en los archivos txt de un objeto encomienda.
     * @author Alex Bermudez
     */
+    @Override
     public String toString(Cliente cl, Conductor co){
-        return super.getCodigo()+","+cl.getNombreApellido()+","+co.getNombreApellido()+","+super.getRuta().getOrigen()+","+super.getRuta().getDestino()+","+super.getFechaHora()+","+this.getTipoE()+","+this.getCantidadProductos+","+super.getTipoPago()+","+super.getValorapagar();
+        return super.getCodigo()+","+cl.getNombreApellido()+","+co.getNombreApellido()+","+super.getRuta().getOrigen()+","+super.getRuta().getDestino()+","+super.getFechaHora()+","+this.getTipoE()+","+this.getCantidadProductos()+","+super.getTipoPago()+","+super.getValorapagar();
     }
     
 }
