@@ -105,19 +105,23 @@ public class Sistema {
         Int valor sc.nextInt();
         
         if("C".equals(tipoUsuario)){
-            Cliente c=new Cliente(User);
+            Cliente c=new Cliente(User);            
             switch (valor) {
                 case 1:
                     Taxi Taxidatosdelcliente= c.solicitarTaxi();
-                    String cadena= Deliverydatosdelcliente.tostring();
+                    Conductor co = new Conductor(Taxidatosdelcliente.buscarConductor());
+                    String cadena= Deliverydatosdelcliente.tostring(c,co);
                     confirmar( cadena, "viaje.txt" );
                     System.out.println(cadena + " cuidado se equivoca de conductor, no somos responsables  ");
                     
                     break;
                 case 2:
                     Delivery Deliverydatosdelcliente= c.solicitarDelivery();
-                    String cadena= Deliverydatosdelcliente.tostring();
+                    Conductor co = new Conductor(Taxidatosdelcliente.buscarConductor());
+                    String cadena= Deliverydatosdelcliente.tostring(c,co);
+                    String cadena2= Deliverydatosdelcliente.tostringPedido(c,co);
                     confirmar( cadena, "delivery.txt" );
+                    confirmar( cadena2, "pedidos.txt" );
                     System.out.println(cadena + " si su envio no llega en menos de 10 dias, pida otro  ");
                     
                     
@@ -125,7 +129,8 @@ public class Sistema {
                 case 3:
                             
                     Encomienda Encomiendodatosdelcliente = c.solicitarEncomienda();
-                    String cadena= Deliverydatosdelcliente.tostring();
+                    Conductor co = new Conductor(Taxidatosdelcliente.buscarConductor());
+                    String cadena= Deliverydatosdelcliente.tostring(c,co);
                     confirmar( cadena, "encomiendas.txt" );
                     System.out.println(cadena + " si su envio no llega en menos de 10 dias, pida otro  ");
                     break;
