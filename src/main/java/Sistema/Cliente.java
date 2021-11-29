@@ -44,6 +44,10 @@ public class Cliente extends Usuario{
         }
     }
     
+    /**
+    * Método que devuelve el nombre y el apellido del cliente.
+    * @return Devuelve un String que indica el nombre y el apellido del cliente.
+    */
     public String getNombreApellido(){
         return nombreApellido;
     }
@@ -167,7 +171,6 @@ public class Cliente extends Usuario{
     * Método que crea un servicio de taxi.
     * @author Melanie Peñaherrera
     */
-
     protected Taxi solicitarTaxi(){
         System.out.println("Ingrese número de pasajeros: ");
         int numPasajeros = sc.nextInt();
