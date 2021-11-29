@@ -189,7 +189,7 @@ public class Servicio {
     * Método que genera un String - Método vacio hecho para que sus clases hijas lo hereden
     * @return Devuelve un String vacio.
     */
-    public String toString(){
+    public String toString(Cliente c, Conductor co){
         return ".";
     }
 }
