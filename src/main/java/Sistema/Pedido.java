@@ -37,8 +37,16 @@ public class Pedido {
         String pedido="";
         for (Plato p: platosElegidos){  //String x="amburgueza"
             pedido+= p.getNombrePlato(); // Plato x =new Plato(String amburgueza)
+            pedido+= "--";
         }
         return pedido;// hambru ,papas,   
+    }
+    public String getPrecioPlato(){
+        double precioplato="";
+        for (Plato p: platosElegidos){  //
+            precioplato+= p.getprecioPlato();
+        return dobule;
+    
     }
     
     /**
