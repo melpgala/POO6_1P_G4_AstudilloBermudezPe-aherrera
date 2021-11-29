@@ -22,6 +22,7 @@ public class Servicio {
     private int codigoServicio;
     private Ruta ruta;
     private Double valorapagar;
+    private tipoPago tipoP;
     
     Scanner sc = new Scanner(System.in);
     
@@ -81,6 +82,15 @@ public class Servicio {
     protected int getvalorapagar(){
         return valorapagar
         }
+    
+    protected tipoPago getTipoPago(){
+        return tipoP;
+    }
+    
+    protected void setTipoPago(tipoPago tipoP){
+        this.tipoP = tipoP;
+    }
+    
     /**
     * Método que devuelve la cédula de un conductor que cumpla los requisitos para realizar el servicio.
     * @return Devuelve un String que indica la cédula del conductor que cumpla los requisitos para realizar el servicio.
