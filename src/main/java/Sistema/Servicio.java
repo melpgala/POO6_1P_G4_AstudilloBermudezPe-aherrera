@@ -72,16 +72,16 @@ public class Servicio {
     * @return Devuelve un int que representa el código del servicio.
     */
     protected int getCodigo(){
-        return codigo;
+        return codigoServicio;
     }
     
     /**
-    *Metodo que devuelve el codigo del servicio.
+    *Metodo que devuelve el valor a pagar.
     *@return {int} Devuelve un Double que representa el valor total a apgar
     */
-    protected int getValorapagar(){
+    protected double getValorapagar(){
         return valorapagar;
-        }
+        }   
     
     /**
     * Método que devuelve el tipo de pago del servicio.
@@ -111,7 +111,7 @@ public class Servicio {
         for(String conductor : conductores){
             String estadoCond = conductor.split(",")[2];
             int codVehiculo = Integer.valueOf(conductor.split(",")[3]);
-            if (estadoCond == "D" ){
+            if (estadoCond.equals("D") ){
                 Vehiculo veh = new Vehiculo(codVehiculo);
                 String tipo = veh.getTipoVehiculo();
                 switch(this.tipoS){
@@ -187,9 +187,11 @@ public class Servicio {
     
     /**
     * Método que genera un String - Método vacio hecho para que sus clases hijas lo hereden
-    * @return Devuelve un String vacio.
+    * @param c Un objeto cliente.
+    * @param co Un objeto conductor.
+    * @return Devuelve null.
     */
     public String toString(Cliente c, Conductor co){
-        return ".";
+        return null;
     }
 }
