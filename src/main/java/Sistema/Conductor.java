@@ -20,7 +20,7 @@ public class Conductor extends Usuario{
     
     /**
     * Método que devuelve el nombre y apellido del conductor.
-    * return Devuelve un String con el nombre y apellido del conductor.
+    * @return Devuelve un String con el nombre y apellido del conductor.
     */
     public String getNombreApellido(){
         return nombre+" "+apellido;
