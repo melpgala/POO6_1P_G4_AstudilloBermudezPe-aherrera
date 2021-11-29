@@ -60,9 +60,10 @@ public class Sistema {
         return tipoUsuario;
     }  
     /**
-    *Astudillo Dante
-    *@param {String} cadena recibe la cadena de los datos ingresados por el ususario para guardarlos en archivo.txt
-    *@param {String} archivotxt archivo.txt donde ingresara los datos de la cadena
+    * Método que confirma el servicio elegido por el usuario y guarda en los archivos txt la información.
+    * @author Astudillo Dante
+    * @param cadena Cadena que se va a escribir en el archivo.
+    * @param archivotxt Nombre del archivo txt.
     */
     public void confirmar(String cadena,String  archivotxt){
         System.out.println("desea confirmar su compra? si 1.-/no 2.- ");
@@ -70,7 +71,6 @@ public class Sistema {
         switch(confirmar){
             case 1:
                 ManejoArchivos.EscribirArchivo( archivotxt , cadena );// maestra se la quiere
-                
                 break;
             case 2:
                 mostrarMenu(tipoUsuario);
@@ -78,7 +78,6 @@ public class Sistema {
             default;
                 System.out.println("se cayo el programa ya fue me dio amsiedad" );
                 break;
-    
     }
     
     
@@ -88,6 +87,7 @@ public class Sistema {
     * @return Devuelve in int que indica la eleccion de las opciones del menu.
     * @author Melanie Peñaherrera
     * @author Dante Astudillo
+    * @author Alex Bermudez
     */
     private static void mostrarMenu(String tipoUsuario) { 
         if ("C".equalsIgnoreCase(tipoUsuario )) {///cliente
@@ -110,10 +110,9 @@ public class Sistema {
                 case 1:
                     Taxi Taxidatosdelcliente= c.solicitarTaxi();
                     Conductor co = new Conductor(Taxidatosdelcliente.buscarConductor());
-                    String cadena= Deliverydatosdelcliente.tostring(c,co);
+                    String cadena = Deliverydatosdelcliente.tostring(c,co);
                     confirmar( cadena, "viaje.txt" );
                     System.out.println(cadena + " cuidado se equivoca de conductor, no somos responsables  ");
-                    
                     break;
                 case 2:
                     Delivery Deliverydatosdelcliente= c.solicitarDelivery();
@@ -123,11 +122,8 @@ public class Sistema {
                     confirmar( cadena, "delivery.txt" );
                     confirmar( cadena2, "pedidos.txt" );
                     System.out.println(cadena + " si su envio no llega en menos de 10 dias, pida otro  ");
-                    
-                    
                     break;
-                case 3:
-                            
+                case 3:        
                     Encomienda Encomiendodatosdelcliente = c.solicitarEncomienda();
                     Conductor co = new Conductor(Taxidatosdelcliente.buscarConductor());
                     String cadena= Deliverydatosdelcliente.tostring(c,co);
@@ -136,7 +132,6 @@ public class Sistema {
                     break;
                 case 4:
                     c.consultarServicio();
-                     
                     break;
                 case 5:
                   System.out.println("Ha salido exitosamente");
@@ -168,7 +163,6 @@ public class Sistema {
                             break;
                     }
                 }
-    
     }
     
     
