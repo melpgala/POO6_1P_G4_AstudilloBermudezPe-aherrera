@@ -79,8 +79,8 @@ public class Servicio {
     *Metodo que devuelve el codigo del servicio.
     *@return {int} Devuelve un Double que representa el valor total a apgar
     */
-    protected int getvalorapagar(){
-        return valorapagar
+    protected int getValorapagar(){
+        return valorapagar;
         }
     
     protected tipoPago getTipoPago(){
