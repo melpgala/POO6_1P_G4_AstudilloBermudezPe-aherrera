@@ -35,7 +35,7 @@ public class Pedido {
     * @param Codigorestaurante Codigo del restaurante al que se hizo el pedido.
     */
     public void  setCodigoDeRestaurant(String Codigorestaurante){
-        thisCodigoDeRestaurante = Codigorestaurante;
+        this.CodigoDeRestaurante = Codigorestaurante;
     }
     
     /**
@@ -43,7 +43,7 @@ public class Pedido {
     * @return Devuelve un String que indica el codigo del restaurante al que se hizo el pedido.
     */
     public String getCodigoDeRestaurant(){
-        return CodigoDeRestaurante
+        return CodigoDeRestaurante;
     }
     
     /**
@@ -62,12 +62,12 @@ public class Pedido {
     * Método que devuelve el precio de los platos del pedido.
     * @return Devuelve un String que indica el precio de los platos del pedido.
     */
-    public String getPrecioPlato(){
-        double precioplato="";
+    public double getPrecioPlato(){
+        double precioplato=0.0;
         for (Plato p: platosElegidos){  //
-            precioplato+= p.getprecioPlato();
+            precioplato+= p.getPrecioPlato();
+        }
         return precioplato;
-    
     }
     
     /**
