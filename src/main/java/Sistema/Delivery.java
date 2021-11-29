@@ -4,7 +4,6 @@
 package Sistema;
 import Enums.tipoServicio;
 import java.time.LocalDateTime;
-import Conductor;
 
 
 /**
@@ -22,6 +21,7 @@ public class Delivery extends Servicio {
     * @param fechaHora Fecha y hora actual en la que pidió el servicio.
     * @param codigo Codigo por el servicio.
     * @param pedido Pedido de servicio Delivery.
+    * @param codigoPedido Código del pedido.
     * @author Alex Bermudez
     */
     public Delivery(tipoServicio tipo, LocalDateTime fechaHora, int codigo, Pedido pedido, int codigoPedido) {
@@ -52,6 +52,7 @@ public class Delivery extends Servicio {
     * @return Devuelve un String que indica la información a agregar en los archivos txt de un objeto delivery.
     * @author Alex Bermudez
     */
+    @Override
     public String toString(Cliente cl,Conductor co){
         return super.getCodigo()+","+cl.getNombreApellido()+","+co.getNombreApellido()+","+super.getRuta().getOrigen()+","+super.getRuta().getDestino()+","+super.getFechaHora()+","+this.getCodigoPedido()+","+super.getTipoPago()+","+super.getValorapagar();
     }
@@ -63,4 +64,5 @@ public class Delivery extends Servicio {
     */
     public String toStringPedido(){
          return this.getCodigoPedido()+","+this.getPedido().getCodigoDeRestaurante()+","+this.getPedido().getNombresPedido()+","+super.getValorapagar();
+    }
 }
