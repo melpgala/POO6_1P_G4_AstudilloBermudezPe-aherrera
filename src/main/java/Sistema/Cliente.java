@@ -136,7 +136,7 @@ public class Cliente extends Usuario{
         }
         Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido,codigoPedido);
         servicioDelivery.getPedido().setNombreRestaurante(nomRestaurante);
-        
+        servicioDelivery.getPedido.setCodigoRestaurant(listaCodigo.get(numero);)
         tipoPago tipoDePago = Pago.elegirTipoPago();
         servicioDelivery.calcularValorPagar(valorTotalPagar,tipoDePago);
         
