@@ -36,14 +36,31 @@ public class Delivery extends Servicio {
     public Pedido getPedido(){
         return pedido;
     }
-     
+    
+    /**
+    * Método que devuelve el código del pedido.
+    * @return Devuelve un int que indica el código del pedido.
+    */
     public int getCodigoPedido(){
          return codigoPedido;
     }
-     
+    
+    /**
+    * Método que devuelve una cadena con la información a agregar en los archivos txt de un objeto delivery.
+    * @param cl Cliente del servicio de delivery.
+    * @param co Conductor del servicio de delivery.
+    * @return Devuelve un String que indica la información a agregar en los archivos txt de un objeto delivery.
+    * @author Alex Bermudez
+    */
     public String toString(Cliente cl,Conductor co){
         return super.getCodigo()+","+cl.getNombreApellido()+","+co.getNombreApellido()+","+super.getRuta().getOrigen()+","+super.getRuta().getDestino()+","+super.getFechaHora()+","+this.getCodigoPedido()+","+super.getTipoPago()+","+super.getValorapagar();
     }
+     
+    /**
+    * Método que devuelve una cadena con la información a agregar en los archivos txt de un objeto delivery.
+    * @author Alex Bermudez
+    * @return Devuelve un String que indica la información a agregar en los archivos txt de un objeto delivery 
+    */
     public String toStringPedido(){
          return this.getCodigoPedido()+","+this.getPedido().getCodigoDeRestaurante()+","+this.getPedido().getNombresPedido()+","+super.getValorapagar();
 }
