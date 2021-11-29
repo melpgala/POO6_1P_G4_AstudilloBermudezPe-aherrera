@@ -24,7 +24,7 @@ public class Encomienda extends Servicio{
     
     /**
     * Método que devuelve el tipo de encomienda.
-    * @return Devuelve in tipoEncomienda que indica el tipo de encomienda.
+    * @return Devuelve un tipoEncomienda que indica el tipo de encomienda.
     */
     protected tipoEncomienda getTipoE(){
         return tipoE;
@@ -46,10 +46,10 @@ public class Encomienda extends Servicio{
     }
     
     /**
-    * Método que devuelve una cadena con la información a agregar en los archivos text de un objeto encomienda.
+    * Método que devuelve una cadena con la información a agregar en los archivos txt de un objeto encomienda.
     * @param cl Cliente del servicio de encomienda.
     * @param co Conductor del servicio de encomienda.
-    * @return Devuelve un String que indica la información a agregar en los archivos text de un objeto encomienda.
+    * @return Devuelve un String que indica la información a agregar en los archivos txt de un objeto encomienda.
     * @author Alex Bermudez
     */
     public String toString(Cliente cl, Conductor co){
