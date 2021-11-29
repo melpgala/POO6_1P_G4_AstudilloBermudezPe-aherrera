@@ -4,6 +4,7 @@
 package Sistema;
 import Enums.tipoServicio;
 import java.time.LocalDateTime;
+import Conductor;
 
 
 /**
@@ -35,4 +36,14 @@ public class Delivery extends Servicio {
     public Pedido getPedido(){
         return pedido;
     }
+     
+    public int getCodigoPedido(){
+         return codigoPedido;
+    }
+     
+    public String toString(Cliente cl,Conductor co){
+        return super.getCodigo()+","+cl.getNombreApellido()+","+co.getNombreApellido()+","+super.getRuta().getOrigen()+","+super.getRuta().getDestino()+","+super.getFechaHora()+","+this.getCodigoPedido()+","+super.getTipoPago()+","+super.getValorapagar();
+    }
+    public String toStringPedido(){
+         return this.getCodigoPedido()+","+this.getPedido().getCodigoRestaurante()+","+this.getPedido().getNombresPedido()+","+
 }
