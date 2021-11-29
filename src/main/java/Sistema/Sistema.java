@@ -59,7 +59,11 @@ public class Sistema {
         }
         return tipoUsuario;
     }  
-    
+    /**
+    *Astudillo Dante
+    *@param {String} cadena recibe la cadena de los datos ingresados por el ususario para guardarlos en archivo.txt
+    *@param {String} archivotxt archivo.txt donde ingresara los datos de la cadena
+    */
     public void confirmar(String cadena,String  archivotxt){
         System.out.println("desea confirmar su compra? si 1.-/no 2.- ");
         int confirmar =sc.nextInt();
@@ -107,13 +111,14 @@ public class Sistema {
                     Taxi Taxidatosdelcliente= c.solicitarTaxi();
                     String cadena= Deliverydatosdelcliente.tostring();
                     confirmar( cadena, "viaje.txt" );
+                    System.out.println(cadena + " cuidado se equivoca de conductor, no somos responsables  ");
                     
                     break;
                 case 2:
                     Delivery Deliverydatosdelcliente= c.solicitarDelivery();
                     String cadena= Deliverydatosdelcliente.tostring();
                     confirmar( cadena, "delivery.txt" );
-            
+                    System.out.println(cadena + " si su envio no llega en menos de 10 dias, pida otro  ");
                     
                     
                     break;
@@ -122,11 +127,11 @@ public class Sistema {
                     Encomienda Encomiendodatosdelcliente = c.solicitarEncomienda();
                     String cadena= Deliverydatosdelcliente.tostring();
                     confirmar( cadena, "encomiendas.txt" );
-                    
+                    System.out.println(cadena + " si su envio no llega en menos de 10 dias, pida otro  ");
                     break;
                 case 4:
                     c.consultarServicio();
-                     //aqui iria el resto del programa si tuviera 
+                     
                     break;
                 case 5:
                   System.out.println("Ha salido exitosamente");
