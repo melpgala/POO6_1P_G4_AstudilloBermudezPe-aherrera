@@ -63,9 +63,10 @@ public class Sistema {
     * Método que confirma el servicio elegido por el usuario y guarda en los archivos txt la información.
     * @author Astudillo Dante
     * @param cadena Cadena que se va a escribir en el archivo.
+    * @param tipoUsuario Tipo de usuario.
     * @param archivotxt Nombre del archivo txt.
     */
-    public void confirmar(String cadena,String  archivotxt){
+    public static void confirmar(String cadena,String  archivotxt,String tipoUsuario,String Usuario){
         System.out.println("desea confirmar su compra? si 1.-/no 2.- ");
         int confirmar =sc.nextInt();
         switch(confirmar){
@@ -73,11 +74,12 @@ public class Sistema {
                 ManejoArchivos.EscribirArchivo( archivotxt , cadena );// maestra se la quiere
                 break;
             case 2:
-                mostrarMenu(tipoUsuario);
+                mostrarMenu(tipoUsuario, Usuario);
                 break;
-            default;
+            default:
                 System.out.println("se cayo el programa ya fue me dio amsiedad" );
                 break;
+        }
     }
     
     
@@ -89,7 +91,7 @@ public class Sistema {
     * @author Dante Astudillo
     * @author Alex Bermudez
     */
-    private static void mostrarMenu(String tipoUsuario) { 
+    private static void mostrarMenu(String tipoUsuario,String usuario) { 
         if ("C".equalsIgnoreCase(tipoUsuario )) {///cliente
             System.out.println("1. Solicitar servicio de taxi");
             System.out.println("2. Solicitar comida a domicilio");
@@ -102,33 +104,33 @@ public class Sistema {
         }
         System.out.print("Ingrese opcion:"); 
         
-        Int valor sc.nextInt();
+        int valor = sc.nextInt();
         
         if("C".equals(tipoUsuario)){
-            Cliente c=new Cliente(User);            
+            Cliente c=new Cliente(usuario);            
             switch (valor) {
                 case 1:
                     Taxi Taxidatosdelcliente= c.solicitarTaxi();
                     Conductor co = new Conductor(Taxidatosdelcliente.buscarConductor());
-                    String cadena = Deliverydatosdelcliente.tostring(c,co);
-                    confirmar( cadena, "viaje.txt" );
-                    System.out.println(cadena + " cuidado se equivoca de conductor, no somos responsables  ");
+                    String cadenaT = Txidatosdelcliente.toString(c,co);
+                    confirmar( cadenaT, "viaje.txt", tipoUsuario, usuario );
+                    System.out.println(cadenaT + " cuidado se equivoca de conductor, no somos responsables  ");
                     break;
                 case 2:
                     Delivery Deliverydatosdelcliente= c.solicitarDelivery();
                     Conductor co = new Conductor(Taxidatosdelcliente.buscarConductor());
-                    String cadena= Deliverydatosdelcliente.tostring(c,co);
-                    String cadena2= Deliverydatosdelcliente.tostringPedido(c,co);
-                    confirmar( cadena, "delivery.txt" );
-                    confirmar( cadena2, "pedidos.txt" );
-                    System.out.println(cadena + " si su envio no llega en menos de 10 dias, pida otro  ");
+                    String cadenaD= Deliverydatosdelcliente.toString(c,ca);
+                    String cadenaDP= Deliverydatosdelcliente.tostringPedido();
+                    confirmar( cadenaD, "delivery.txt", tipoUsuario, usuario );
+                    confirmar( cadenaDP, "pedidos.txt", tipoUsuario, usuario );
+                    System.out.println(cadenaD+ " si su envio no llega en menos de 10 dias, pida otro  ");
                     break;
                 case 3:        
-                    Encomienda Encomiendodatosdelcliente = c.solicitarEncomienda();
-                    Conductor co = new Conductor(Taxidatosdelcliente.buscarConductor());
-                    String cadena= Deliverydatosdelcliente.tostring(c,co);
-                    confirmar( cadena, "encomiendas.txt" );
-                    System.out.println(cadena + " si su envio no llega en menos de 10 dias, pida otro  ");
+                    Encomienda Encomiendadatosdelcliente = c.solicitarEncomienda();
+                    Conductor ce = new Conductor(Ecomiendadatosdelcliente.buscarConductor());
+                    String cadenaE= Encomiendadatosdelcliente.toString(c,ce);
+                    confirmar( cadenaE, "encomiendas.txt" );
+                    System.out.println(cadenaE + " si su envio no llega en menos de 10 dias, pida otro  ");
                     break;
                 case 4:
                     c.consultarServicio();
@@ -145,8 +147,8 @@ public class Sistema {
                 ArrayList<String> datos=ManejoArchivos.LeeFichero("usuarios.txt");
                 String cedula="";
                 for(int i=0;i<datos.size();i++){
-                    String usuario=datos.get(i).split(",")[3];
-                    if(usuario.equals(User)){
+                    String User=datos.get(i).split(",")[3];
+                    if(usuario.equals(User){
                         cedula=datos.get(i).split(",")[0];
                     }
                 }
@@ -180,6 +182,6 @@ public class Sistema {
         System.out.println("Contraseña: ");
         String Contra=sc.next();
         String tipo= iniciarSesion(User,Contra);
-        int valor = mostrarMenu(tipo);
+        mostrarMenu(tipo, User);
       
 }}
