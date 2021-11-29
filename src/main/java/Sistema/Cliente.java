@@ -22,6 +22,7 @@ import java.util.Scanner;
  * @see Usuario
  */
 public class Cliente extends Usuario{
+    private String nombreApellido;
     private int numtarjetaCredito;
     private String cedula;
     private ArrayList <Servicio>ServiciosPedidos;
@@ -35,11 +36,16 @@ public class Cliente extends Usuario{
     public Cliente(String Usuario){
     ArrayList <String > clienteCL = ManejoArchivos.LeeFichero("usuarios.txt");
      for (int i = 0 ; i < clienteCL.size() ; i++){
-        numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
-        cedula = clienteCL.get(i).split(",")[0];
+        this.numtarjetaCredito = Integer.valueOf(clienteCL.get(i).split(",")[2]);
+        this.cedula = clienteCL.get(i).split(",")[0];
         this.Usuario = Usuario;
         Contrasenia = clienteCL.get(i).split(",")[4];
+        this.nombreApellido = clienteCL.get(i).split(",")[1]+" "+clienteCL.get(i).split(",")[2];
         }
+    }
+    
+    public String getNombreApellido(){
+        return nombreApellido;
     }
     
     /**
