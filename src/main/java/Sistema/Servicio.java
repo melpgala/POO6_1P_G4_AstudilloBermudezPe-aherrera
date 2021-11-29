@@ -161,4 +161,8 @@ public class Servicio {
     int codP=(int)(Math.random()*(9999-1000)+1000);
         return codP;
     }
+    
+    public String toString(){
+        return ".";
+    }
 }
