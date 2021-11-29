@@ -64,6 +64,7 @@ public class Sistema {
     * @author Astudillo Dante
     * @param cadena Cadena que se va a escribir en el archivo.
     * @param tipoUsuario Tipo de usuario.
+    * @param usuario Usuario.
     * @param archivotxt Nombre del archivo txt.
     */
     public static void confirmar(String cadena,String  archivotxt,String tipoUsuario,String Usuario){
