@@ -58,7 +58,25 @@ public class Sistema {
             }
         }
         return tipoUsuario;
-    }   
+    }  
+    
+    public void confirmar(String cadena,String  archivotxt){
+        System.out.println("desea confirmar su compra? si 1.-/no 2.- ");
+        int confirmar =sc.nextInt();
+        switch(confirmar){
+            case 1:
+                ManejoArchivos.EscribirArchivo( archivotxt , cadena );// maestra se la quiere
+                
+                break;
+            case 2:
+                mostrarMenu(tipoUsuario);
+                break;
+            default;
+                System.out.println("se cayo el programa ya fue me dio amsiedad" );
+                break;
+    
+    }
+    
     
     /**
     * Método que muestra el menu dependiendo del tipo de usuario.
@@ -87,19 +105,24 @@ public class Sistema {
             switch (valor) {
                 case 1:
                     Taxi Taxidatosdelcliente= c.solicitarTaxi();
+                    String cadena= Deliverydatosdelcliente.tostring();
+                    confirmar( cadena, viajestxt );
                     
-                    confirmar();
-                    }
                     break;
                 case 2:
                     Delivery Deliverydatosdelcliente= c.solicitarDelivery();
-                    confirmar();
+                    String cadena= Deliverydatosdelcliente.tostring();
+                    confirmar( cadena, viajestxt );
+            
+                    
                     
                     break;
                 case 3:
                             
                     Encomienda Encomiendodatosdelcliente = c.solicitarEncomienda();
-                    confirmar();
+                    String cadena= Deliverydatosdelcliente.tostring();
+                    confirmar( cadena, viajestxt );
+                    
                     break;
                 case 4:
                     c.consultarServicio();
@@ -137,21 +160,7 @@ public class Sistema {
                 }
     
     }
-    public void confirmar(){
-        System.out.println("desea confirmar su compra? si 1.-/no 2.- ");
-        int confirmar =sc.nextInt();
-        switch(confirmar){
-            case 1:
-                 //aqui iria el resto del programa si tuviera 
-                break;
-            case 2:
-                mostrarMenu(tipoUsuario);
-                break;
-            default;
-                System.out.println("se cayo el programa ya fue me dio amsiedad" );
-                break;
     
-    }
     
     /**
     * Método static Main principal del Programa 
