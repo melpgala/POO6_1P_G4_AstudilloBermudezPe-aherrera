@@ -52,7 +52,7 @@ public class Pedido {
         double precioplato="";
         for (Plato p: platosElegidos){  //
             precioplato+= p.getprecioPlato();
-        return dobule;
+        return precioplato;
     
     }
     
