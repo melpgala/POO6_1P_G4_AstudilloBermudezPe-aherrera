@@ -73,9 +73,9 @@ public class Conductor extends Usuario{
         ArrayList <String> listaTaxi = ManejoArchivos.LeeFichero("viajes.txt");
         ArrayList <String> listaEncomiendas = ManejoArchivos.LeeFichero("encomiendas.txt");
         String nombreApellidoConductor = this.getNombreApellido();
-        String datosConductor = "";
+        String datosConductor;
         String tipoAsignado = "";
-        String fechahoraAsigando = "";
+        String fechahoraAsignado = "";
         String desde = "";
         String hasta = "";
         String recojer = "";
@@ -86,7 +86,7 @@ public class Conductor extends Usuario{
                 fechahoraAsignado = datos.split(",")[5];
                 desde = datos.split(",")[3];
                 hasta = datos.split(",")[4];
-                recojer = "el delivery"
+                recojer = "el delivery";
             }            
         }
         for (String datos : listaTaxi){
