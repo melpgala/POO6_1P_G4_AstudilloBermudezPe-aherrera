@@ -45,5 +45,5 @@ public class Delivery extends Servicio {
         return super.getCodigo()+","+cl.getNombreApellido()+","+co.getNombreApellido()+","+super.getRuta().getOrigen()+","+super.getRuta().getDestino()+","+super.getFechaHora()+","+this.getCodigoPedido()+","+super.getTipoPago()+","+super.getValorapagar();
     }
     public String toStringPedido(){
-         return this.getCodigoPedido()+","+this.getPedido().getCodigoRestaurante()+","+this.getPedido().getNombresPedido()+","+
+         return this.getCodigoPedido()+","+this.getPedido().getCodigoDeRestaurante()+","+this.getPedido().getNombresPedido()+","+super.getValorapagar();
 }
