@@ -83,10 +83,18 @@ public class Servicio {
         return valorapagar;
         }
     
+    /**
+    * Método que devuelve el tipo de pago del servicio.
+    * @return Devuelve un tipoPago que indica el tipo de pago del servicio.
+    */
     protected tipoPago getTipoPago(){
         return tipoP;
     }
-    
+   
+    /**
+    * Método que cambia el tipo de pado del servicio
+    * @param tipoP Tipo de pago del servicio.
+    */
     protected void setTipoPago(tipoPago tipoP){
         this.tipoP = tipoP;
     }
@@ -167,11 +175,20 @@ public class Servicio {
     int cod=(int)(Math.random()*(99999-10000)+10000);
         return cod;
     }
+    
+    /**
+    * Método estatico que genera un código por el pedido.
+    * @return Devuelve un int que indica el código por el pedido.
+    */
     protected static int generarCodPedido(){
     int codP=(int)(Math.random()*(9999-1000)+1000);
         return codP;
     }
     
+    /**
+    * Método que genera un String - Método vacio hecho para que sus clases hijas lo hereden
+    * @return Devuelve un String vacio.
+    */
     public String toString(){
         return ".";
     }
