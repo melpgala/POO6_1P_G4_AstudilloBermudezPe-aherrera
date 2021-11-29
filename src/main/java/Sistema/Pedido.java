@@ -42,7 +42,7 @@ public class Pedido {
     * Método que devuelve el código del restaurante al que se hizo el pedido.
     * @return Devuelve un String que indica el codigo del restaurante al que se hizo el pedido.
     */
-    public String getCodigoDeRestaurant(){
+    public String getCodigoDeRestaurante(){
         return CodigoDeRestaurante;
     }
     
