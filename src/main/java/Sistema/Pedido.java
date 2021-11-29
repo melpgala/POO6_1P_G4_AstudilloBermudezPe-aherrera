@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class Pedido {
     private String nombreRestaurante;
     private ArrayList  <Plato> platosElegidos  = new ArrayList();
+    private String CodigoDeRestaurant;
     
     /**
     * Método que devuelve el nombre del restaurante al que se hizo el pedido.
@@ -27,6 +28,12 @@ public class Pedido {
     */
     public void setNombreRestaurante(String nombreRestaurante){
         this.nombreRestaurante = nombreRestaurante;
+    }
+    public void  setCodigoDeRestaurant(String Codigorestaurante){
+        thisCodigoDeRestaurant = Codigorestaurante;
+    }
+    public String getCodigoDeRestaurant(){
+        return CodigoDeRestaurant
     }
     
     /**
