@@ -33,4 +33,8 @@ public class Taxi extends Servicio {
         super(tipo, fechaHora, codigo);
         this.numeroPasajeros = numeroPasajeros;
     }      
+    
+    public String toString(Cliente cl, Conductor co){        
+        return super.getCodigo()+","+cl.getNombreApellido()+","+co.getNombreApellido()+","+super.getRuta().getOrigen()+","+super.getRuta().getDestino()+","+super.getFechaHora()+","+this.getNumeroPasajeros()+","+super.getTipoPago()+","+super.getValorapagar();
+    }
 }
