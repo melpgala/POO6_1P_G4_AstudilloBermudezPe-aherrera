@@ -106,13 +106,13 @@ public class Sistema {
                 case 1:
                     Taxi Taxidatosdelcliente= c.solicitarTaxi();
                     String cadena= Deliverydatosdelcliente.tostring();
-                    confirmar( cadena, viajestxt );
+                    confirmar( cadena, "viaje.txt" );
                     
                     break;
                 case 2:
                     Delivery Deliverydatosdelcliente= c.solicitarDelivery();
                     String cadena= Deliverydatosdelcliente.tostring();
-                    confirmar( cadena, viajestxt );
+                    confirmar( cadena, "delivery.txt" );
             
                     
                     
@@ -121,7 +121,7 @@ public class Sistema {
                             
                     Encomienda Encomiendodatosdelcliente = c.solicitarEncomienda();
                     String cadena= Deliverydatosdelcliente.tostring();
-                    confirmar( cadena, viajestxt );
+                    confirmar( cadena, "encomiendas.txt" );
                     
                     break;
                 case 4:
