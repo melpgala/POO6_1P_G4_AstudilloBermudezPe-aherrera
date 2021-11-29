@@ -29,9 +29,19 @@ public class Pedido {
     public void setNombreRestaurante(String nombreRestaurante){
         this.nombreRestaurante = nombreRestaurante;
     }
+    
+    /**
+    * Método que cambia el codigo del restaurante al que se hizo el pedido.
+    * @param Codigorestaurante Codigo del restaurante al que se hizo el pedido.
+    */
     public void  setCodigoDeRestaurant(String Codigorestaurante){
         thisCodigoDeRestaurante = Codigorestaurante;
     }
+    
+    /**
+    * Método que devuelve el código del restaurante al que se hizo el pedido.
+    * @return Devuelve un String que indica el codigo del restaurante al que se hizo el pedido.
+    */
     public String getCodigoDeRestaurant(){
         return CodigoDeRestaurante
     }
@@ -43,11 +53,15 @@ public class Pedido {
     public String getNombresPedido(){
         String pedido="";
         for (Plato p: platosElegidos){  //String x="amburgueza"
-            pedido+= p.getNombrePlato(); // Plato x =new Plato(String amburgueza)
-            pedido+= "--";
+            pedido+= "--"+p.getNombrePlato(); // Plato x =new Plato(String amburgueza)
         }
         return pedido;// hambru ,papas,   
     }
+    
+    /**
+    * Método que devuelve el precio de los platos del pedido.
+    * @return Devuelve un String que indica el precio de los platos del pedido.
+    */
     public String getPrecioPlato(){
         double precioplato="";
         for (Plato p: platosElegidos){  //
