@@ -45,6 +45,13 @@ public class Encomienda extends Servicio{
         this.tipoE = tipoE;
     }
     
+    /**
+    * Método que devuelve una cadena con la información a agregar en los archivos text de un objeto encomienda.
+    * @param cl Cliente del servicio de encomienda.
+    * @param co Conductor del servicio de encomienda.
+    * @return Devuelve un String que indica la información a agregar en los archivos text de un objeto encomienda.
+    * @author Alex Bermudez
+    */
     public String toString(Cliente cl, Conductor co){
         return super.getCodigo()+","+cl.getNombreApellido()+","+co.getNombreApellido()+","+super.getRuta().getOrigen()+","+super.getRuta().getDestino()+","+super.getFechaHora()+","+this.getTipoE()+","+this.getCantidadProductos+","+super.getTipoPago()+","+super.getValorapagar();
     }
