@@ -91,11 +91,12 @@ public class Cliente extends Usuario{
     * Método que crea un servicio de delivery de comida.
     * @author Melanie Peñaherrera
     * @author Dante Astudillo 
+    * @return Devuelve un objeto Delivery.
     */
     protected Delivery solicitarDelivery (){
         LocalDateTime fechaHora = LocalDateTime.now();
         int codigo = Servicio.generarCodServicio();
-        int codigoPedido= Servicio.generarCodPedido
+        int codigoPedido= Servicio.generarCodPedido();
         double valorTotalPagar = 0;
         Pedido pedido = new Pedido();
         System.out.println("Bienvenido!! Elija un restaurante: ");
@@ -136,11 +137,11 @@ public class Cliente extends Usuario{
         }
         Delivery servicioDelivery = new Delivery(DELIVERY,fechaHora, codigo, pedido,codigoPedido);
         servicioDelivery.getPedido().setNombreRestaurante(nomRestaurante);
-        servicioDelivery.getPedido.setCodigoRestaurant(listaCodigo.get(numero);)
+        servicioDelivery.getPedido().setCodigoDeRestaurant(listaCodigo.get(numero));
         tipoPago tipoDePago = Pago.elegirTipoPago();
         servicioDelivery.calcularValorPagar(valorTotalPagar,tipoDePago);
         
-        return serivicioDelivery;
+        return servicioDelivery;
     }
     
     /**
@@ -170,6 +171,7 @@ public class Cliente extends Usuario{
     /**
     * Método que crea un servicio de taxi.
     * @author Melanie Peñaherrera
+    * @return Devuelve objeto taxi.
     */
     protected Taxi solicitarTaxi(){
         System.out.println("Ingrese número de pasajeros: ");
@@ -185,6 +187,7 @@ public class Cliente extends Usuario{
     /**
     * Método que crea un servicio de entrega de encomiendas.
     * @author Melanie Peñaherrera
+    * @return Devuelve un objeto encomienda.
     */
     protected void solicitarEncomienda(){
         System.out.println("Ingrese cantidad de productos: ");
@@ -209,5 +212,6 @@ public class Cliente extends Usuario{
         Encomienda servicioEncomienda = new Encomienda(ENCOMIENDA, fechaHora, codigo, cantProd, tipoE);
         tipoPago tipoDePago = Pago.elegirTipoPago();
         servicioEncomienda.calcularValorPagar(tipoDePago);
+        return servicioEncomienda;
     }
 }
